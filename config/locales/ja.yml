@@ -104,15 +104,18 @@ ja:
         category_id: カテゴリ
         decidim_scope_id: スコープ
         has_address: 住所有り
+        scope_id: 対象範囲
         state: 都道府県：
         title: タイトル
         user_group_id: 以下として共同ドラフトを作成します。
+      common:
+        created_at: 作成日時
       component:
         name: 名前
         published_at: 公開日時
         weight: 重量
       conference:
-        assemblies_ids: 関連する会議体
+        assemblies_ids: 関連する参加スペース
         banner_image: バナー画像
         consultations_ids: 関連する議案
         copy_categories: カテゴリをコピー
@@ -157,6 +160,8 @@ ja:
         title: タイトル
       debate:
         category_id: カテゴリ
+        closed_at: 終了日時
+        conclusions: まとめ
         decidim_category_id: カテゴリ
         description: 説明
         end_time: 終了時刻
@@ -182,59 +187,17 @@ ja:
         document_type: あなたの文書の種類
         user: 参加者
         verification_attachment: 文書のスキャンコピー
-      initiative:
-        decidim_user_group_id: 作成者
-        description: 説明
-        offline_votes: In-personal 署名
-        scope_id: スコープ
-        signature_end_date: 署名の収集期間の終了
-        signature_start_date: 署名の収集期間の開始
-        signature_type: 署名のコレクションタイプ
-        signature_type_values:
-          any: 混在しました
-          offline: In-person
-          online: オンライン
-        state: ステータス
-        title: タイトル
-      initiative_author:
-        address: 住所
-        city: 市区町村名
-        id_document: DNI/NIE
-        name: 氏名と姓
-        phone_number: 電話番号
-        post_code: 郵便番号
-        province: 県
-      initiatives_committee_member:
-        user: 委員会メンバー
-      initiatives_type:
-        area_enabled: 作成者がイニシアチブの領域を選択できるようにする
-        attachments_enabled: 添付ファイルを有効化
-        banner_image: バナー画像
-        collect_user_extra_fields: 署名に参加者の個人データを収集する
-        custom_signature_end_date_enabled: 著者が署名の収集期間の終わりを選択できるようにする
-        description: 説明
-        document_number_authorization_handler: 署名上のドキュメント番号を検証する権限
-        extra_fields_legal_information: 個人データの収集に関する法的情報
-        minimum_committee_members: 委員の最小数
-        online_signature_enabled: オンライン署名は有効です
-        promoting_committee_enabled: プロモーション委員会を有効にする
-        title: タイトル
-        undo_online_signatures_enabled: 参加者がオンライン署名を取り消すことを有効にする
-        validate_sms_code_on_votes: 署名プロセスにSMSコード検証ステップを追加
-      initiatives_vote:
-        date_of_birth: 誕生日
-        document_number: ドキュメント番号
-        name_and_surname: 氏名と姓名
-        postal_code: 郵便番号
       meeting:
         address: 住所
         available_slots: この会議で利用可能なスロット
         decidim_category_id: カテゴリ
         decidim_scope_id: スコープ
+        decidim_user_group_id: ユーザーグループ
         description: 説明
         end_time: 終了時刻
         location: 場所
         location_hints: 位置情報のヒント
+        organizer_gid: '次として作成:'
         organizer_id: オーガナイザー
         private_meeting: プライベートミーティング
         registration_form_enabled: 登録フォームは有効です
@@ -308,10 +271,6 @@ ja:
         welcome_notification_body: Welcome通知本文
         welcome_notification_subject: ウェルカム通知の件名
         youtube_handler: YouTube handler
-      organization_data:
-        address: 住所
-        id_document: ID ドキュメント
-        name: 完全な名前
       participatory_process:
         announcement: お知らせ
         area_id: エリア
@@ -338,7 +297,7 @@ ja:
         scope_type_max_depth_id: スコープフィルタの深さ
         scopes_enabled: スコープは有効です
         short_description: 短い説明
-        show_metrics: メトリックを表示
+        show_metrics: 数値情報を表示
         show_statistics: 統計情報を表示
         slug: URL スラグ
         start_date: 開始日
@@ -385,6 +344,7 @@ ja:
         category_id: カテゴリ
         decidim_scope_id: スコープ
         has_address: 住所有り
+        scope_id: 対象範囲
         state: 都道府県：
         suggested_hashtags: 推奨ハッシュタグ
         title: タイトル
@@ -408,8 +368,8 @@ ja:
         max_votes: 最大投票数
         min_votes: 投票の最小数
         origin_scope: スコープ
-        origin_title: 原点：
-        origin_url: 原点URL
+        origin_title: オリジナルタイトル：
+        origin_url: オリジナルURL
         participatory_scope: 参加スコープ
         promoter_group: プロモーターグループ
         question_context: コンテキスト
@@ -479,7 +439,7 @@ ja:
         description: 説明
         entry_date: 日付
       user:
-        about: About
+        about: 自己紹介
         email: あなたのメールアドレス
         name: あなたの名前
         nickname: ニックネーム：
@@ -503,12 +463,6 @@ ja:
           attributes:
             email:
               already_invited: このメールアドレスは既に招待されています
-        initiative:
-          attributes:
-            attachment:
-              file: ファイルが無効です
-              needs_to_be_reattached: 再接続が必要
-              title: タイトルは空にしないでください
         meeting_agenda:
           attributes:
             base:
@@ -565,6 +519,7 @@ ja:
       decidim/comments/reply_created_event: コメント返信
       decidim/comments/user_mentioned_event: メンション
       decidim/component_published_event: アクティブなコンポーネント
+      decidim/debates/close_debate_event: ディベートが終了しました
       decidim/debates/create_debate_event: ディベート
       decidim/debates/creation_disabled_event: ディベートは無効です
       decidim/debates/creation_enabled_event: ディベートは有効です
@@ -589,12 +544,12 @@ ja:
       decidim/proposals/creation_enabled_event: 提案の作成は有効です
       decidim/proposals/endorsing_enabled_event: 提案の推奨が有効になりました
       decidim/proposals/evaluating_proposal_event: 提案を評価しています
-      decidim/proposals/proposal_endorsed_event: 提案書の承認
-      decidim/proposals/proposal_mentioned_event: 言及された提案
-      decidim/proposals/publish_proposal_event: 提案書の公開
-      decidim/proposals/rejected_proposal_event: 提案が却下された
-      decidim/proposals/voting_enabled_event: プロポーザル投票を可能にした
+      decidim/proposals/proposal_mentioned_event: 提案について述べました
+      decidim/proposals/publish_proposal_event: 提案が公開
+      decidim/proposals/rejected_proposal_event: 提案が却下されました
+      decidim/proposals/voting_enabled_event: 提案投票を有効にしました
       decidim/removed_from_group: グループから削除しました
+      decidim/resource_endorsed_event: 承認された
       decidim/sortitions/create_sortition_event: 並び替え
       decidim/surveys/closed_survey_event: アンケートが終了しました
       decidim/surveys/opened_survey_event: アンケートを開始
@@ -630,8 +585,7 @@ ja:
         one: 結果
         other: 結果
       decidim/amendment:
-        one: 改正
-        other: 改正点
+        other: 修正
       decidim/assembly:
         one: アセンブリー
         other: アセンブリ
@@ -668,49 +622,31 @@ ja:
       decidim/consultations/vote:
         other: 投票
       decidim/debates/debate:
-        one: 討論
-        other: ディベート
-      decidim/initiative:
-        other: イニシアチブ
-      decidim/initiative_comittee:
-        other: Comittes
-      decidim/initiative_vote:
-        other: 署名
+        other: ディベート数
+      decidim/endorsement:
+        other: 支持
       decidim/meetings/meeting:
-        one: 打ち合わせ
         other: ミーティング
       decidim/meetings/minutes:
-        one: 分数
-        other: 分数
+        other: 分
       decidim/meetings/registration:
-        one: 登録
-        other: 登録情報
+        other: 登録
       decidim/pages/page:
         one: ページ
         other: ページ数
       decidim/participatory_process:
-        one: 参加型プロセス
         other: 参加型プロセス
       decidim/participatory_process_group:
-        one: 参加型プロセスグループ
         other: 参加型プロセスグループ
       decidim/participatory_process_step:
-        one: フェーズ
         other: フェーズ
       decidim/proposals/collaborative_draft:
-        one: コラボレーションドラフト
-        other: コラボレーションドラフト
+        other: 共同草案
       decidim/proposals/proposal:
-        one: 提案
         other: 提案
-      decidim/proposals/proposal_endorsement:
-        one: 裏付け
-        other: お墨付き
       decidim/proposals/proposal_note:
-        one: 留意事項
-        other: 注意事項
+        other: メモ
       decidim/proposals/proposal_vote:
-        one: サポート
         other: サポート
       decidim/sortitions/sortition:
         one: 並び替え
@@ -722,16 +658,15 @@ ja:
         one: 回答
         other: 回答
       decidim/user:
-        one: 参加者
         other: 参加者
       decidim/user_group:
-        one: グループ
         other: グループ
   booleans:
-    false: いいえ
-    true: はい
+    'false': いいえ
+    'true': はい
   carrierwave:
     errors:
+      general: 画像処理中にエラー
       image_too_big: 画像が大きすぎます
   date:
     formats:
@@ -741,6 +676,10 @@ ja:
       decidim_with_month_name: '%d %B %Y'
       decidim_with_month_name_short: '%d %b'
   decidim:
+    accessibility:
+      external_link: 外部リンク
+      logo: '%{organization}の公式ロゴ'
+      skip_button: メインコンテンツにスキップ
     account:
       data_portability_export:
         file_no_exists: ファイルが存在しません
@@ -752,7 +691,7 @@ ja:
           ok: はい、アカウントを削除します
           question: アカウントを削除してもよろしいですか？
           title: アカウントを削除する
-        explanation: アカウントを削除する理由を入力してください (オプション)。
+        explanation: アカウントを削除する理由を入力してください ( 任意 )。
       destroy:
         error: アカウントの削除中に問題が発生しました。
         success: アカウントが正常に削除されました。
@@ -938,7 +877,6 @@ ja:
         new_assembly_type: 新しい会議体種別
         new_conference: 新しいカンファレンス
         new_consultation: 新規の議案
-        new_initiative_type: 新しいイニシアチブ種別
         new_process: 新規参加型プロセス
         new_process_group: 新規参加型プロセスグループ
         new_process_step: 新しいフェーズ
@@ -1296,25 +1234,6 @@ ja:
         category_id_eq:
           label: カテゴリ
         filter_label: フィルター
-        initiatives:
-          decidim_area_id_eq:
-            label: エリア
-          state_eq:
-            label: 州(県)
-            values:
-              accepted: 十分な署名
-              created: 作成日
-              discarded: 削除済み
-              published: 公開済
-              rejected: 十分な署名がありません
-              validating: 技術的検証
-          type_id_eq:
-            label: タイプ
-        is_emendation_true:
-          label: タイプ
-          values:
-            false: 提案
-            true: 改正点
         officialized_at_null:
           label: 都道府県：
           values:
@@ -1325,6 +1244,31 @@ ja:
           values:
             false: 公共の場
             true: プライベート
+        proposals:
+          category_id_eq:
+            label: カテゴリ
+          is_emendation_true:
+            label: タイプ
+            values:
+              'false': 提案
+              'true': 修正
+          scope_id_eq:
+            label: 対象範囲
+          state_eq:
+            label: 州(県)
+            values:
+              accepted: 受理
+              evaluating: 評価
+              published: 公開済
+              rejected: 却下済み
+              validating: 技術的検証
+              withdrawn: 撤回
+          state_null:
+            label: 州(県)
+            values:
+              'true': 回答なし
+          valuator_role_ids_has:
+            label: 評価者にアサインされました
         published_at_null:
           label: 公開済み
           values:
@@ -1337,18 +1281,6 @@ ja:
           id_string_or_title_cont: '%{collection} をIDまたはタイトルで検索します。'
           name_or_nickname_or_email_cont: '%{collection} をメール、名前、ニックネームで検索します。'
           title_cont: '%{collection} をタイトルで検索します。'
-          title_or_description_or_id_string_or_author_name_or_author_nickname_cont: '%{collection}
-            をタイトル、説明、ID、または著者名で検索します。'
-        state_eq:
-          values:
-            evaluating: 評価
-            withdrawn: 撤退
-        state_null:
-          label: ステータス
-          values:
-            true: 未回答
-        valuator_role_ids_has:
-          label: バリュエータへの配属
       help_sections:
         error: ヘルプセクションの更新中に問題が発生しました
         form:
@@ -1473,8 +1405,6 @@ ja:
         help_sections: ヘルプセクション
         homepage: ホームページ
         impersonations: なりすまし
-        initiatives: イニシアチブ
-        initiatives_types: イニシアチブ種別
         newsletters: ニュースレター
         oauth_applications: OAuthアプリケーション
         participants: 参加者
@@ -1596,38 +1526,6 @@ ja:
             reason: 理由：
             started_at: 開始日時
             user: 参加者
-        initiatives:
-          fields:
-            created_at: 作成日時
-            id: ID
-            published_at: 公開日時
-            state: ステータス
-            supports_count: 署名
-            title: イニシアチブ
-        initiatives_type_scope:
-          fields:
-            scope: スコープ
-            supports_required: 署名が必要です
-          name: イニシアチブ種別のスコープ
-        initiatives_types:
-          fields:
-            created_at: 作成日時
-            title: イニシアチブ種別
-          name: イニシアチブ種別
-        initiatives_votes:
-          fields:
-            date_of_birth: 誕生日
-            document_number: ドキュメント番号
-            hash: ハッシュ
-            initiative_end_date: 終了日
-            initiative_id: イニシアチブID
-            initiative_signatures_count: 署名の数
-            initiative_start_date: 開始日
-            initiative_title: イニシアチブのタイトル
-            name_and_surname: 氏名と姓名
-            postal_code: 郵便番号
-            time_and_date: 日時
-            timestamp: タイムスタンプ
         media_link:
           fields:
             date: 日付
@@ -1927,7 +1825,7 @@ ja:
         create:
           error: 新しい参加型プロセスのフェーズの作成に問題がありました。
           success: 参加型プロセスのフェーズが正常に作成されました。
-        default_title: はじめに
+        default_title: イントロダクション
         destroy:
           error:
             active_step: アクティブなフェーズは削除できません。
@@ -2206,8 +2104,6 @@ ja:
         dashboard: ダッシュボード
         impersonatable_users: 管理可能な参加者
         impersonations: 参加者管理
-        initiatives: イニシアチブ
-        initiatives_types: イニシアチブ種別
         participants: 参加者
         participatory_process_groups: 参加型プロセスグループ
         participatory_processes: 参加型するプロセス
@@ -2385,6 +2281,7 @@ ja:
         invite: '%{user_name} が参加者 %{resource_name} をロール %{role} で招待しました'
         officialize: '%{user_name} が参加者 %{resource_name} を公式化しました'
         remove_from_admin: '%{user_name} が参加者 %{resource_name} をロールで削除しました: %{role}'
+        show_email: '%{user_name} が参加者 %{resource_name} のメールを取得しました'
         unofficialize: '%{user_name} が参加者 %{resource_name} を非公式にしました'
       user_group:
         reject: '%{user_name} が %{resource_name} グループの確認を拒否しました'
@@ -2392,6 +2289,8 @@ ja:
         verify_via_csv: '%{user_name} がCSVファイルを介してグループ %{resource_name} を確認しました'
     admin_terms_of_use:
       default_body: <h2>管理者向け利用規約</h2><p>システム管理者からレクチャーを受けたと思います。通常、以下の3つのことに集約されます。</p><ol><li>他社のプライバシーを尊重する</li><li>クリックする前に考える</li><li>大きな力には大きな責任が伴う</li></ol>
+    alert:
+      dismiss: 通知を消去
     amendments:
       accepted:
         error: 修正を承認中にエラーが発生しました。
@@ -2426,7 +2325,9 @@ ja:
           button_reject: 拒否
           help_text: 変更内容を確認し、修正を承認または却下します。通知は著者に送信されます。
         announcement:
-          accepted: "%{amendable_type} %{proposal_link} のこの修正は、\n <strong>%{date}に承認されました</strong>。"
+          accepted: '%{amendable_type} %{proposal_link} のこの修正は、
+
+            <strong>%{date}に承認されました</strong>。'
           evaluating: '%{amendable_type} %{proposal_link}
 
             のこの修正は評価されています。'
@@ -2461,24 +2362,22 @@ ja:
       update_draft:
         error: 修正案の更新中に問題が発生しました。
         success: 修正の下書きが正常に更新されました。
-      visibility_options:
-        all: 修正はすべての人に見えるようになっています。
-        participants: 修正は作成者にのみ表示されます。
       withdraw:
         error: 修正の撤回中にエラーが発生しました
         success: 修正は正常に撤回されました
       wizard_step_form:
         steps:
-          1: 修正案を作成する
-          2: あなたの修正案を比較してみてください。
-          3: 修正を完了する
-          4: 修正案を公開する
+          '1': 修正を作成する
+          '2': 修正内容を比較
+          '3': 修正を完了する
+          '4': 修正内容を公開
     anonymous_user: 匿名です
     application:
       collection:
         documents:
-          one: ドキュメント
-          other: 書類の提出先
+          other: ドキュメント
+      document:
+        download: ファイルをダウンロード
       documents:
         related_documents: 関連ドキュメント
       photos:
@@ -2618,8 +2517,9 @@ ja:
     author:
       avatar: アバター
       comments:
-        one: コメント
-        other: 註釈
+        other: コメント
+      endorsements:
+        other: 承認
     authorization_handlers:
       admin:
         csv_census:
@@ -2642,6 +2542,7 @@ ja:
         explanation: 「A」で始まるパスポート番号を入力して確認する
         fields:
           passport_number: パスポート番号
+          postal_code: 郵便番号
         name: 別の例の承認
       csv_census:
         explanation: 組織の国勢調査を利用して検証を受ける
@@ -2650,8 +2551,11 @@ ja:
       dummy_authorization_handler:
         explanation: 「X」で終わるドキュメント番号を導入して認証を取得する
         fields:
+          allowed_postal_codes: 許可する郵便番号 (コンマで区切る)
+          allowed_scope_id: 許可されたスコープ
           document_number: ドキュメント番号
           postal_code: 郵便番号
+          scope_id: スコープ
         name: 許可の例：
       dummy_authorization_workflow:
         name: ダミー認証ワークフロー
@@ -2674,6 +2578,7 @@ ja:
       postal_letter:
         explanation: 住所確認ができるように、入力していただくコードを添えて郵便物をお送りします。
         name: 郵便物によるコード
+      renew: 検証を更新する
       sms:
         explanation: 身分証を確認するために、携帯電話番号を提出してください。
         name: SMSによるコード
@@ -2709,6 +2614,8 @@ ja:
             を確認する必要があります。
           request_confirmation_instructions: 確認手順をリクエストする
           title: メールアドレスを確認してください
+      show:
+        close_modal: ウィンドウを閉じる
     blogs:
       actions:
         confirm_destroy: この投稿を削除してもよろしいですか？
@@ -2863,8 +2770,7 @@ ja:
           view_all_projects: すべてのプロジェクトを表示
     collapsible_list:
       hidden_elements_count:
-        one: と%{count}の方が
-        other: と%{count}の方が
+        other: 他 %{count} 名
       see_less: (以下を参照)
       see_more: (続きを参照)
     comments:
@@ -2967,18 +2873,35 @@ ja:
         single_comment_warning: コメントの残りはこちら <a href="%{url}"></a>で確認できます。
         single_comment_warning_title: 単一のコメントが表示されています
         title: '%{count} 件のコメント'
+      component_order_selector:
+        no_content: この基準のコンテンツが見つかりませんでした
+        order:
+          all_types: すべてのタイプ
+          collaborative_draft: 共同草案
+          comment: コメント
+          debate: ディベート
+          initiative: 取り組み
+          meeting: 会議
+          post: 投稿
+          proposal: 提案
+          question: 質問
+        title: '表示:'
       debates:
         actions:
           create: 作成
+          endorse: 支持
         name: ディベート
         settings:
           global:
             announcement: お知らせ
             comments_enabled: コメントは有効です
+            comments_max_length: コメント最大長 (デフォルト値は 0 のまま)
           step:
             announcement: お知らせ
             comments_blocked: コメントがブロックされました
             creation_enabled: 参加者によるディベートの作成が有効になりました
+            endorsements_blocked: 支持がブロックされました
+            endorsements_enabled: 支持が有効です
       dummy:
         actions:
           bar: バー
@@ -2988,6 +2911,7 @@ ja:
           global:
             amendments_enabled: 修正は有効になっています
             comments_enabled: コメントは有効です
+            comments_max_length: コメント最大長
             dummy_global_attribute_1: ダミーステータス１
             dummy_global_attribute_2: ダミーステータス2
             dummy_global_translatable_text: ダミー翻訳可能なテキスト
@@ -3010,12 +2934,16 @@ ja:
           global:
             announcement: お知らせ
             comments_enabled: コメントは有効です
+            comments_max_length: コメント最大長 (デフォルト値は 0 のまま)
+            creation_enabled_for_participants: 出席者はミーティングを作成できます
             default_registration_terms: デフォルトの登録条件
             enable_pads_creation: パッドの作成を有効にする
             resources_permissions_enabled: アクションの権限はミーティングごとに設定できます
           step:
             announcement: お知らせ
             comments_blocked: コメントがブロックされました
+            creation_enabled_for_participants: 参加者によるミーティングの作成が有効です
+            creation_enabled_for_user_groups: ユーザーグループによるミーティングの作成が有効です
       pages:
         name: ページ
         settings:
@@ -3042,26 +2970,27 @@ ja:
             can_accumulate_supports_beyond_threshold: 閾値を超えてサポートを蓄積できます。
             collaborative_drafts_enabled: 共同作業の下書きを有効にする
             comments_enabled: コメントは有効です
+            comments_max_length: コメント最大長 (デフォルト値は 0 のまま)
             geocoding_enabled: ジオコーディングを有効にする
             minimum_votes_per_user: ユーザーあたりの最小サポート数
             new_proposal_body_template: 新しい提案本文テンプレート
             new_proposal_body_template_help: 新しい提案に含まれる予定のテキストを定義することができます。
             new_proposal_help_text: 新しい提案ヘルプテキスト
             official_proposals_enabled: 役職の提案は有効になっています
-            participatory_texts_disabled_help: 既存の提案がある場合、この設定を操作することはできません。この機能を有効にしたい場合は新規に
-              `Proposals component` を作成するか、無効にしたい場合は `Participatory Texts` メニューでインポートした提案をすべて破棄してください。
-            participatory_texts_enabled: 参加型テキストが可能に
-            proposal_answering_enabled: 提案回答が可能に
-            proposal_edit_before_minutes: プロポーザルは、この多くの分が経過する前に、著者が編集することができます。
-            proposal_length: 提案書本体の最大長さ
-            proposal_limit: 参加者一人当たりの提案限度額
-            proposal_wizard_step_1_help_text: 提案書ウィザード「作成」ステップヘルプテキスト
-            proposal_wizard_step_2_help_text: 提案書ウィザード「比較」ステップヘルプテキスト
-            proposal_wizard_step_3_help_text: 提案書ウィザード「完了」ステップヘルプテキスト
-            proposal_wizard_step_4_help_text: 提案書ウィザード「発行」ステップヘルプテキスト
-            resources_permissions_enabled: 各提案に対してアクションの権限を設定することができます。
+            participatory_texts_enabled: 参加者のテキストは有効です
+            participatory_texts_enabled_readonly: 既存の提案がある場合は、この設定は操作できません。 この機能を有効にする場合は、新しい
+              `提案 コンポーネント` を作成し、もし無効にしたい場合はインポートされたすべての提案を `参加型 テキスト` メニューから破棄してください。
+            proposal_answering_enabled: 提案の回答を有効にする
+            proposal_edit_before_minutes: 提案は、この多くの分が経過する前に著者によって編集することができます
+            proposal_length: 提案本文の最大長
+            proposal_limit: 参加者ごとの提案制限
+            proposal_wizard_step_1_help_text: 提案ウィザード "作成" ステップヘルプ テキスト
+            proposal_wizard_step_2_help_text: 提案ウィザード "比較" ステップヘルプテキスト
+            proposal_wizard_step_3_help_text: 提案ウィザード「完了」ステップヘルプテキスト
+            proposal_wizard_step_4_help_text: 提案ウィザード "公開" ステップヘルプ テキスト
+            resources_permissions_enabled: アクションの権限は提案ごとに設定できます
             threshold_per_proposal: 提案ごとのしきい値
-            vote_limit: 参加者一人あたりのサポート限度額
+            vote_limit: 参加者ごとのサポート制限
           step:
             amendment_creation_enabled: 修正の作成は有効です
             amendment_creation_enabled_help: 参加者は提案を修正できます。
@@ -3070,6 +2999,9 @@ ja:
             amendment_reaction_enabled: 修正反応は有効です
             amendment_reaction_enabled_help: 提案の著者は、参加者の承諾または拒否することができます。
             amendments_visibility: 修正の表示
+            amendments_visibility_choices:
+              all: 修正内容はすべてに表示されます
+              participants: 修正内容は著者にのみ表示されます
             amendments_visibility_help: 「修正は作成者にのみ表示される」オプションを選択した場合、参加者は修正内容を確認するためにログインする必要があります。
             announcement: お知らせ
             answers_with_costs: 提案の回答時にコストを有効にする
@@ -3130,13 +3062,13 @@ ja:
               rejected: 拒否
               sent: 送信済み
             filter_by: フィルター
-            invite_attendee: Invite participant
+            invite_attendee: 参加者を招待
             invites: 招待
             search: 検索
           new:
             explanation: 参加者はカンファレンスに招待されます。 参加者の電子メールが組織に登録されていない場合、同様に組織に招待されます。
             invite: 招待
-            new_invite: Invite participant
+            new_invite: 参加者を招待
         conference_registrations:
           index:
             registrations: 登録
@@ -3311,7 +3243,7 @@ ja:
         details: 詳細
         introduction: はじめに
         objectives: 目的
-        related_assemblies: 関連する会議体
+        related_assemblies: 関連する参加スペース
         related_consultations: 関連する議案
         related_participatory_processes: 関連する参加型プロセス
       statistics:
@@ -3405,7 +3337,7 @@ ja:
       question_votes:
         create:
           error: 質問に投票中に問題が発生しました
-          success: 議案が終了するまで変更できます。最後の投票のみが承認されます。
+          success: 議案が終了するまで変更できます。最新の投票のみが承認されます。
           title_error: 投票エラー！
           title_success: 投票が正常に登録されました
       regular_questions:
@@ -3428,6 +3360,9 @@ ja:
         name: フッターサブヒーローバナー
       hero:
         name: ヒーロー画像
+      hero_settings_form:
+        background_image: 背景画像
+        welcome_text: ようこそテキスト
       highlighted_content_banner:
         name: 強調表示されたコンテンツバナー
       how_to_participate:
@@ -3436,8 +3371,8 @@ ja:
         html_content: HTML コンテンツ
         name: HTMLブロック
       last_activity:
-        name: 最後のアクティビティ
-        title: 最後のアクティビティ
+        name: 最近のアクティビティ
+        title: 最近のアクティビティ
         view_all: すべて表示
       metrics:
         name: 組織のメトリック
@@ -3455,17 +3390,22 @@ ja:
       show:
         download_data: データをダウンロード
         download_data_description: アカウントに関連付けられているすべての情報を持つファイルが <strong>%{user_email}</strong>に送信されます
-        request_data: データを要求する
+        request_data: ダウンロードする
     datepicker:
       help_text: '期待されるフォーマット: %{datepicker_format}'
     debates:
       actions:
+        close: 閉じる
         confirm_destroy: よろしいですか？
         destroy: 削除
         edit: 編集
         new: 新しい %{name}
         title: アクション
       admin:
+        debate_closes:
+          edit:
+            close: 閉じる
+            title: ディベートを閉じる
         debates:
           create:
             invalid: ディベートの作成で不具合が発生しました。
@@ -3488,38 +3428,73 @@ ja:
             name: ディベート
       admin_log:
         debate:
+          close: '%{user_name} は、 %{resource_name} スペースの %{space_name} ディベートを終了しました'
           create: '%{user_name} が %{resource_name} スペースで %{space_name} ディベートを作成しました'
           update: '%{user_name} が %{resource_name} スペースの %{space_name} ディベートを更新しました'
       debates:
+        close:
+          invalid: ディベートを閉じるのに失敗しました。
+          success: ディベートが正常に終了しました。
+        close_debate_modal:
+          close: 閉じる
+          description: このディベートの要約または結論は何ですか?
+          send: ディベートを閉じる
+        closed: 終了
         count:
           debates_count:
-            one: '%{count}討論会'
-            other: '%{count}の討論会'
+            other: '%{count} 個のディベート数'
         create:
           invalid: ディベートの作成で不具合が発生しました。
           success: ディベートが正常に作成されました。
         debate:
           participate: 参加
+        edit:
+          back: 戻る
+          save: 変更を保存
+          title: ディベートを編集
         filters:
           all: すべて
           category: カテゴリ
           category_prompt: カテゴリを選択
-          citizens: Citizens
+          citizens: 市民
           official: オフィシャル
-          origin: 原点：
+          origin: 元々の提案者：
           search: 検索
         filters_small_view:
           close_modal: モーダルを閉じる
           filter: フィルター
           filter_by: フィルター
           unfold: 展開する
+        form:
+          select_a_category: カテゴリを選択してください
         index:
           new_debate: 新しいディベート
         new:
           back: 戻る
           create: 作成
-          select_a_category: カテゴリを選択してください
-          title: 新たな議論
+          title: 新しいディベート
+        show:
+          back: リストに戻る
+          close_debate: ディベートを終了する
+          date: 日付
+          debate_closed: 終了
+          debate_conclusions_are: ディベートは %{date} に、以下の結論を持って終了しました。
+          edit_conclusions: 結論を編集
+          edit_debate: ディベートを編集
+          groups_count: グループ
+          last_comment_by: 最新コメント
+          no_comments_yet: コメントがありません
+          participants_count: 参加者
+        update:
+          invalid: ディベートの更新に問題がありました。
+          success: ディベートが正常に更新されました。
+        versions:
+          debates:
+            back_to_resource: ディベートに戻る
+          index:
+            title: バージョン
+        versions_list:
+          back_to_resource: ディベートに戻る
       last_activity:
         new_debate_at_html: <span> %{link}での新しいディベート</span>
       models:
@@ -3538,7 +3513,7 @@ ja:
           nickname_help: '%{organization} のエイリアス'
           sign_up: プロフィールを完成してください
           subtitle: サインアップを完了するには、次のフォームに記入してください
-          username_help: 投稿に表示される公名。匿名性を保証する目的で、任意の名前にすることができます。
+          username_help: 投稿に表示される名前。匿名性を保証する目的で、任意の名前にすることができます。
       registrations:
         new:
           already_have_an_account?: 既にアカウントをお持ちですか？
@@ -3550,15 +3525,15 @@ ja:
           sign_up: 新規登録
           sign_up_as:
             legend: として登録
-          subtitle: 議論とサポートの提案に参加するにはサインアップしてください。
-          terms: 利用規約や
+          subtitle: 下記の情報を入力して下さい。
+          terms: 利用規約
           tos_agreement: サインアップすることで、 %{link} に同意したことになります。
           tos_title: 利用規約
-          username_help: 投稿に表示される公名。匿名性を保証する目的で、任意の名前にすることができます。
+          username_help: 投稿に表示される名前。匿名性を保証する目的で、任意の名前にすることができます。
       sessions:
         new:
-          are_you_new?: プラットフォームは初めてですか？
-          register: アカウントを作成
+          are_you_new?: 新規登録される方は
+          register: こちら
           sign_in_disabled: 外部アカウントでアクセスできます
           sign_up_disabled: サインアップは無効です。既存のアカウントを使用してアクセスすることができます
       shared:
@@ -3596,6 +3571,16 @@ ja:
           this_application_will_not_be_able_to: このアプリケーションは次のことができません：
           update_profile: プロフィールを更新
           wants_to_use_your_account_html: <strong>%{application_name}</strong> があなたのアカウントを使用しようとしています
+    endorsable:
+      endorsements: 支持
+      endorsements_count: 支持数
+    endorsement_buttons_cell:
+      already_endorsed: 承認済み
+      endorse: 承認する
+    endorsements:
+      identities:
+        done: 完了
+        select_identity: IDを選択
     errors:
       internal_server_error:
         title: サーバーに問題が発生しました
@@ -3789,6 +3774,11 @@ ja:
           email_subject: ディベートは %{participatory_space_title} で利用可能になりました
           notification_title: <a href="%{participatory_space_url}">%{participatory_space_title}</a>
             内で <a href="%{resource_path}">新しいディベート</a> を開始できます。
+        debate_closed:
+          email_intro: 「%{resource_title}」のディベートは終了しました。そのページから結論を読むことができます。
+          email_outro: '%{resource_title} をフォローしているため、この通知を受け取りました。前のリンクから通知の受信を停止することができます。'
+          email_subject: 「%{resource_title}」のディベートは終了しました
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> のディベートは終了しました。
       email_event:
         email_greeting: こんにちは、 %{user_name} さん。
         email_intro: '"%{resource_title}" の更新がありました。このページから見ることができます：'
@@ -3851,38 +3841,20 @@ ja:
           email_outro: あなたがそのグループのメンバーであったため、この通知を受け取りました。
           email_subject: あなたは %{user_group_name} グループから削除されました！
           notification_title: <a href="%{resource_path}">%{user_group_name}</a> グループから削除されました。
-      initiatives:
-        admin:
-          initiative_sent_to_technical_validation:
-            email_intro: イニシアチブ %{resource_title}" が技術的な検証に送信されました。 <a href="%{admin_initiative_url}">管理者パネル</a>
-              で確認してください。
-            email_outro: あなたはプラットフォームの管理者であるため、この通知を受け取りました。
-            email_subject: イニシアチブ %{resource_title}" は技術的な検証に送信されました。
-            notification_title: イニシアチブ %{resource_title}" が技術的な検証に送信されました。 <a href="%{admin_initiative_path}">管理者パネル</a>
-              で確認してください。
-        initiative_extended:
-          email_intro: イニシアチブ %{resource_title} の署名の終了日が延長されました！
-          email_outro: '%{resource_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
-          email_subject: イニシアティブ署名の終了日を延長しました！
-          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブの署名の終了日が延長されました。
-        milestone_completed:
-          affected_user:
-            email_intro: あなたのイニシアチブ %{resource_title} は署名の %{percentage}%を達成しました！
-            email_outro: イニシアチブ %{resource_title}の作成者であるため、この通知を受け取りました。
-            email_subject: 新しいマイルストーンが完了しました！
-            notification_title: あなたの <a href="%{resource_path}">%{resource_title}</a>
-              イニシアチブは署名の %{percentage}%を達成しました。
-          follower:
-            email_intro: '%{resource_title} が署名の %{percentage}%を達成しました！'
-            email_outro: '%{resource_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
-            email_subject: 新しいマイルストーンが完了しました！
-            notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブは署名の
-              %{percentage}%を達成している。
-        support_threshold_reached:
-          email_intro: イニシアチブ %{resource_title} がサポートのしきい値に達しました
+        user_group_created:
+          email_intro: '%{user_group_name}という名前の新しいユーザーグループが作成されました。 <a href="%{groups_admin_url}">管理パネル</a>
+            で確認できるようになりました。'
           email_outro: あなたはプラットフォームの管理者であるため、この通知を受け取りました。
-          email_subject: サポートのしきい値に達しました
-          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブはサポートのしきい値に達しました
+          email_subject: 新しいユーザーグループが作成されました
+          notification_title: '%{user_group_name} ユーザーグループが作成されました。 <a href="%{groups_admin_path}">管理パネル</a>
+            で確認できるようになりました。'
+        user_group_updated:
+          email_intro: ユーザーグループ「 %{user_group_name} 」がプロフィールページをアップデートし、未承認のままになっています。
+            <a href="%{groups_admin_url}">管理画面</a>から承認してください。
+          email_outro: あなたはプラットフォームの管理者であるため、この通知を受け取りました。
+          email_subject: ユーザーグループがプロファイルを更新しました
+          notification_title: '%{user_group_name} ユーザーグループがプロファイルを更新し、未検証のままにしました。
+            <a href="%{groups_admin_path}">管理パネル</a> で確認できるようになりました。'
       meetings:
         meeting_closed:
           affected_user:
@@ -3936,6 +3908,12 @@ ja:
       notification_event:
         notification_title: <a href="%{resource_path}">%{resource_title}</a> にイベントが発生しました。
       participatory_process:
+        role_assigned:
+          email_intro: あなたは参加型プロセス「 %{role} 」の%{resource_title}として割り当てられています。
+          email_outro: あなたは " %{role} " の参加型プロセスの%{resource_title}であるため、この通知を受け取りました。
+          email_subject: あなたは " %{role} " の%{resource_title} として割り当てられました。
+          notification_title: あなたは参加型プロセス<a href="%{resource_url}">%{resource_title}</a>
+            に、%{role} として割り当てられました。
         step_activated:
           email_intro: '%{resource_title} フェーズが %{participatory_space_title}に有効になりました。このページから確認できます:'
           email_outro: '%{participatory_space_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
@@ -3949,6 +3927,13 @@ ja:
           notification_title: <a href="%{resource_path}">%{resource_title}</a> の <a
             href="%{participatory_space_url}">%{participatory_space_title}</a> フェーズの日付が更新されました。
       proposals:
+        admin:
+          proposal_note_created:
+            email_intro: 誰かが提案 "%{resource_title}" にメモを残しました。 <a href="%{admin_proposal_info_url}">管理者パネル</a>で確認してください。
+            email_outro: 提案を評価できるため、この通知を受け取りました。
+            email_subject: 誰かが提案 %{resource_title} にメモを残しました。
+            notification_title: 誰かが提案 <a href="%{resource_path}">%{resource_title}</a>にメモを残しました。
+              <a href="%{admin_proposal_info_path}">管理者パネル</a> で確認してください
         collaborative_draft_access_accepted:
           email_intro: '%{requester_name} は、 <a href="%{resource_path}">%{resource_title}</a>
             の共同ドラフトのコントリビューターとして承認されました。'
@@ -4014,12 +3999,6 @@ ja:
             email_outro: 「%{resource_title}」をフォローしているため、この通知を受け取りました。前のリンクからこの通知をアンフォローすることができます。
             email_subject: あなたがフォローしている提案が受け入れられました
             notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案が承認されました。
-        proposal_endorsed:
-          email_intro: あなたがフォローしている%{endorser_name} %{endorser_nickname}さんが「%{resource_title}」の提案に賛同してくれたので、面白いかもしれません。ぜひチェックして投稿してみてください。
-          email_outro: '%{endorser_nickname}をフォローしているため、この通知を受信しています。前のリンクをたどって通知の受信を停止することができます。'
-          email_subject: '%{endorser_nickname}は、新提案を承認しました。'
-          notification_title: <a href="%{resource_path}">%{resource_title}の</a>提案は、<a
-            href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>によって承認されました。
         proposal_evaluating:
           affected_user:
             email_intro: あなたの提案 "%{resource_title}" は現在評価されています。このページで回答を確認できます：
@@ -4080,6 +4059,13 @@ ja:
           email_subject: '%{participatory_space_title} の提案サポートが開始されました'
           notification_title: <a href="%{resource_path}">supporting proposition</a>
             in <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+      resource_endorsed:
+        email_intro: あなたがフォローしている%{endorser_name} %{endorser_nickname}は、「%{resource_title}」を支持しました。私たちはあなたにとって興味深いことかもしれません。
+          チェックアウトして貢献：
+        email_outro: '%{endorser_nickname}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
+        email_subject: '%{endorser_nickname} が新しい承認を行いました'
+        notification_title: <a href="%{resource_path}">%{resource_title}</a> %{resource_type}
+          は <a href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>によって承認されました。
       sortitions:
         sortition_created:
           email_intro: 追いかけている「%{participatory_space_title}」にソート「%{resource_title}」が追加されました。
@@ -4128,18 +4114,20 @@ ja:
         proposal: 提案
         result: 結果
     fingerprint:
-      check: 指紋を確認
+      check: 電子証紋を確認
       explanation: 以下のテキストは、このコンテンツの短縮されたハッシュ化された表現です。 コンテンツが改ざんされていないことを確認すると便利です。単一の修正で全く異なる値になります。
       online_calculator_name: MD5カルキュレータオンライン
-      replicate_help: この指紋はSHA256 ハッシュアルゴリズムを使用して計算されます。自分で複製するには、 %{online_calculator_link}
+      replicate_help: この電子証紋はSHA256 ハッシュアルゴリズムを使用して計算されます。自分で複製するには、 %{online_calculator_link}
         を使用してソース データをコピー&ペーストできます。
       source: ソース
       title: フィンガープリント
       value: 値
     followers:
+      followers_count:
+        other: '%{count} 人のフォロワー'
       no_followers: フォロワーはまだいません。
     following:
-      no_followings: まだ誰にも何にも従っていません。
+      no_followings: フォローしている物がありません。
     follows:
       create:
         button: フォロー
@@ -4155,25 +4143,81 @@ ja:
             description: 説明
             tos: 利用規約
         questionnaires:
+          actions:
+            back: 質問に戻る
+            show: 回答を表示
           answer_option:
             answer_option: 回答オプション
             free_text: フリーテキスト
             remove: 削除
             statement: ステートメント
+          answers:
+            actions:
+              back: 返信に戻る
+              export: エクスポート
+              show: 回答を表示
+            empty: まだ回答がありません
+            export:
+              answer:
+                title: '応答 #%{number}'
+            export_response:
+              title: survey_user_answers_%{token}
+            index:
+              title: 合計%{total} 件の回答
+            show:
+              title: '回答 #%{number}'
+          display_condition:
+            answer_option: 回答オプション
+            condition_question: 質問
+            condition_type: 条件
+            condition_types:
+              answered: 回答済み
+              equal: 等しい
+              match: テキストを含む
+              not_answered: 回答なし
+              not_equal: 等しくない
+            condition_value: 含まれるテキスト
+            display_condition: 条件を表示
+            mandatory: 他の条件にかかわらず、この条件は常に満たされる必要があります
+            remove: 削除
+            save_warning: 表示条件を設定する前にフォームを保存してください
+            select_answer_option: 回答オプションを選択
+            select_condition_question: 質問を選択
+            select_condition_type: 条件の種類を選択
           edit:
             save: 保存
             title: アンケートを編集
           form:
             add_question: 質問を追加
+            add_separator: 区切り文字を追加
             already_answered_warning: このフォームはすでに一部のユーザーによって回答されているため、質問を修正することはできません。
+            collapse: すべての質問を閉じる
+            expand: すべての質問を展開
+            preview: プレビュー
+            title: フォームの編集
+            unpublished_warning: フォームは公開されていません。質問を修正することはできますが、そうすると現在の回答が削除されます。
+          matrix_row:
+            matrix_row: 行
+            remove: 削除
+            statement: ステートメント
           question:
             add_answer_option: 回答オプションを追加
+            add_display_condition: 表示条件を追加
+            add_display_condition_info: 表示条件を設定するためにフォームを保存します
+            add_matrix_row: 行を追加
             any: 任意の
+            collapse: 折りたたむ
             description: 説明
             down: 下
+            expand: 展開
             question: 質問
             remove: 削除
             statement: ステートメント
+            up: 上へ
+          separator:
+            down: 下
+            remove: 削除
+            separator: 区切り記号
             up: 上へ
           update:
             invalid: フォームの保存に失敗しました。
@@ -4190,8 +4234,30 @@ ja:
         error: このフィールドにはエラーがあります。
         impersonate_user:
           reason: 管理対象外の参加者を管理する場合は理由を入力する必要があります
+      file_help:
+        file:
+          explanation: 'ファイルのガイダンス:'
+          message_1: 画像またはドキュメントである必要があります。
+          message_2: 画像の場合、風景画像が適しています。システムが画像を切り抜きます。
+        image:
+          explanation: '画像のガイダンス:'
+          message_1: テキストを含まない風景画像が適しています。
+          message_2: システムが画像を切り抜きます。
+      file_validation:
+        allowed_file_extensions: 'アップロード可能なファイル形式: %{extensions}'
+        max_file_size: '最大ファイルサイズ: %{megabytes}MB'
+      files:
+        extension_whitelist: '承認されたフォーマット:'
+      images:
+        dimensions: '%{width} x %{height} px'
+        dimensions_info: 'この画像は次のようになります:'
+        processors:
+          resize_and_pad: リサイズおよびパッド先
+          resize_to_fit: フィットするようにリサイズしました
       question_types:
         long_answer: 長い回答
+        matrix_multiple: マトリクス (複数オプション)
+        matrix_single: マトリクス（シングルオプション）
         multiple_option: 複数のオプション
         short_answer: 短い回答
         single_option: 単一オプション
@@ -4199,6 +4265,7 @@ ja:
       questionnaires:
         answer:
           invalid: フォームの回答に問題がありました。
+          max_choices_alert: 選択された選択肢が多すぎます
           success: フォームは正常に回答しました。
         question:
           max_choices: '最大選択肢: %{n}'
@@ -4207,24 +4274,39 @@ ja:
             anonymous_user_message: <a href="%{sign_in_link}">アカウント</a> でサインインするか、
               <a href="%{sign_up_link}">サインアップ</a> してフォームに回答してください。
             title: フォームに回答
-          are_you_sure: このアクションは元に戻すことができず、回答を編集することができません。間違いありませんか？
+          current_step: ステップ %{step}
+          of_total_steps: / %{total_steps}
           questionnaire_answered:
-            body: このフォームにはすでに回答済みです。
-            title: 回答済み
+            body: このフォームには既に回答済みです。
+            title: すでに回答済み
           questionnaire_closed:
-            body: フォームは閉じられており、回答できません。
-            title: フォームクローズ
+            body: フォームが閉じられているため、回答できません。
+            title: フォームを閉じました
           questionnaire_for_private_users:
-            body: フォームは個人の方のみご利用いただけます。
-            title: フォームクローズ
-          submit: 提出
-          tos_agreement: 参加することで、利用規約に同意します。
+            body: このフォームはプライベートユーザーのみ利用できます
+            title: フォームを閉じました
+          questionnaire_js_disabled:
+            body: このフォームのいくつかの機能は無効になります。あなたのエクスペリエンスを向上させるために、ブラウザでJavaScriptを有効にしてください。
+            title: JavaScriptは無効です
+          questionnaire_not_published:
+            body: このフォームはまだ公開されていません。
+          tos_agreement: 参加することにより、利用規約に同意します。
       remove_this_file: このファイルを削除
+      step_navigation:
+        show:
+          are_you_sure: この操作は元に戻すことができず、回答を編集することはできません。よろしいですか？
+          back: 戻る
+          continue: 続ける
+          submit: 送信
       user_answers_serializer:
+        body: 回答
+        completion: 完了
         created_at: 回答日時
         id: 回答ID
         ip_hash: IP ハッシュ
+        question: 質問
         registered: 登録済み
+        session_token: ユーザー識別子
         unregistered: 未登録
         user_status: ユーザーの状態
     gamification:
@@ -4274,20 +4356,8 @@ ja:
         index:
           badge_title: '%{name} バッジ'
           how: どうやって稼ぐことができますか？
-          page_description: バッジは、プラットフォームの参加者の行動と進行状況を認識します。 プラットフォームで発見し、参加し、交流し始めると、異なるバッジを獲得できます。
-            ここにバッジのリストといくつかの方法があります。
+          page_description: Decidimプラットフォームでの行動実績に応じて、バッジを獲得する事が出来ます。
           title: バッジ
-        initiatives:
-          conditions:
-          - Intiatives の参加スペースに移動
-          - 新しいイニシアチブを作成するには、手順に従ってください
-          description: このバッジは、新しいイニシアチブを開始し、他の人と提携して実行するときに付与されます。
-          description_another: この参加者は %{score} のイニシアチブを公開しました。
-          description_own: '%{score} のイニシアチブが公開されました。'
-          name: 公開されたイニシアチブ
-          next_level_in: 次のレベルに到達するために公開された %{score} 件のイニシアチブを入手しましょう！
-          unearned_another: この参加者はまだイニシアチブを発行していません。
-          unearned_own: まだイニシアチブが公開されていません。
         invitations:
           conditions:
           - 友達を招待するには、ユーザーページの「友達招待」リンクを使用してください
@@ -4413,7 +4483,7 @@ ja:
     help:
       main_topic:
         default_page:
-          content: '<p>%{organization} では、トップメニューにあるスペース（参加型プロセスや会議体、イニシアチブ、議案）から、さまざまなトピックに参加したり、決定したりすることができます。</p>
+          content: '<p>%{organization} では、トップメニューにあるスペース（参加型プロセスや参加スペース、取り組み、議案）から、さまざまなトピックに参加したり、決定したりすることができます。</p>
             <p>それぞれのスペースには、参加するためのさまざまなオプションが用意されています: (個人または他の人と一緒に) 提案をする 、ディベートに参加する、実施するプロジェクトの優先順位を決める、対面会議に出席する、その他のアクションを行う等。</p>
 
             '
@@ -4445,20 +4515,6 @@ ja:
 
             '
           title: 議案とは何ですか?
-        initiatives:
-          contextual: '<p> <strong>イニシアチブ</strong>とは、組織が特定のアクション (規制の変更、プロジェクトの開始、部署や道路の名前の変更など)
-            を実行するための (デジタルの) 署名を集めることによって、誰もが (他のチャネルや参加スペースとは無関係に) 主体的に推進できる提案のことです。
-            </p> <p>イニシアチブの推進者は、その目的を定義し、支持を集め、討論し、普及させ、出席者から署名を集めることができる集会場所を定義したり、他の参加者に開かれた議論を行ったりすることができます。</p><p>例:
-            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額のプロセスを開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
-
-            '
-          page: '<p> <strong>イニシアチヴ</strong>とは、組織が特定のアクション (規制の変更、プロジェクトの開始、部署や道路の名前の変更など)
-            を実行するための (デジタルの) 署名を集めることによって、誰もが (他のチャネルや参加スペースとは無関係に) 主体的に推進できる提案のことです。
-            </p> <p>イニシアチブの推進者は、その目的を定義し、支持を集め、討論し、普及させ、出席者から署名を集めることができる集会場所を定義したり、他の参加者に開かれた議論を行ったりすることができます。</p><p>例:
-            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額のプロセスを開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
-
-            '
-          title: イニシアチブとは？
         participatory_processes:
           contextual: '<p> <strong>参加型プロセス</strong>とは、特定のトピックを定義し、決定することを目的とした一連の参加型活動(例えば、最初にアンケートに記入し、次に提案を行い、対面または仮想会議で議論し、最終的に優先順位をつける)のことです。
             </p> <p>参加型プロセスの例としては、委員会メンバーの選出プロセス(最初に立候補者が提示され、議論され、最終的に立候補者が選ばれる)、参加型予算(提案がなされ、経済的に評価され、利用可能な資金で投票される)、戦略的計画プロセス、規制や規範の共同起草、都市空間の設計、公共政策計画の作成などが挙げられます。</p>
@@ -4469,344 +4525,12 @@ ja:
 
             '
           title: 参加型プロセスとは何ですか?
-    initiatives:
-      actions:
-        answer: 回答
-      admin:
-        answers:
-          edit:
-            answer: 回答
-            title: '%{title} の回答'
-          info_initiative:
-            created_at: 作成日時
-            description: 説明
-            initiative_votes_count: 投票数
-            initiatives: イニシアチブ
-            state: 都道府県：
-        committee_requests:
-          index:
-            approve: 承認
-            confirm_revoke: よろしいですか？
-            invite_to_committee_help: このリンクを共有して他の参加者をプロモーター委員会に招待します
-            no_members_yet: プロモーター委員会にメンバーがいません。
-            revoke: Revoke
-            title: 委員会メンバー
-        content_blocks:
-          highlighted_initiatives:
-            max_results: 表示する要素の最大量
-        exports:
-          initiatives: イニシアチブ
-        initiatives:
-          edit:
-            accept: イニシアチブを承認する
-            confirm: よろしいですか？
-            discard: イニシアチブを破棄する
-            export_pdf_signatures: 署名の PDF をエクスポート
-            export_votes: 署名をエクスポート
-            reject: イニシアチブを拒否する
-            send_to_technical_validation: 技術検証に送る
-            success: このイニシアチブは技術検証に送信されました
-            update: 更新
-          form:
-            attachments: 添付ファイル
-            settings: 設定
-            title: 一般情報
-          index:
-            actions_title: アクション
-            preview: プレビュー
-            print: 印刷
-          initiative_attachments:
-            documents: ドキュメント
-            edit: 編集
-            new: 新規作成
-            photos: 写真
-          show:
-            print: 印刷
-          update:
-            error: エラーが発生しました
-            success: イニシアチブが正常に更新されました
-        initiatives_type_scopes:
-          create:
-            error: エラーが発生しました
-            success: 指定されたイニシアチブ種別の新しいスコープが作成されました
-          destroy:
-            success: スコープを削除しました
-          edit:
-            back: 戻る
-            confirm_destroy: よろしいですか？
-            destroy: 削除
-            title: イニシアチブ種別のスコープを編集
-            update: 更新
-          new:
-            back: 戻る
-            create: 作成
-            title: イニシアチブ種別のスコープを作成
-          update:
-            error: エラーが発生しました
-            success: スコープが正常に更新されました
-        initiatives_types:
-          create:
-            error: エラーが発生しました
-            success: 新しいイニシアチブ種別が正常に作成されました
-          destroy:
-            success: イニシアチブの種別が削除されました
-          edit:
-            confirm_destroy: よろしいですか？
-            destroy: 削除
-            update: 更新
-          form:
-            title: 一般情報
-          initiative_type_scopes:
-            title: イニシアチブの種別のスコープ
-          new:
-            create: 作成
-            title: 新しいイニシアチブ種別
-          update:
-            error: エラーが発生しました
-            success: イニシアチブ種別が正常に更新されました
-      admin_log:
-        initiative:
-          publish: '%{user_name} が %{resource_name} イニシアチブを公開しました'
-          send_to_technical_validation: '%{user_name} が %{resource_name} イニシアチブを技術的な検証に送信しました'
-          unpublish: '%{user_name} が %{resource_name} イニシアチブを破棄しました'
-          update: '%{user_name} が %{resource_name} のイニシアチブを更新しました'
-      admin_states:
-        accepted: 十分な署名
-        created: 作成済み
-        discarded: 破棄しました
-        published: 公開済み
-        rejected: 十分な署名がありません
-        validating: 技術的検証
-      application_helper:
-        filter_area_values:
-          all: すべて
-        filter_scope_values:
-          all: すべて
-        filter_state_values:
-          accepted: 十分な署名
-          all: すべて
-          answered: 回答済み
-          closed: 終了
-          open: 公開
-          rejected: 十分な署名がありません
-        filter_type_values:
-          all: すべて
-      committee_requests:
-        new:
-          continue: 続ける
-          help_text: このイニシアチブのプロモーター委員会のメンバーになることを要求しようとしています
-        spawn:
-          success: あなたのリクエストはイニシアチブの作成者に送信されました。
-      content_blocks:
-        highlighted_initiatives:
-          name: イニシアチブを強調しました
-      create_initiative:
-        fill_data:
-          back: 戻る
-          continue: 続ける
-          fill_data_help: <ul> <li>イニシアチブの内容を確認しましょう。件名はわかりやすいですか? イニシアチブの目的は明確ですか?
-            </li> <li>署名の種類を選択する必要があります。直接署名、オンライン署名、または両方の組み合わせ</li> <li>イニシアチブの対象範囲はどのようなものですか?
-            市ですか？地区ですか?</li></ul>
-          initiative_type: イニシアティブの種類
-          more_information: (詳細)
-          select_area: エリアを選択
-          select_scope: スコープを選択
-        finish:
-          back: 戻る
-          back_to_initiatives: イニシアチブに戻る
-          callout_text: おめでとうございます！あなたのイニシアチブが正常に作成されました。
-          confirm: 確認する
-          edit_my_initiative: 自分のイニシアチブを編集
-          go_to_my_initiatives: 私のイニシアチブに移動
-          more_information: (詳細)
-          send_my_initiative: 自分のイニシアチブを送信
-        finish_help:
-          access_reminder: 参加者メニューから常にあなたのイニシアチブにアクセスできることを忘れないでください。
-          help_for_organizations: あなたが団体である場合は、プロモーション委員会を構成するすべての組織の管理委員会の議事録をアップロードする必要があります。
-          help_in_person_signatures: 直接署名を収集する場合、またはオンラインと組み合わせる場合は、必要な情報をアップロードする必要があります。
-          help_text: イニシアチブを適切に処理するには、ユーザーメニューが表示される管理パネルにアクセスする必要があります。 必要な情報をアップロードして処理のために送信してください
-          initiatives_page_link: '%{link} のすべての情報を調べることができます。'
-          page: ページ
-        previous_form:
-          back: 戻る
-          continue: 続ける
-          help: イニシアチブは何から成りますか? タイトルと説明を書き留めてください。 提案されたソリューションに焦点を当てた短く簡潔なタイトルと説明をお勧めします。
-          more_information: (詳細)
-        promotal_committee:
-          back: 戻る
-          individual_help_text: この種の市民イニシアチブには、少なくとも %{committee_size} 人(証人)からなるプロモーション委員会が必要です。
-            このイニシアチブの一部である他の人と以下のリンクを共有する必要があります。 連絡先がこのリンクを受信すると、指定された手順に従う必要があります。
-          more_information: (詳細)
-        select_initiative_type:
-          back: 戻る
-          choose_html: <strong>%{title}</strong> を作成したい
-          more_information: (詳細)
-          select: 私はこのイニシアチブを推進したいです
-          select_initiative_type_help: 市民のイニシアチブは、市議会が市の管轄区域内にある一般的な利益の防衛のための行動を行うことができるように、市民権が介入することができる手段である。
-            どのイニシアチブを立ち上げますか？
-        share_committee_link:
-          continue: 続ける
-          invite_to_committee_help: プロモーター委員会に参加する人を招待するためのリンク
-        show_similar_initiatives:
-          back: 戻る
-          compare_help: 以下のイニシアチブのいずれかがあなたのものと似ている場合は、署名することをお勧めします。あなたの提案には、より多くの可能性があります。
-          continue: 私のイニシアチブは異なる
-          more_information: (詳細)
-      events:
-        create_initiative_event:
-          email_intro: あなたがフォローしている%{author_name} %{author_nickname}が新しいイニシアチブを作成しました。チェックして貢献してください：
-          email_outro: '%{author_nickname}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
-          email_subject: '%{author_nickname} による新しいイニシアチブの作成'
-          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブは、
-            <a href="%{author_path}">%{author_name} %{author_nickname}</a> によって作成されました。
-        endorse_initiative_event:
-          email_intro: あなたがフォローしている%{author_name} %{author_nickname}は、次のイニシアチブを承認しました。会話に貢献したい場合もあります：
-          email_outro: '%{author_nickname}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
-          email_subject: '%{author_nickname} によって支持されたイニシアチブ。'
-          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブは、
-            <a href="%{author_path}">%{author_name} %{author_nickname}</a> によって承認されました。
-      index:
-        title: イニシアチブ
-      initiative_signatures:
-        fill_personal_data:
-          continue: 続ける
-          date_select:
-            day: 日
-            month: 月
-            year: 年
-          help: イニシアチブに署名するには、次の項目を入力してください。
-        finish:
-          back_to_initiative: イニシアチブに戻る
-        sms_code:
-          continue: コードを確認して続行する
-          help: 携帯電話で受信したSMSを確認してください
-        sms_phone_number:
-          continue: SMSを送信
-          help: 確認済みの電話番号でフォームに記入し、確認コードをリクエストしてください
-      initiative_votes:
-        create:
-          error: イニシアチブに署名中に問題が発生しました。
-          invalid: イニシアチブに署名するために提供されたデータは無効です
-          success_html: おめでとうございます！ <strong> %{title}</strong> イニシアチブの署名が完了しました。
-        personal_data:
-          invalid: 個人データは、承認のために提供されたデータと一致しません。
-        sms_code:
-          invalid: 認証コードが私たちのものと一致しません。SMSを送信したことを再確認してください。
-        sms_phone:
-          invalid: 電話番号が無効または承認待ちです。認証を確認してください。
-      initiatives:
-        author:
-          deleted: 削除しました
-        author_list:
-          hidden_authors_count:
-            other: '%{count} 人以上'
-        count:
-          title:
-            other: '%{count} のイニシアチブ'
-        filters:
-          any: 任意の
-          area: エリア
-          author: 作成者
-          myself: 私のイニシアチブ
-          scope: スコープ
-          search: 検索
-          state: ステータス
-          type: タイプ
-        filters_small_view:
-          close_modal: ウィンドウを閉じる
-          filter: フィルター
-          filter_by: フィルター
-          unfold: 展開する
-        index_header:
-          new_initiative: 新たなイニシアチブを作成
-          not_authorized:
-            authorizations_page: 権限を表示
-            close: 閉じる
-            explanation: 新しいイニシアチブを作成するには、認証が必要です。
-            title: 認証が必要です
-        initiatives:
-          closed_initiatives_warning: 現在、オープンなイニシアチブはありませんが、ここに記載されているすべてのクローズドイニシアチブを見つけることができます。
-          no_initiatives_warning: 検索基準に一致するイニシアチブは見つかりませんでした
-        interactions:
-          comments_count:
-            count:
-              other: コメント
-        orders:
-          label: 'イニシアチブの並べ替え:'
-          most_commented: コメントが多い順
-          most_voted: 最も署名されたもの
-          random: Random
-          recent: 直近のもの
-          recently_published: 直近に公開
-        result:
-          answer_title:
-            accepted: 'この提案は受け入れられた理由:'
-            created: この提案は作成されました
-            discarded: この提案は破棄されました
-            published: 'この提案が公開されている理由:'
-            rejected: この提案は拒否されました
-            validating: この提案は評価されています
-          initiative_rejected_reason: このイニシアチブは、署名がないために拒否されました。
-        show:
-          any_vote_method: この市民イニシアチブは、オンラインと対面の署名の両方を収集します。
-          follow_description: このイニシアチブでニュースがある場合に通知を受け取る
-          offline_method: この市民イニシアチブは、個人の署名のみを収集します。
-        signature_identities:
-          select_identity: 出席者識別子を選択
-        signatures_count:
-          other: ' 署名'
-        supports:
-          title: 署名一覧
-        vote_cabin:
-          already_voted: 既に署名されています
-          supports_required: '%{total_supports} 署名が必要です'
-          verification_required: イニシアチブに署名するにはアカウントを確認してください
-          vote: サイン
-          votes_blocked: サインインが無効になりました
-        votes_count:
-          count:
-            other: 署名
-          most_popular_initiative: 最も人気のあるイニシアチブです
-          need_more_votes: もっと署名が必要です
-      initiatives_mailer:
-        creation_subject: あなたのイニシアチブ「%{title}」が作成されました
-        initiative_link:
-          check_initiative_details: イニシアチブの詳細を見ることができます
-          here: ここ
-        more_information: ここでは、イニシアチブの作成プロセスについての詳細情報があります。
-        progress_report_body_for: '%{title} が必要な署名の %{percentage}%に達しました。'
-        progress_report_for: 'イニシアチブの概要: %{title}'
-        promotal_committee_help: 少なくとも %{member_count} 人をプロモーター委員会に招待する必要があります。プロモーター委員会に招待するには、次のリンクを進めてください。
-        status_change_body_for: イニシアチブ %{title} がステータスを %{state}に変更しました
-        status_change_for: イニシアチブ %{title} のステータスが変更されました
-      last_activity:
-        new_initiative: 新たなイニシアチブを作成
-      pages:
-        home:
-          highlighted_initiatives:
-            active_initiatives: 積極的なイニシアチブ
-            see_all_initiatives: すべてのイニシアチブを見る
-      show:
-        badge_name:
-          accepted: 十分な署名
-          created: 作成済み
-          discarded: 破棄しました
-          published: 公開済み
-          rejected: 十分な署名がありません
-          validating: 技術的検証
-      states:
-        accepted: 承認済み
-        expired: 期限切れ
-      unavailable_scope: 利用できないスコープ
-      versions:
-        shared:
-          back_to_resource: イニシアチブに戻る
     last_activities:
       activities:
         no_activities_warning: アクティビティがありません
       all: すべてのアクティビティタイプ
       index:
-        last_activity: 最後のアクティビティ
+        last_activity: 最近のアクティビティ
         resource_type: タイプ
     log:
       base_presenter:
@@ -4836,6 +4560,13 @@ ja:
           not_found: 'The scope type was not found on the データベース (ID: %{id})'
     managed_users:
       expired_session: 出席者の現在の管理セッションの有効期限が切れています。
+    map:
+      dynamic:
+        screen_reader_explanation: 以下の要素は、このページ上のアイテムを地図上のポイントとして表示するマップです。 この要素はスクリーンリーダーで使用することができますが、理解しにくいかもしれません。
+        skip_button: 地図をスキップ
+      static:
+        latlng_text: '緯度: %{latitude}, 経度: %{longitude}'
+        map_service_brand: OpenStreetMap
     media:
       index:
         description: このカンファレンスに関するリンク
@@ -4849,6 +4580,9 @@ ja:
         confirm_destroy: このミーティングを削除してもよろしいですか？
         destroy: 削除
         edit: 編集
+        invalid_destroy:
+          proposals_count:
+            other: '%{count} 件の提案が関連付けられているため、会議を破壊できません:'
         minutes: 分
         new: 新しいミーティング
         preview: プレビュー
@@ -4919,9 +4653,6 @@ ja:
           edit:
             close: 閉じる
             title: ミーティングを閉じる
-        meeting_copies:
-          form:
-            select_organizer: オーガナイザーを選択する
         meetings:
           close:
             invalid: この会議を終了する際に問題が発生しました
@@ -4930,6 +4661,9 @@ ja:
             invalid: このミーティングを作成する際に問題が発生しました
             success: ミーティングを作成しました
           destroy:
+            invalid:
+              proposals_count:
+                other: '%{count} 件の提案が関連付けられているため、会議を破壊できません'
             success: ミーティングを削除しました
           edit:
             update: 更新
@@ -4937,7 +4671,6 @@ ja:
             address_help: 'アドレス: ジオコーダーが場所を見つけるために使用'
             location_help: '場所: ユーザーにメッセージが表示されます。'
             location_hints_help: 位置情報：追加情報。例：建物の床。
-            select_organizer: オーガナイザーを選択する
           index:
             title: ミーティング
           new:
@@ -4979,10 +4712,11 @@ ja:
           form:
             available_slots_help: 無制限のスロットがある場合は0のままにしてください。
             invites: 招待
+            recommendation_message: プライバシー上の理由から、不要になったときにこの碑文フォームを削除することをお勧めします。
+              デフォルトでは、ミーティングが終了してから3ヶ月です。
             registration_form: 登録フォーム
             registrations_count:
-              one: '%{count}の登録がありました。'
-              other: '%{count}の登録がありました。'
+              other: '%{count} 件の登録がありました。'
             reserved_slots_help: 予約スロットがない場合は0にしてください
             reserved_slots_less_than: '%{count} 以下にしてください'
             title: 登録
@@ -5045,30 +4779,63 @@ ja:
       meeting:
         not_allowed: このミーティングを表示する権限がありません
       meetings:
+        count:
+          meetings_count:
+            other: '%{count} 個のミーティング'
+        create:
+          invalid: このミーティングの作成に問題がありました．
+          success: ミーティングを作成しました．
+        edit:
+          back: 戻る
+          title: ミーティングを編集
+          update: 更新
         filters:
           category: カテゴリ
-          category_prompt: カテゴリを選択してください
           date: 日付
-          past: 過去の実績
+          date_values:
+            all: すべて
+            past: 過去
+            upcoming: 近日公開
+          origin: 元々の提案者：
+          origin_values:
+            all: すべて
+            citizens: 市民
+            official: オフィシャル
+            user_groups: グループ
+          scope: スコープ
           search: 検索
-          upcoming: 今後の予定
         filters_small_view:
           close_modal: モーダルを閉じる
           filter: フィルター
           filter_by: フィルター
           unfold: 展開する
+        form:
+          address_help: 'アドレス: ジオコーダーが場所を見つけるために使用'
+          create_as: 次のユーザとしてミーティングを作成：
+          location_help: '場所: ユーザーにメッセージが表示されます。'
+          location_hints_help: 位置情報：追加情報。例：建物の床。
+          select_a_category: カテゴリを選択してください
+        index:
+          new_meeting: 新しいミーティング
         meeting_minutes:
           meeting_minutes: ミーティング時間
           related_information: 関連情報
         meetings:
           no_meetings_warning: 検索条件に一致するミーティングがないか，スケジュールされたミーティングがありません．
           upcoming_meetings_warning: 現在、スケジュールされたミーティングはありませんが、ここではリストされた過去のミーティングをすべて見つけることができます。
+        new:
+          back: 戻る
+          create: 作成
+          title: ミーティングを作成
         registration_confirm:
           cancel: キャンセル
           confirm: 確認する
         show:
           attendees: 出席者数
+          back: リストに戻る
           contributions: コントリビューション数
+          date: 日付
+          edit_meeting: ミーティングを編集
           going: 次へ
           join: 会議に参加
           meeting_report: ミーティングレポート
@@ -5079,9 +4846,11 @@ ja:
             validated: 有効化
             validation_pending: 保留中
           remaining_slots:
-            one: '%{count}スロット残数'
-            other: '%{count}スロット残り'
+            other: 残り%{count} スロット
           view: 表示
+        update:
+          invalid: 会議の更新に問題がありました。
+          success: ミーティングを更新しました．
       meetings_map:
         view_meeting: ミーティングを表示
       models:
@@ -5100,6 +4869,7 @@ ja:
             closed: クローズ済み
             end_time: 終了日
             map: 地図
+            official_meeting: 公式ミーティング
             start_time: 開始日
             title: タイトル
       read_more: (続きを読む)
@@ -5121,6 +4891,8 @@ ja:
       types:
         private_meeting: プライベートミーティング
         transparent: 透明度
+      versions:
+        back_to_resource: 会議に戻る
     members:
       no_members: このグループにはまだメンバーがいません。
     menu:
@@ -5129,30 +4901,72 @@ ja:
       consultations: 議案
       help: ヘルプ
       home: ホーム
-      initiatives: イニシアチブ
       processes: 参加型プロセス
     messaging:
       conversation_mailer:
+        comanagers_new_conversation:
+          admin_in_group: あなたは %{group}の管理者であるため、これを受け取っています。
+          greeting: Hi, %{recipient}!
+          intro: '%{manager} が %{group}という名前で新しい会話を開始しました。こちらをクリックしてください:'
+          outro: お楽しみください!
+          subject: '%{manager} が %{group} として新しい会話を開始しました'
+        comanagers_new_message:
+          admin_in_group: あなたは %{group}の管理者であるため、これを受け取っています。
+          greeting: Hi, %{recipient}!
+          intro: '%{manager} は、 %{group}という名前の新しいメッセージを会話に投稿しました。それらを表示するにはここをクリックしてください：'
+          outro: お楽しみください!
+          subject: '%{manager} は %{group} として新しいメッセージを送信しました'
         new_conversation:
           greeting: Hi, %{recipient}!
           intro: '%{sender} があなたと新しい会話を開始しました。こちらをクリックしてください:'
           outro: お楽しみください!
           subject: '%{sender} があなたと会話を開始しました'
+        new_group_conversation:
+          admin_in_group: あなたは %{group}の管理者であるため、これを受け取っています。
+          greeting: Hi, %{recipient}!
+          intro: '%{sender} がグループ %{group}との新しい会話を開始しました。こちらをクリックしてください:'
+          outro: お楽しみください!
+          subject: '%{sender} が %{group} と会話を開始しました'
+        new_group_message:
+          admin_in_group: あなたは %{group}の管理者であるため、これを受け取っています。
+          greeting: Hi, %{recipient}!
+          intro: '%{sender} がグループ %{group}との会話に新しいメッセージを投稿しました。こちらをクリックしてください:'
+          outro: お楽しみください!
+          subject: '%{group} に %{sender} からの新しいメッセージがあります'
         new_message:
           greeting: Hi, %{recipient}!
           intro: '%{sender} さんがあなたの会話に新しいメッセージを投稿しました。こちらをクリックしてください：'
           outro: お楽しみください!
           subject: '%{sender} からの新しいメッセージがあります'
       conversations:
+        add_conversation_users:
+          add_max_users: '会話にユーザーを追加: 最大 9 人のユーザー'
+          add_users_placeholder: 検索...
+          modal_title: 新しい会話
+          no_results: 結果がありません
+          participant_with_disabled_message_reception: この参加者はメッセージの受信を無効にしています
+        conversation:
+          show: '%{sender} との会話を表示'
         create:
           error: 会話が開始されませんでした。後でもう一度お試しください。
         index:
+          ago: 前
+          close: モーダルを閉じる
+          from: '差出人:'
+          groups: 自分のグループ
+          last_message: 最新のメッセージ
+          new_conversation: 新しい会話
+          next: 次へ
           no_conversations: 会話がまだありません
           title: 会話
         reply:
+          placeholder: あなたの返信...
           send: 送信
           title: 返信
         show:
+          back: すべての会話に戻る
+          chat_with: 会話
+          not_allowed: このユーザーはこれ以上のダイレクトメッセージを受け付けません。
           title: '%{usernames} との会話'
         start:
           send: 送信
@@ -5253,6 +5067,43 @@ ja:
         see_on_website: このメールは正しく表示されませんか？ <a href="%{link}" target="_blank">ウェブサイト</a>
           で確認してください。
         unsubscribe: この種類のメールの受信を拒否するには、 <a href="%{link}" target="_blank" class="unsubscribe">購読解除</a>.
+    newsletter_templates:
+      basic_only_text:
+        body_preview: 'Dummy text for body: Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Pellentesque fringilla nisl tellus. Donec sed mi dui. Sed
+          efficitur libero a felis tempor sollicitudin. Nullam vestibulum fringilla
+          felis, id efficitur lorem sagittis et. Vivamus aliquam maximus velit vel
+          dapibus. Mauris pellentesque, enim eu varius lacinia, risus ante rutrum
+          ipsum, non lobortis augue lorem quis urna. Aenean et malesuada arcu.'
+        name: Basic (テキストのみ)
+      basic_only_text_settings_form:
+        body: 本文
+        interpolations_hint: 'ヒント: "%{name}" は、本文または件名の任意の場所で使用でき、受信者の名前に置き換えられます。'
+      image_text_cta:
+        body_preview: 'Dummy text for body: Maecenas ac nisl vitae lectus pretium
+          facilisis. Etiam facilisis sem nibh, sit amet rutrum mi aliquam nec. Sed
+          id urna at nisl pretium mollis eu vel velit. Proin vitae suscipit urna,
+          sed faucibus urna. Pellentesque id libero vulputate ipsum scelerisque suscipit.
+          Nam aliquam sodales mi sit amet cursus. Donec mattis faucibus purus. Aenean
+          tincidunt porta lorem ac commodo. Vestibulum in mollis mi. Morbi eros erat,
+          cursus ut tortor sit amet, imperdiet dapibus arcu. Suspendisse id egestas
+          enim. In eget magna sed enim efficitur elementum sit amet aliquam quam.
+          Donec fermentum metus eget urna luctus pulvinar.'
+        cta_text_preview: アクションテキストを呼び出す
+        introduction_preview: 'Dummy text for introduction: Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit. Pellentesque fringilla nisl tellus. Donec
+          sed mi dui. Sed efficitur libero a felis tempor sollicitudin. Nullam vestibulum
+          fringilla felis, id efficitur lorem sagittis et. Vivamus aliquam maximus
+          velit vel dapibus. Mauris pellentesque, enim eu varius lacinia, risus ante
+          rutrum ipsum, non lobortis augue lorem quis urna. Aenean et malesuada arcu.'
+        name: 画像、テキスト、通話先ボタン
+      image_text_cta_settings_form:
+        body: 本文
+        cta_text: Call To Action ボタンのテキスト
+        cta_url: Call To Action ボタンURL
+        interpolations_hint: 'ヒント: 紹介、本文、CTAテキスト、または件名の任意の場所で「%{name}」を使用でき、受信者の名前に置き換えられます。'
+        introduction: はじめに
+        main_image: メイン画像
     newsletters:
       unsubscribe:
         check_subscription: 設定を変更したい場合は、 <a href="%{link}" target="_blank">設定ページ</a>
@@ -5281,11 +5132,13 @@ ja:
       no_notifications: まだ通知はありません。
     notifications_settings:
       show:
+        allow_public_contact: 私は彼らに従わない場合でも、誰でも私にダイレクトメッセージを送信することを許可します。
+        direct_messages: 誰からでもダイレクトメッセージを受信する
         email_on_notification: 通知を受け取るたびにメールを受信します。
-        everything_followed: 自分がフォローしているすべて
+        everything_followed: 自分がフォローしている提案等に関する通知
         newsletter_notifications: ニュースレターを受け取る
-        newsletters: ニュースレター
-        own_activity: 誰かが提案にコメントしたり、私に言及したりした時など、自分自身の活動
+        newsletters: メールマガジン
+        own_activity: 誰かが提案にコメントしたり、私に言及したりした時など
         receive_notifications_about: 通知を受け取りたい
         send_notifications_by_email: 電子メールで通知を送信
         update_notifications_settings: 変更を保存
@@ -5343,7 +5196,7 @@ ja:
           headline: メトリック
         statistics:
           answers_count: 完了した調査
-          assemblies_count: 会議体
+          assemblies_count: 参加スペース
           comments_count: コメント
           conferences_count: カンファレンス
           consultations_count: 議案
@@ -5394,11 +5247,13 @@ ja:
           alert: サービス利用規約を更新しました。ご確認ください。
           body: サービス利用規約の更新を確認してください。そうでなければ、プラットフォームを使用することはできません。
           title: 必須：サービス利用規約の更新を確認する
+    participatory_process:
+      show:
+        related_assemblies: 関連する参加スペース
     participatory_process_groups:
       show:
         group_participatory_processes:
-          one: '%{group}用1プロセス'
-          other: '%{group}用の%{count}プロセス'
+          other: '%{group} 内の %{count} の参加型プロセス'
         title: 参加型プロセスグループ
     participatory_process_steps:
       index:
@@ -5453,6 +5308,7 @@ ja:
             active_step: アクティブフェーズ
             more_information: 詳細情報
             participate: 参加
+            participate_in: 参加型プロセス %{resource_name} に参加する
             see_all_processes: すべての参加型プロセスを見る
       participatory_process_groups:
         highlighted_meetings:
@@ -5462,25 +5318,24 @@ ja:
           proposals: 提案
         highlighted_results:
           results: 結果
+      participatory_process_steps:
+        index:
+          back_to_process: 参加型プロセスのページに戻る
       participatory_processes:
         filters:
           counters:
             active:
-              one: 1つのアクティブプロセス
-              other: '%{count} アクティブプロセス'
+              other: '%{count} 個の有効な参加型プロセス'
             all:
-              one: 1プロセス
-              other: '%{count}処理'
+              other: '%{count} 個の参加型プロセス'
             past:
-              one: 1 過去のプロセス
-              other: '%{count} 過去のプロセス'
+              other: '%{count} 個の過去の参加型プロセス'
             upcoming:
-              one: 1 アップグレードプロセス
-              other: '%{count} 今後のプロセス'
+              other: '%{count} 件の今後の参加型プロセス'
           explanations:
             no_active: アクティブな参加型プロセスはありません
             no_active_nor_upcoming: アクティブな参加型プロセスも今後の参加型プロセスもありません
-            no_active_nor_upcoming_callout: アクティブなプ参加型ロセスも今後の参加型プロセスもありません。ここでは過去の参加型プロセスのリストを示します。
+            no_active_nor_upcoming_callout: アクティブな参加型プロセスも今後予定されている参加型プロセスもありません。ここでは過去の参加型プロセスのリストを示します。
           names:
             active: アクティブ
             all: すべて
@@ -5491,6 +5346,7 @@ ja:
           loading: 結果を読み込み中...
       show:
         area: エリア
+        dates: 日付
         developer_group: プロモーターグループ
         end_date: 終了日
         local_area: 組織エリア
@@ -5545,10 +5401,12 @@ ja:
       show:
         activity: アクティビティ
         badges: バッジ
+        conversations: 会話
         followers: フォロワー
         following: フォロー
         groups: グループ
         members: メンバー
+        officialized: 正規参加者
         timeline: タイムライン
         view_full_profile: 全プロファイルを表示
       sidebar:
@@ -5646,12 +5504,10 @@ ja:
             title: 提案を更新
             update: 更新
           form:
-            add_images: 画像の追加
-            attachment_legend: オプション）添付ファイルの追加
-            created_in_meeting: この提案は打ち合わせから
-            gallery_legend: (オプション) イメージギャラリーの追加
-            select_a_category: カテゴリを選択してください
-            select_a_meeting: 会議を選択する
+            attachment_legend: (オプション) 添付ファイルを追加
+            created_in_meeting: この提案は会議から来ています
+            select_a_category: カテゴリを選択
+            select_a_meeting: ミーティングを選択
           index:
             actions: アクション
             assign_to_valuator: 評価者に割り当てる
@@ -5694,8 +5550,7 @@ ja:
             endorsers: Endorsers
             link: リンク
             n_more_endorsers:
-              one: そしてもう1つ
-              other: と%{count}をもっと
+              other: 他 %{count} 名
             photos: 写真
             proposals: 提案
             ranking: '%{ranking} / %{total}'
@@ -5806,8 +5661,7 @@ ja:
           title: 共同作業の下書きを完成させましょう
         count:
           drafts_count:
-            one: '%{count}コラボドラフト'
-            other: '%{count}コラボドラフト'
+            other: '%{count} 件の共同の下書きです'
         create:
           error: 共同作業の下書き作成中に問題が発生しました
           success: 共同作業の下書きを作成しました。
@@ -5863,20 +5717,16 @@ ja:
           final_proposal: 最終的な提案
           final_proposal_help_text: このドラフトは終了しました。最終提案を確認してください。
           hidden_authors_count:
-            one: と%{count}より多くの人
-            other: と%{count}より多くの人々
+            other: '%{count} 人以上'
           info-message: これは提案のための <strong>共同ドラフト</strong> です。 これは、以下のコメントセクションを使用して提案を作成したり、編集するためのアクセスを要求することで、提案を改善したりすることができることを意味します。
             作成者がアクセスを許可すると、このドラフトを変更することができます。
-          of_versions: null
-          publish: 発行
-          publish_info: この版の草案を公開するか
-          published_proposal: 公表案
+          publish: 公開
+          publish_info: このバージョンの下書きを公開するか、
+          published_proposal: 公開された提案
           request_access: アクセスを要求する
-          requested_access: リクエストされたアクセス
-          see_other_versions: 他のバージョンを見る
-          version: バージョン %{number}
-          version_history: この提案のバージョン履歴を参照してください。
-          withdraw: 草案を撤回する
+          requested_access: アクセスがリクエストされました
+          version_history: この提案のバージョン履歴を見る
+          withdraw: ドラフトを撤回する
         states:
           open: 開く
           published: 公開済み
@@ -5884,15 +5734,23 @@ ja:
         update:
           error: 共同作業のドラフトを保存する際に問題が発生しました。
           success: 共同作業の下書きが正常に更新されました。
+          title: 共同草案の下書きを編集
         wizard_aside:
           back: 戻る
+          back_from_collaborative_draft: 共同草案に戻る
+          back_from_step_1: 共同草案に戻る
+          back_from_step_2: 共同草案に戻る
+          back_from_step_3: 共同草案の比較に戻る
+          back_from_step_4: 下書き編集に戻る
           info: <strong>共同ドラフト</strong>を作成しています。
         wizard_steps:
+          current_step: 現在のステップ
           see_steps: 手順を見る
           step_1: 共同作業の下書きを作成する
           step_2: 共同作業の下書きと比較
           step_3: 共同作業の下書きを完成させましょう
           step_of: '%{current_step_num} / %{total_steps}'
+          title: 共同草稿作成手順
       create:
         error: 提案を保存する際に問題がありました。
         success: 提案は正常に作成されました。ドラフトとして保存されました。
@@ -5911,17 +5769,16 @@ ja:
           fields:
             category: カテゴリ
             comments: コメント
-            endorsements: お墨付き
-            id: 身分証明書
-            notes: 注意事項
-            official_proposal: 公式提案
+            id: ID
+            notes: メモ
+            official_proposal: 官職の提案
             published_answer: 公開された回答
-            published_at: 公開日
-            scope: 範囲
+            published_at: 公開日時
+            scope: スコープ
             state: ステータス
             title: タイトル
-            valuator: バリュエータ
-            valuators: バリュエータ
+            valuator: Valuator
+            valuators: Valuators
             votes: 投票
       new:
         limit_reached: 制限を超えたため、新しい提案を作成することはできません。
@@ -5931,19 +5788,6 @@ ja:
           amend: 修正
           comment: コメント
           comments: コメント
-          endorse: 賛同します。
-      proposal_endorsements:
-        create:
-          error: お墨付きを与えることに問題があった。
-        identities:
-          done: äº†
-          select_identity: アイデンティティを選択
-      proposal_endorsements_helper:
-        endorsement_button:
-          already_endorsed: お墨付き
-          endorse: 賛同します。
-        render_endorsements_button_card_part:
-          endorse: 賛同します。
       proposal_votes:
         create:
           error: その提案を支持するのに問題があった。
@@ -5954,11 +5798,10 @@ ja:
           title: 類似の提案
         complete:
           send: 送信
-          title: 提案を完了する
+          title: 投稿される内容を確認
         count:
           proposals_count:
-            one: '%{count}提案'
-            other: '%{count}の提案'
+            other: '%{count} の提案'
         edit:
           attachment_legend: (オプション) 添付ファイルを追加
           back: 戻る
@@ -5970,17 +5813,13 @@ ja:
           discard_confirmation: この提案の下書きを破棄してもよろしいですか？
           send: プレビュー
           title: 提案ドラフトを編集
-        endorsement_identities_cabin:
-          endorse: 賛同します。
-        endorsements_card_row:
-          comments: コメント
         filters:
           activity: 私のアクティビティ
           all: すべて
           amendment_type: タイプ
           category: カテゴリ
           my_proposals: 私の提案
-          origin: 原点：
+          origin: 元々の作成者：
           related_to: 関連
           scope: スコープ
           search: 検索
@@ -5999,8 +5838,7 @@ ja:
           view_proposal: 提案を表示
         linked_proposals:
           proposal_votes:
-            one: 支持
-            other: 支持者
+            other: サポート
         new:
           send: 続ける
           title: 提案を作成
@@ -6010,7 +5848,7 @@ ja:
           most_endorsed: 最も支持された
           most_followed: 最もフォローされている
           most_voted: 最もサポートされています
-          random: Random
+          random: ランダム
           recent: 最近のもの
           with_more_authors: より多くの著者と一緒に
         participatory_texts:
@@ -6021,23 +5859,26 @@ ja:
         preview:
           modify: 提案を変更する
           proposal_edit_before_minutes:
-            one: この企画書を編集できるのは、企画書が公開されてから最初の1分間です。この時間が過ぎると編集できなくなります。
-            other: この提案書を編集できるのは、提案書が公開されてから最初の%{count}の時間内です。この時間を過ぎると編集できなくなります。
+            other: 提案が公開されてから最初の %{count} 分間、この提案を編集することができます。 この時間が経過すると、提案を編集することはできません。
           publish: 公開
           title: 提案を公開
         proposal:
           creation_date: '作成: %{date}'
           view_proposal: 提案を表示
+        proposals:
+          empty: 提案はまだありません
+          empty_filters: この基準の提案はありません
         show:
           answer: 回答
           back_to: 前に戻る
+          back_to_list: リストに戻る
           changes_at_title: 「%{title} 」に修正
+          comments: コメント
           edit_proposal: 提案を編集
           endorsements_list: 承認者一覧
           estimated_cost: 推定コスト
           hidden_endorsers_count:
-            one: と%{count}より多くの人
-            other: と%{count}より多くの人々
+            other: '%{count} 人以上'
           link_to_collaborative_draft_help_text: この提案は共同ドラフトの結果です。履歴を確認してください
           link_to_collaborative_draft_text: 共同作業の下書きを見る
           link_to_promoted_emendation_help_text: この提案は奨励された提案です
@@ -6051,10 +5892,12 @@ ja:
           read_more: もっと読む
           report: レポート
           withdraw_btn_hint: サポートを受けていない限り、気が変わった場合は提案を撤回することができます。 提案は削除されず、撤回された提案のリストに表示されます。
-          withdraw_confirmation: 本当にこの提案を撤回しますか？
-          withdraw_proposal: 提案の撤回
+          withdraw_confirmation_html: この提案を撤回してもよろしいですか？<br><br><strong>この操作はキャンセルできません！</strong>
+          withdraw_proposal: 提案を撤回する
         tags:
           changed_from: (管理者によって <u>%{previous_name}</u> から変更されました)
+        update:
+          title: 提案を更新
         vote_button:
           already_voted: サポート済みです
           already_voted_hover: サポートを撤回する
@@ -6064,8 +5907,7 @@ ja:
           votes_blocked: サポートは無効です
         votes_count:
           count:
-            one: サポート
-            other: サポーター
+            other: サポート
           most_popular_proposal: 最も人気のある提案
           need_more_votes: さらにサポートが必要です
         voting_rules:
@@ -6086,14 +5928,25 @@ ja:
             votes: サポート
         wizard_aside:
           back: 戻る
+          back_from_step_1: 提案に戻る
+          back_from_step_2: 提案に戻る
+          back_from_step_3: 提案の比較に戻る
+          back_from_step_4: 下書き編集に戻る
           info: <strong>提案</strong> を作成しています。
         wizard_steps:
+          current_step: 現在のステップ
           see_steps: 手順を見る
           step_1: 提案を作成
           step_2: 比較
-          step_3: Complete
+          step_3: 投稿される内容を確認
           step_4: 提案を公開
           step_of: '%{current_step_num} / %{total_steps}'
+          title: 提案の作成手順
+      proposals_picker:
+        choose_proposals: 提案を選択
+        close: 閉じる
+        more_proposals: あと %{number} 件の提案があります。検索を絞り込んで見つけましょう。
+        no_proposals: 検索条件に一致する提案がないか、提案がありません。
       publish:
         error: 提案を発表する際に問題が発生しました。
         success: 提案は正常に公開されました。
@@ -6106,20 +5959,12 @@ ja:
         error: 共同作業のドラフトを保存する際に問題が発生しました。
         success: 提案ドラフトが正常に更新されました。
       versions:
-        changes_at_title: '%{title}」の変更点'
+        collaborative_drafts:
+          back_to_resource: 共同草案に戻る
         index:
           title: バージョン
-        stats:
-          back_to_collaborative_draft: コラボドラフトに戻る
-          back_to_proposal: 提案に戻る
-          number_of_versions: バージョン
-          show_all_versions: すべてのバージョンを表示
-          version_author: バージョン作成者
-          version_created_at: で作成されたバージョン
-          version_number: バージョン番号
-          version_number_out_of_total: '%{total_count}の%{current_version}アウト'
-        version:
-          version_index: バージョン %{index}
+        proposals:
+          back_to_resource: 提案に戻る
       withdraw:
         errors:
           has_supports: すでにサポートがあるため、この提案は撤回できません。
@@ -6160,14 +6005,23 @@ ja:
         report_html: <p>次の <a href="%{url}">コンテンツ</a> が自動的に非表示になりました。</p>
         subject: リソースは自動的に非表示になりました
       report:
+        authors: 著者
+        content: 報告されたコンテンツ
+        date: 報告日時
+        details: 詳細
         hello: こんにちは、 %{name} さん。
         manage_moderations: モデレーションの管理
+        participatory_space: 参加者のスペース
+        reason: 理由：
         report_html: <p>次の <a href="%{url}">コンテンツ</a> が報告されました。</p>
         subject: リソースが報告されました
     reports:
       create:
         error: レポートの作成中にエラーが発生しました。もう一度やり直してください。
         success: レポートは正常に作成され、管理者によってレビューされます。
+    resource_endorsements:
+      create:
+        error: 承認アクション中に問題がありました。
     resource_links:
       copied_from_component:
         proposal_proposal: 関連する提案
@@ -6189,19 +6043,20 @@ ja:
       consultations:
         actions:
           vote: 投票
-      initiatives_type:
-        actions:
-          title: アクション
-          vote: サイン
     scopes:
       global: グローバルスコープ
       picker:
         cancel: キャンセル
+        change: 選択したスコープを変更
         choose: 選択
+        currently_selected: 現在選択中のスコープ
         title: '%{field} を選択'
       prompt: スコープを選択
       scopes: スコープ
+      scopes_picker_input:
+        select_scope: 'スコープを選択 (現在: %{current})'
     search:
+      results: 検索結果
       results_found_for_term: '%{count} 検索結果: "%{term}"'
       term_input_placeholder: 検索
     searches:
@@ -6220,10 +6075,14 @@ ja:
         unfold: 展開する
       results:
         results:
-          one: '%{count}結果'
-          other: '%{count}の結果'
+          other: '%{count} 件の結果'
         view_all: すべて表示 (%{count})
     shared:
+      confirm_modal:
+        cancel: キャンセル
+        close_modal: ウィンドウを閉じる
+        ok: OK
+        title: 確定
       embed_modal:
         close_window: ウィンドウを閉じる
         embed: このコードをページに貼り付けてください
@@ -6231,6 +6090,9 @@ ja:
       extended_navigation_bar:
         more: もっと見る
         unfold: 展開する
+      filter_form_help:
+        help: 以下のフォームは、検索条件が変更されたときに検索結果を動的にフィルタリングします。
+        skip: 結果にスキップ
       flag_modal:
         already_reported: このコンテンツはすでに報告されており、管理者が確認します。
         close: 閉じる
@@ -6241,10 +6103,12 @@ ja:
         spam: クリックベイト、広告、詐欺やスクリプトボットが含まれています。
         title: 不適切な内容を報告する
       floating_help:
+        close: ヘルプを閉じる
         help: ヘルプ
       follow_button:
         sign_in_before_follow: このアクションを実行する前にサインインしてください
       login_modal:
+        close_modal: ウィンドウを閉じる
         please_sign_in: サインインしてください
         sign_up: 新規登録
       participatory_space_filters:
@@ -6258,12 +6122,11 @@ ja:
         select_user_group: グループを選択
       results_per_page:
         label: 'ページごとの結果:'
+        title: ページあたりの結果数を選択
       share_modal:
         close_window: ウィンドウを閉じる
         share: 共有
         share_link: リンクを共有
-      version_author:
-        deleted: 参加者削除
     sortitions:
       admin:
         actions:
@@ -6479,15 +6342,53 @@ ja:
           our_getting_started_guide: ガイドを始めるのは
       titles:
         dashboard: ダッシュボード
+    tags:
+      filter_results_for_category: 'カテゴリの検索結果: %{resource}'
+      filter_results_for_scope: 'スコープの検索結果: %{resource}'
+    translation_bar:
+      help_text: <strong>警告:</strong>内容は自動的に翻訳されている場合があり、100%正確ではありません。
+      show_original: 元テキストを表示する
+      show_translated: 機械翻訳されたテキストを表示する
     user_activity:
       index:
-        no_activities_warning: この参加者はまだアクティビティを行っていません。
+        no_activities_warning: まだアクティビティがありません
+    user_contact_disabled: この参加者はダイレクトメッセージを受け付けていません。
+    user_conversations:
+      create:
+        error: メッセージを作成できませんでした。後でもう一度お試しください。
+        existing_error: メッセージを作成できませんでした。会話はすでに存在します。今すぐやり直してください。
+        success: 会話が正常に開始されました！
+      index:
+        add_max_users: '会話にユーザーを追加: 最大 9 人のユーザー'
+        add_users_placeholder: 検索...
+        close: 閉じる
+        conversations_info: 会話は非公開です。他の誰も見ることはできません。会話はプラットフォームに登録されている参加者またはグループで開始できます。
+        from: '差出人:'
+        last_message: 最新のメッセージ
+        modal_title: 新しい会話
+        new_conversation: 新しい会話
+        next: 次へ
+        no_conversations_warning: 会話はまだありません。
+        no_results: 結果がありません
+        participant_with_disabled_message_reception: この参加者はメッセージの受信を無効にしています
+        time_ago: '%{time} 前'
+      new:
+        title: 会話を開始
+      reply:
+        placeholder: あなたの返信...
+        send: 送信
+        title_reply: 返信
+      show:
+        not_allowed: このユーザーはこれ以上のダイレクトメッセージを受け付けません。
+        title: '%{usernames} との会話'
+      update:
+        error: メッセージが送信されませんでした。後でもう一度お試しください。
     user_interests:
       show:
         my_interests: 興味のあるもの
         no_scopes: この組織にはまだ範囲がありません！
-        select_your_interests: 興味のあるトピックを選択すると、プロフィールのタイムラインタブで関連するイベントを受け取ることができます。
-        update_my_interests: 興味を更新する
+        select_your_interests: 興味のあるトピックを選択すると、プロフィールのタイムラインタブで関連するイベントに関する通知を受け取ることができます。
+        update_my_interests: 更新する
       update:
         error: 更新中に問題が発生しました。
         success: 興味のある情報は正常に更新されました。
@@ -6651,6 +6552,33 @@ ja:
           update:
             error: あなたの検証コードは私たちのものと一致しません。送信したSMSを再確認してください。
             success: おめでとうございますあなたは正常に認証されました。
+    version:
+      show:
+        back_to_resource: 戻る
+        changes_at_title: 変更 "%{title}"
+        number_of_versions: バージョン
+        show_all_versions: すべてのバージョンを表示
+        version_author: バージョンの作成者
+        version_created_at: バージョン作成日時
+        version_number: バージョン番号
+        version_number_out_of_total: '%{current_version} / %{total_count}'
+    version_author:
+      show:
+        deleted: 削除された参加者
+    versions:
+      resource_version:
+        of_versions: ( %{number} の)
+        see_other_versions: 他のバージョンを見る
+        version: バージョン %{number}
+    versions_list:
+      show:
+        back_to_resource: 戻る
+        changes_at_title: 変更 "%{title}"
+        number_of_versions: バージョン
+        title: バージョン
+    versions_list_item:
+      show:
+        version_index: バージョン %{index}
     welcome_notification:
       default_body: <p>こんにちは {{name}}, {{organization}} へ参加いただきありがとうございます。歓迎します！</p><ul><li>もし、あなたがここでできることを知りたい場合、
         <a href="{{help_url}}">Help</a> セクションをご参照ください。</li><li>目を通していただけると、最初のバッジを獲得できます。<a
@@ -6795,15 +6723,14 @@ ja:
     shared:
       links:
         back: 戻る
-        didn_t_receive_confirmation_instructions: 確認の指示を受信しませんでしたか？
-        didn_t_receive_unlock_instructions: ロック解除の指示を受信しませんでしたか？
+        didn_t_receive_confirmation_instructions: 確認手順の情報が届かなかった方
+        didn_t_receive_unlock_instructions: ロック解除のお知らせが届かなかった方
         forgot_your_password: パスワードをお忘れですか？
         sign_in: ログイン
         sign_in_with_provider: '%{provider} でサインイン'
         sign_up: 新規登録
       minimum_password_length:
-        one: (%{count}文字最小値)
-        other: (%{count}文字以上)
+        other: (%{count} 文字以上)
     unlocks:
       new:
         resend_unlock_instructions: ロック解除の手順を再送信する
@@ -6831,14 +6758,18 @@ ja:
       not_found: 見つかりませんでした。以前にサインアップしましたか？
       not_locked: ロックされていません
       not_saved:
-        one: リクエストの処理にエラーが発生しました。
-        other: リクエストを処理する際に複数のエラーが発生しました。
+        other: 'リクエストの処理中に複数のエラーが発生しました:'
       too_many_marks: '連続する句読点が多すぎます (例: !, ?)'
       too_much_caps: 大文字が多すぎます(テキストの25%以上)
       too_short: 短すぎます（15文字未満）
       uppercase_only_letters_numbers: すべて大文字で、文字および/または数字のみを含む必要があります。
   forms:
+    correct_errors: 下記のフォームにエラーがありました。修正して継続してください。
+    length_validator:
+      minimum:
+        other: 少なくとも %{count} 文字
     required: 必須項目
+    required_explanation: '* 必須項目にはアスタリスクが付いています'
   index:
     confirmed_orders_count: 投票数
   invisible_captcha:
@@ -6847,11 +6778,6 @@ ja:
   layouts:
     decidim:
       admin:
-        initiative:
-          attachments: 添付ファイル
-          committee_members: 委員会メンバー
-          components: コンポーネント
-          information: 情報
         newsletters:
           title: ニュースレター
         question:
@@ -6916,8 +6842,10 @@ ja:
       edit_link:
         edit: 編集
       footer:
+        cc_by_license: クリエイティブコモンズライセンス
+        decidim_logo: Decidim ロゴ
         download_open_data: オープンデータファイルをダウンロード
-        made_with_open_source: <a target="_blank" href="https://github.com/decidim/decidim">フリーソフトウェア</a>で作られたウェブサイト。
+        made_with_open_source: Powered by <a target="_blank" href="https://github.com/decidim/decidim">decidim</a>
       header:
         close_menu: メニューを閉じる
         navigation: Navigation
@@ -6928,40 +6856,15 @@ ja:
         description_html: 参加者 <b>%{user_name}</b> を管理しています。
         expire_time_html: このログインセッションは <b><span class="minutes">%{minutes}</span>
           分後に無効になります。</b>.
-      initiative_creation_header:
-        back: 戻る
-        fill_data: 作成
-        finish: 完了
-        previous_form: 開始
-        promotal_committee: プロモーター委員会
-        select_initiative_type: 選択
-        show_similar_initiatives: 比較
-        step: '%{current} / %{total}'
-        title: 新しいイニシアチブを作成
-      initiative_header:
-        initiative_menu_item: イニシアチブ
-      initiative_signature_creation_header:
-        back: 戻る
-        fill_personal_data: データを完成させましょう
-        finish: 完了
-        finished: イニシアチブの署名が作成されました
-        see_steps: 手順を見る
-        select_identity: IDを選択
-        sms_code: SMSコードの検証
-        sms_phone_number: 携帯電話番号
-        step: '%{current} / %{total}'
-        title: '%{initiative_title} に署名'
-      initiatives:
-        initiative:
-          check: ご確認ください
-          check_and_support: サインアウトしてください
-        no_initiatives_yet:
-          no_initiatives_yet: まだイニシアチブがありません！
+      language_chooser:
+        choose_language: 言語を選択
       notifications_dashboard:
         mark_all_as_read: すべて既読にする
+        mark_as_read: 既読にする
       participatory_process_groups:
         participatory_process_group:
           browse: 検索
+          browse_resource: 参加型プロセスグループ %{resource_name} を参照
           processes_count: '参加型プロセス:'
       participatory_process_widgets:
         show:
@@ -6973,11 +6876,15 @@ ja:
         participatory_process:
           active_step: '現在のフェーズ:'
           more_info: 詳細情報
+          more_info_about: 参加型プロセス %{resource_name} についての詳細情報
           take_part: 参加する
+          take_part_in: 参加型プロセス %{resource_name} に参加する
         promoted_process:
           active_step: '現在のフェーズ:'
           more_info: 詳細情報
+          more_info_about: 参加型プロセス %{resource_name} についての詳細情報
           take_part: 参加する
+          take_part_in: 参加型プロセス %{resource_name} に参加する
       process_header_steps:
         step: 段階 %{current} / %{total}
         view_steps: プロセスのフェーズ
@@ -6989,7 +6896,14 @@ ja:
       question_header:
         back_to_consultation: すべての議案を見る
         back_to_question: 質問に戻る
+      social_media_links:
+        facebook: Facebook の %{organization}
+        github: GitHub の %{organization}
+        instagram: Instagramの%{organization}
+        twitter: Twitter の %{organization}
+        youtube: YouTube の %{organization}
       user_menu:
+        account: 'ユーザーアカウント: %{name}'
         admin_dashboard: 管理ダッシュボード
         conversations: 会話
         notifications: 通知
@@ -7056,6 +6970,7 @@ ja:
           invitation_instructions:
             accept_until_format: '%B %d, %Y %I:%M %p'
       long: '%B %d, %Y %H:%M'
+      long_dashed: '%Y-%m-%d %H:%M:%S'
       short: '%d/%m/%Y %H:%M'
       time_of_day: '%H:%M'
   total_budget: 予算の合計
@@ -7073,7 +6988,13 @@ ja:
   views:
     pagination:
       first: '&laquo; 最初'
+      first_title: 最初のページへのリンク
       last: 最終 &raquo;
+      last_title: 最新のページへのリンク
       next: 次へ &rsaquo;
+      next_title: 次のページへのリンク
+      pagination: 改ページ
       previous: '&lsaquo; 前'
+      previous_title: 前のページへのリンク
+      title: 'ページ番号: '
       truncate: '&hellip;'
