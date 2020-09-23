@@ -15,6 +15,7 @@ end
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   omniauth_config = Rails.application.secrets.dig(:omniauth)
+  #{:provider_ignores_state => true}
 
   if omniauth_config
     if omniauth_config[:developer].present?
@@ -47,7 +48,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       )
     end
 
-    if omniauth_config[:google_oauth2].present?
+    if omniauth_config[:line].present?
       provider(
         :line,
         setup: setup_provider_proc(:line, client_id: :channel_id, client_secret: :channel_secret)
