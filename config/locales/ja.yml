@@ -49,11 +49,11 @@ ja:
         local_area: 組織エリア
         meta_scope: スコープメタデータ
         parent_id: 親の会議体
-        participatory_processes_ids: 関連する参加型プロセス
+        participatory_processes_ids: 関連する議題一覧
         participatory_scope: 決定されるもの
         participatory_structure: どのように決められますか？
         private_space: プライベートスペース
-        promoted: 強調表示
+        promoted: ハイライト
         published_at: 公開日時
         purpose_of_action: アクションの目的
         scope_id: スコープ
@@ -122,8 +122,8 @@ ja:
         description: 説明
         hashtag: ハッシュタグ
         hero_image: ホーム画像
-        participatory_processes_ids: 関連する参加型プロセス
-        promoted: 強調表示
+        participatory_processes_ids: 関連する議題一覧
+        promoted: ハイライト
         published_at: 公開日時
         scope_id: スコープ
         scopes_enabled: スコープは有効です
@@ -277,7 +277,7 @@ ja:
         highlighted_content_banner_action_subtitle: アクションボタンのサブタイトル
         highlighted_content_banner_action_title: アクションボタンのタイトル
         highlighted_content_banner_action_url: アクションボタンURL
-        highlighted_content_banner_enabled: 強調表示されたコンテンツバナーを表示
+        highlighted_content_banner_enabled: ハイライトされたコンテンツバナーを表示
         highlighted_content_banner_image: 画像
         highlighted_content_banner_short_description: 短い説明
         highlighted_content_banner_title: タイトル
@@ -328,12 +328,12 @@ ja:
         hero_image: ホーム画像
         local_area: 組織エリア
         meta_scope: スコープメタデータ
-        participatory_process_group_id: 参加型プロセスグループ
+        participatory_process_group_id: 議題グループ
         participatory_scope: 決定されるもの
         participatory_structure: どのように決められますか？
         promoted: プロモート
         published_at: 公開日時
-        related_process_ids: 関連する参加型プロセス
+        related_process_ids: 関連する議題一覧
         scope_id: スコープ
         scope_type_max_depth_id: スコープフィルタの深さ
         scopes_enabled: スコープは有効です
@@ -349,7 +349,7 @@ ja:
         description: 説明
         hero_image: 画像
         name: 名前
-        participatory_process_ids: 関連する参加型プロセス
+        participatory_process_ids: 関連する議題一覧
       participatory_process_step:
         cta_path: コールからアクションパス
         cta_text: アクションテキストの呼び出し
@@ -589,7 +589,7 @@ ja:
       decidim/proposals/creation_enabled_event: 提案の作成は有効です
       decidim/proposals/endorsing_enabled_event: 提案の推奨が有効になりました
       decidim/proposals/evaluating_proposal_event: 提案を評価しています
-      decidim/proposals/proposal_endorsed_event: 提案書に対するいいね
+      decidim/proposals/proposal_endorsed_event: 提案書の承認
       decidim/proposals/proposal_mentioned_event: 言及された提案
       decidim/proposals/publish_proposal_event: 提案書の公開
       decidim/proposals/rejected_proposal_event: 提案が却下された
@@ -689,11 +689,11 @@ ja:
         one: ページ
         other: ページ数
       decidim/participatory_process:
-        one: 参加型プロセス
-        other: 参加型プロセス
+        one: 議題
+        other: 議題
       decidim/participatory_process_group:
-        one: 参加型プロセスグループ
-        other: 参加型プロセスグループ
+        one: 議題グループ
+        other: 議題グループ
       decidim/participatory_process_step:
         one: フェーズ
         other: フェーズ
@@ -929,8 +929,8 @@ ja:
         edit: 編集
         export: エクスポート
         filter:
-          all_processes: すべての参加型プロセスを表示
-          process_groups: 参加型プロセス グループ
+          all_processes: すべての議題を表示
+          process_groups: 議題グループ
         import_process: インポート
         manage: 管理
         new: 新しい %{name}
@@ -939,10 +939,10 @@ ja:
         new_conference: 新しいカンファレンス
         new_consultation: 新規の議案
         new_initiative_type: 新しいイニシアチブ種別
-        new_process: 新規参加型プロセス
-        new_process_group: 新規参加型プロセスグループ
+        new_process: 新規議題
+        new_process_group: 新規 議題グループ
         new_process_step: 新しいフェーズ
-        new_process_user_role: 新しい参加型プロセス管理者
+        new_process_user_role: 新しい議題管理者
         new_question: 新しい質問
         new_response: 新しい応答
         new_response_group: 新しいグループ
@@ -1478,8 +1478,8 @@ ja:
         newsletters: ニュースレター
         oauth_applications: OAuthアプリケーション
         participants: 参加者
-        participatory_process_groups: 参加型プロセスグループ
-        participatory_processes: 参加型プロセス
+        participatory_process_groups: 議題グループ
+        participatory_processes: 議題一覧
         participatory_processes_submenu:
           attachment_collections: フォルダ
           attachment_files: ファイル
@@ -1489,7 +1489,7 @@ ja:
           info: 情報
           moderations: モデレーション
           private_users: プライベート参加者
-          process_admins: 参加型プロセス管理者
+          process_admins: 議題 管理者
           steps: フェーズ
         questions_submenu:
           components: コンポーネント
@@ -1520,7 +1520,7 @@ ja:
           fields:
             created_at: 作成日時
             private: 非公開
-            promoted: 強調表示
+            promoted: ハイライト
             published: 公開済み
             title: タイトル
           name: Assembly
@@ -1561,7 +1561,7 @@ ja:
         conference:
           fields:
             created_at: 作成日時
-            promoted: 強調表示
+            promoted: ハイライト
             published: 公開済み
             title: タイトル
         conference_speaker:
@@ -1651,26 +1651,26 @@ ja:
           fields:
             created_at: 作成日時
             private: 非公開
-            promoted: 強調表示
+            promoted: ハイライト
             published: 公開済み
             title: タイトル
-          name: 参加型プロセス
+          name: 議題
         participatory_process_group:
           fields:
             name: 名前
-          name: 参加型プロセスグループ
+          name: 議題グループ
         participatory_process_step:
           fields:
             end_date: 終了日
             start_date: 開始日
             title: タイトル
-          name: プロセスのフェーズ
+          name: フェーズ
         participatory_process_user_role:
           fields:
             email: Eメールアドレス
             name: 名前
             role: ロール
-          name: 参加型プロセス管理者
+          name: 議題管理者
           roles:
             admin: 管理者
             collaborator: 共同編集者
@@ -1890,83 +1890,83 @@ ja:
         new:
           copy: コピー
           select: 複製したいデータを選択してください
-          title: 重複した参加型プロセス
+          title: 議題 複製
       participatory_process_groups:
         destroy:
-          error: 参加者型プロセスグループの破壊中にエラーが発生しました。
-          success: 参加型プロセスグループが正常に削除されました。
+          error: 議題グループの破壊中にエラーが発生しました。
+          success: 議題グループが正常に削除されました。
         edit:
-          title: 参加型プロセスグループを編集
+          title: 議題グループを編集
           update: 更新
         new:
           create: 作成
-          title: 新規参加型プロセスグループ
+          title: 新規議題グループ
         update:
-          error: この参加型プロセスグループの更新に問題がありました。
-          success: 参加型プロセスグループが正常に更新されました。
+          error: この議題グループの更新に問題がありました。
+          success: 議題グループが正常に更新されました。
       participatory_process_imports:
         create:
-          error: この参加型プロセスのインポート中に問題が発生しました。
-          success: 参加型プロセスは正常にインポートされました。
+          error: この議題のインポート中に問題が発生しました。
+          success: 議題は正常にインポートされました。
         new:
           import: インポート
           select: インポートしたいデータを選択
-          title: 参加型プロセスをインポート
+          title: 議題をインポート
       participatory_process_publications:
         create:
-          error: この参加型プロセスを公開する際に問題が発生しました。
-          success: 参加型プロセスが正常に公開されました。
+          error: この議題を公開する際に問題が発生しました。
+          success: 議題が正常に公開されました。
         destroy:
-          error: この参加型プロセスを非公開にする際に問題が発生しました。
-          success: 参加型プロセスを正常に非公開にしました。
+          error: この議題を非公開にする際に問題が発生しました。
+          success: 議題を正常に非公開にしました。
       participatory_process_step_activations:
         create:
-          error: この参加型プロセスのフェーズの有効化に問題が発生しました。
-          success: 参加型プロセスのフェーズが正常にアクティベートされました。
+          error: この議題のフェーズの有効化に問題が発生しました。
+          success: 議題のフェーズが正常にアクティベートされました。
       participatory_process_steps:
         create:
-          error: 新しい参加型プロセスのフェーズの作成に問題がありました。
-          success: 参加型プロセスのフェーズが正常に作成されました。
+          error: 新しい議題のフェーズの作成に問題がありました。
+          success: 議題のフェーズが正常に作成されました。
         default_title: イントロダクション
         destroy:
           error:
             active_step: アクティブなフェーズは削除できません。
-            last_step: 参加型プロセスの最後のフェーズは削除できません。
-          success: 参加型プロセスのフェーズが正常に削除されました。
+            last_step: 議題の最後のフェーズは削除できません。
+          success: 議題のフェーズが正常に削除されました。
         edit:
-          title: 参加型プロセスのフェーズを編集
+          title: 議題のフェーズを編集
           update: 更新
         index:
           steps_title: フェーズ
         new:
           create: 作成
-          title: 新しい参加型プロセスのフェーズ
+          title: 新しいフェーズ
         ordering:
-          error: 参加型プロセスのこれらのフェーズの順序変更に問題がありました。
+          error: 議題のこれらのフェーズの順序変更に問題がありました。
         update:
-          error: 参加型プロセスのこの段階の更新に問題がありました。
+          error: 議題のこのフェーズの更新に問題がありました。
           success: 参加段階が正常に更新されました。
       participatory_process_user_roles:
         create:
-          error: この参加型プロセスに参加者を追加する際に問題が発生しました。
-          success: 管理者がこの参加型プロセスに正常に追加されました。
+          error: この議題に参加者を追加する際に問題が発生しました。
+          success: 管理者がこの議題に正常に追加されました。
         destroy:
-          success: 管理者がこの参加型プロセスから削除しました。
+          success: 管理者がこの議題から削除しました。
         edit:
-          title: 参加型プロセス管理者を更新
+          title: 議題管理者を更新
           update: 更新
         index:
-          process_admins_title: 参加型プロセス管理者
+          process_admins_title: 議題管理者
         new:
           create: 作成
-          title: 新しい参加型プロセス管理者
+          title: 新しい議題管理者
         update:
-          error: 参加型プロセスの管理者を更新中に問題が発生しました。
-          success: 管理者がこの参加プロセスの更新に成功しました。
+          error: 議題の管理者を更新中に問題が発生しました。
+          success: 管理者がこの議題の更新に成功しました。
       participatory_processes:
         create:
-          error: 新しい参加型プロセスの作成に問題がありました。
-          success: 参加型プロセスが正常に作成されました。今度はそのフェーズを構成します。
+          error: 新しい議題の作成に問題がありました。
+          success: 議題が正常に作成されました。今度はそのフェーズを構成します。
         edit:
           update: 更新
         index:
@@ -1976,18 +1976,18 @@ ja:
           published: 公開済み
         new:
           create: 作成
-          title: 新しい参加型プロセス
+          title: 新しい議題
         update:
-          error: この参加型プロセスの更新に問題がありました。
-          success: 参加型プロセスが正常に更新されました。
+          error: この議題の更新に問題がありました。
+          success: 議題が正常に更新されました。
       participatory_processes_copies:
         create:
-          error: この参加型プロセスの複製中に問題が発生しました。
-          success: 参加型プロセスを複製しました。
+          error: この議題の複製中に問題が発生しました。
+          success: 議題を複製しました。
       participatory_processes_group:
         create:
-          error: 新しい参加型プロセスグループの作成中に問題が発生しました。
-          success: 参加型プロセスグループを作成しました。
+          error: 新しい議題グループの作成中に問題が発生しました。
+          success: 議題グループを作成しました。
       participatory_space_private_users:
         create:
           error: この参加スペースにプライベート参加者を追加する際に問題が発生しました。
@@ -2209,8 +2209,8 @@ ja:
         initiatives: イニシアチブ
         initiatives_types: イニシアチブ種別
         participants: 参加者
-        participatory_process_groups: 参加型プロセスグループ
-        participatory_processes: 参加型するプロセス
+        participatory_process_groups: 議題グループ
+        participatory_processes: 議題一覧
         questions: 質問
         response_groups: 応答グループ
         responses: 回答
@@ -2346,22 +2346,22 @@ ja:
       page:
         update: '%{user_name} が %{resource_name} の %{space_name} ページを更新しました'
       participatory_process:
-        create: '%{user_name} が %{resource_name} の参加型プロセスを作成しました'
-        publish: '%{user_name} が %{resource_name} 参加型プロセスを公開しました'
-        unpublish: '%{user_name} が %{resource_name} 参加型プロセスを非公開にしました'
-        update: '%{user_name} が %{resource_name} の参加型プロセスを更新しました'
+        create: '%{user_name} が %{resource_name} の議題を作成しました'
+        publish: '%{user_name} が %{resource_name} 議題を公開しました'
+        unpublish: '%{user_name} が %{resource_name} 議題を非公開にしました'
+        update: '%{user_name} が %{resource_name} の議題を更新しました'
       participatory_process_group:
-        create: '%{user_name} が %{resource_name} 参加型プロセスグループを作成しました'
-        update: '%{user_name} が %{resource_name} 参加型プロセスグループを更新しました'
+        create: '%{user_name} が %{resource_name} 議題グループを作成しました'
+        update: '%{user_name} が %{resource_name} 議題グループを更新しました'
       participatory_process_step:
-        activate: '%{user_name} が %{resource_name} の参加型プロセスで %{space_name} フェーズを有効化しました'
-        create: '%{user_name} が %{resource_name} の参加型プロセスで %{space_name} フェーズを作成しました'
-        delete: '%{user_name} が %{resource_name} の参加型プロセスで %{space_name} フェーズを削除しました'
-        update: '%{user_name} が %{resource_name} の参加型プロセスで %{space_name} フェーズを更新しました'
+        activate: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを有効化しました'
+        create: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを作成しました'
+        delete: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを削除しました'
+        update: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを更新しました'
       participatory_process_user_role:
-        create: '%{user_name} が参加者 %{resource_name} を %{space_name} 参加型プロセスに招待しました'
-        delete: '%{user_name} が参加者 %{resource_name} を %{space_name} 参加型プロセスから削除しました'
-        update: '%{user_name} が %{resource_name} 参加型プロセスにおける参加者 %{space_name} の役割を変更しました'
+        create: '%{user_name} が参加者 %{resource_name} を %{space_name} 議題に招待しました'
+        delete: '%{user_name} が参加者 %{resource_name} を %{space_name} 議題から削除しました'
+        update: '%{user_name} が %{resource_name} 議題における参加者 %{space_name} の役割を変更しました'
       participatory_space_private_user:
         create: '%{user_name} が %{resource_name} を非公開参加者に招待しました'
         create_via_csv: '%{user_name} が %{resource_name} を csv 経由で非公開の参加者に招待しました'
@@ -2592,7 +2592,7 @@ ja:
         purpose_of_action: アクションの目的
         read_less: 未読にする
         read_more: もっと読む
-        related_participatory_processes: 関連する参加型プロセス
+        related_participatory_processes: 関連する議題一覧
         scope: スコープ
         social_networks: ソーシャル ネットワーク
         target: 参加者
@@ -2601,7 +2601,7 @@ ja:
         assemblies_count: 会議体
         comments_count: コメント
         debates_count: ディベート
-        endorsements_count: いいね
+        endorsements_count: 支持
         headline: アクティビティ
         meetings_count: ミーティング
         orders_count: サポート
@@ -2891,8 +2891,7 @@ ja:
           step:
             comments_blocked: コメントがブロックされました
       add_comment_form:
-        account_message: <a href="%{sign_in_url}">アカウント</a> または <a href="%{sign_up_url}">サインアップ</a>
-          でコメントを追加します。
+        account_message: <a href="%{sign_in_url}">サインイン</a> または <a href="%{sign_up_url}">新規登録</a> してコメントを追加します。
         form:
           body:
             label: コメント
@@ -2902,7 +2901,7 @@ ja:
           user_group_id:
             label: 'コメント:'
         opinion:
-          neutral: ニュートラル
+          neutral: どちらでもない
         remaining_characters: 残り %{count} 文字
         remaining_characters_1: 残り%{count} 文字
         title: コメントを追加
@@ -2954,13 +2953,13 @@ ja:
         single_comment_link_title: シングルコメントへのリンクを取得
       comment_order_selector:
         order:
-          best_rated: 最高評価
-          most_discussed: 最も議論されたもの
+          best_rated: 評価がいい順
+          most_discussed: 議論されている順
           older: 古い順
-          recent: 最近のもの
+          recent: 新しい順
         title: 並び順：
       comment_thread:
-        title: '%{authorName} との会話'
+        title: '%{authorName} とのメッセージ'
       comments:
         blocked_comments_for_user_warning: 現時点ではコメントできませんが、以前のコメントを読むことができます。
         blocked_comments_warning: コメントは現時点で無効になっていますが、以前のコメントを読むことができます。
@@ -3029,7 +3028,7 @@ ja:
         actions:
           amend: 修正
           create: 作成
-          endorse: いいね
+          endorse: 承認する
           vote: サポート
           withdraw: 出金する
         name: 提案
@@ -3078,8 +3077,8 @@ ja:
             automatic_hashtags: すべての提案にハッシュタグを追加しました
             comments_blocked: コメントがブロックされました
             creation_enabled: 提案の作成は有効です
-            endorsements_blocked: いいねがブロックされました
-            endorsements_enabled: いいねを有効にする
+            endorsements_blocked: エンドースメントがブロックされました
+            endorsements_enabled: エンドースメントを有効にする
             proposal_answering_enabled: 提案の回答を有効にする
             publish_answers_immediately: 提案の回答をすぐに公開
             suggested_hashtags: 新しい提案のために参加者に提案したハッシュタグ
@@ -3315,13 +3314,13 @@ ja:
         objectives: 目的
         related_assemblies: 関連する参加スペース
         related_consultations: 関連する議案
-        related_participatory_processes: 関連する参加型プロセス
+        related_participatory_processes: 関連する議題一覧
       statistics:
         answers_count: 回答
         comments_count: コメント
         conference_count: カンファレンス
         debates_count: ディベート
-        endorsements_count: いいね
+        endorsements_count: 支持
         headline: アクティビティ
         meetings_count: ミーティング
         orders_count: サポート
@@ -3431,7 +3430,7 @@ ja:
       hero:
         name: ヒーロー画像
       highlighted_content_banner:
-        name: 強調表示されたコンテンツバナー
+        name: ハイライトされたコンテンツバナー
       how_to_participate:
         name: 参加方法
       html:
@@ -3457,7 +3456,7 @@ ja:
       show:
         download_data: データをダウンロード
         download_data_description: アカウントに関連付けられているすべての情報を持つファイルが <strong>%{user_email}</strong>に送信されます
-        request_data: ダウンロードする
+        request_data: メールを送信する
     datepicker:
       help_text: '期待されるフォーマット: %{datepicker_format}'
     debates:
@@ -3470,7 +3469,7 @@ ja:
       admin:
         debates:
           create:
-            invalid: ディベートの作成で不具合が発生しました。
+            invalid: ディベートの作成でエラーが発生しました。
             success: ディベートが正常に作成されました。
           destroy:
             success: ディベートを削除しました。
@@ -3507,7 +3506,7 @@ ja:
           category: カテゴリ
           category_prompt: カテゴリを選択
           citizens: 市民
-          official: オフィシャル
+          official: 公式提案
           origin: 元々の提案者：
           search: 検索
         filters_small_view:
@@ -3539,7 +3538,7 @@ ja:
           complete_profile: プロファイルを完了
           nickname_help: '%{organization} のエイリアス'
           sign_up: プロフィールを完成してください
-          subtitle: サインアップを完了するには、次のフォームに記入してください
+          subtitle: を完了するには、次のフォームに記入してください
           username_help: 投稿に表示される名前。匿名性を保証する目的で、任意の名前にすることができます。
       registrations:
         new:
@@ -3547,14 +3546,14 @@ ja:
           newsletter: 関連情報を含む時折ニュースレターを受け取る
           newsletter_title: 連絡先の権限
           nickname_help: '%{organization} のエイリアス'
-          password_help: '%{minimun_characters} 文字以上は一般的すぎてはいけません（例：123456）。ニックネームとメールアドレスと異なる必要があります。'
+          password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，ニックネームとメールアドレスは異なる必要があります。'
           sign_in: ログイン
           sign_up: 新規登録
           sign_up_as:
             legend: として登録
           subtitle: 下記の情報を入力して下さい。
           terms: 利用規約
-          tos_agreement: サインアップすることで、 %{link} に同意したことになります。
+          tos_agreement: 新規登録することで、 %{link} に同意したことになります。
           tos_title: 利用規約
           username_help: 投稿に表示される名前。匿名性を保証する目的で、任意の名前にすることができます。
       sessions:
@@ -3562,7 +3561,7 @@ ja:
           are_you_new?: 新規登録される方は
           register: こちら
           sign_in_disabled: 外部アカウントでアクセスできます
-          sign_up_disabled: サインアップは無効です。既存のアカウントを使用してアクセスすることができます
+          sign_up_disabled: 新規登録は無効です。既存のアカウントを使用してアクセスすることができます
       shared:
         newsletter_modal:
           buttons:
@@ -4017,11 +4016,11 @@ ja:
             email_subject: あなたがフォローしている提案が受け入れられました
             notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案が承認されました。
         proposal_endorsed:
-          email_intro: あなたがフォローしている%{endorser_name} %{endorser_nickname}さんが「%{resource_title}」の提案にいいねをしてくれたので、面白いかもしれません。ぜひチェックして投稿してみてください。
+          email_intro: あなたがフォローしている%{endorser_name} %{endorser_nickname}さんが「%{resource_title}」の提案にいいねしてくれたので、面白いかもしれません。ぜひチェックして投稿してみてください。
           email_outro: '%{endorser_nickname}をフォローしているため、この通知を受信しています。前のリンクをたどって通知の受信を停止することができます。'
-          email_subject: '%{endorser_nickname}は、新提案をいいねしました。'
+          email_subject: '%{endorser_nickname}は、新提案を承認しました。'
           notification_title: <a href="%{resource_path}">%{resource_title}の</a>提案は、<a
-            href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>によっていいねされました。
+            href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>によって承認されました。
         proposal_evaluating:
           affected_user:
             email_intro: あなたの提案 "%{resource_title}" は現在評価されています。このページで回答を確認できます：
@@ -4146,7 +4145,7 @@ ja:
       create:
         button: フォロー
         error: このリソースの後に問題がありました。
-        participatory_space: 既に<span class="show-for-sr">%{resource_name}</span>をフォローしています
+        participatory_space: フォロー
       destroy:
         button: フォローを停止
         error: リソースのフォローを解除する際に問題が発生しました。
@@ -4206,10 +4205,10 @@ ja:
           max_choices: '最大選択肢: %{n}'
         show:
           answer_questionnaire:
-            anonymous_user_message: <a href="%{sign_in_link}">アカウント</a> でサインインするか、
-              <a href="%{sign_up_link}">サインアップ</a> してフォームに回答してください。
+            anonymous_user_message: アカウントに<a href="%{sign_in_link}">サインイン</a> するか、
+              <a href="%{sign_up_link}">新規登録</a> してフォームに回答してください。
             title: フォームに回答
-          are_you_sure: このアクションは元に戻すことができず、回答を編集することができません。間違いありませんか？
+          are_you_sure: このアクションは元に戻すことができません。間違いありませんか？
           questionnaire_answered:
             body: このフォームにはすでに回答済みです。
             title: 回答済み
@@ -4220,7 +4219,7 @@ ja:
             body: フォームは個人の方のみご利用いただけます。
             title: フォームクローズ
           submit: 提出
-          tos_agreement: 参加することで、利用規約に同意します。
+          tos_agreement: 利用規約に同意して参加する
       remove_this_file: このファイルを削除
       user_answers_serializer:
         created_at: 回答日時
@@ -4414,7 +4413,7 @@ ja:
     help:
       main_topic:
         default_page:
-          content: '<p>%{organization} では、トップメニューにあるスペース（参加型プロセスや参加スペース、取り組み、議案）から、さまざまなトピックに参加したり、決定したりすることができます。</p>
+          content: '<p>%{organization} では、トップメニューにあるスペース（議題や参加スペース、取り組み、議案）から、さまざまなトピックに参加したり、決定したりすることができます。</p>
             <p>それぞれのスペースには、参加するためのさまざまなオプションが用意されています: (個人または他の人と一緒に) 提案をする 、ディベートに参加する、実施するプロジェクトの優先順位を決める、対面会議に出席する、その他のアクションを行う等。</p>
 
             '
@@ -4425,12 +4424,12 @@ ja:
         assemblies:
           contextual: '<p> <strong>会議体</strong>とは、組織の特定の領域や範囲について決定を下すために定期的に会合を開く組織のメンバーのグループです。</p>
             <p>会議体は非公開のものもあれば、公開されているものもあります。公開されている場合は、その集会に参加することができます (例えば、定員に余裕があれば出席したり、議題にポイントを追加したり、この組織の提案や決定に対してコメントしたりすることができます)。</p>
-            <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（プロセスを監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>
+            <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（議題を監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>
 
             '
           page: '<p> <strong>会議体</strong>とは、組織の特定の領域や範囲について決定を下すために定期的に会合を開く組織のメンバーのグループです。</p>
             <p>会議体は非公開のものもあれば、公開されているものもあります。公開されている場合は、その集会に参加することができます (例えば、定員に余裕があれば出席したり、議題にポイントを追加したり、この組織の提案や決定に対してコメントしたりすることができます)。</p>
-            <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（プロセスを監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>
+            <p>例：総会（年に一度開催され、組織の主要な活動方針と執行機関を投票で決定する）、平等諮問評議会（組織内の男女比率等を改善する方法についての提案を行うために2ヶ月ごとに開催される）、評価委員会（議題を監視するために毎月開催される）、保証機関（意思決定手続きを改善するために事件や虐待、提案を収集する）などは、すべて会議体の例です。</p>
 
             '
           title: 会議体とは？
@@ -4450,26 +4449,26 @@ ja:
           contextual: '<p> <strong>イニシアチブ</strong>とは、組織が特定のアクション (規制の変更、プロジェクトの開始、部署や道路の名前の変更など)
             を実行するための (デジタルの) 署名を集めることによって、誰もが (他のチャネルや参加スペースとは無関係に) 主体的に推進できる提案のことです。
             </p> <p>イニシアチブの推進者は、その目的を定義し、支持を集め、討論し、普及させ、出席者から署名を集めることができる集会場所を定義したり、他の参加者に開かれた議論を行ったりすることができます。</p><p>例:
-            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額のプロセスを開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
+            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額の議題を開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
 
             '
           page: '<p> <strong>イニシアチヴ</strong>とは、組織が特定のアクション (規制の変更、プロジェクトの開始、部署や道路の名前の変更など)
             を実行するための (デジタルの) 署名を集めることによって、誰もが (他のチャネルや参加スペースとは無関係に) 主体的に推進できる提案のことです。
             </p> <p>イニシアチブの推進者は、その目的を定義し、支持を集め、討論し、普及させ、出席者から署名を集めることができる集会場所を定義したり、他の参加者に開かれた議論を行ったりすることができます。</p><p>例:
-            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額のプロセスを開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
+            イニシアチブは、組織のすべての人々の間で協議を行うために署名を集めることができ、また、組織の領域や地域の予算増額の議題を開始するために、集会を作成または招集することができます。署名を集める過程で、より多くの人々がこの要求を追加し、組織内でそれを推進することができます。</p>
 
             '
           title: イニシアチブとは？
         participatory_processes:
-          contextual: '<p> <strong>参加型プロセス</strong>とは、特定のトピックを定義し、決定することを目的とした一連の参加型活動(例えば、最初にアンケートに記入し、次に提案を行い、対面または仮想会議で議論し、最終的に優先順位をつける)のことです。
-            </p> <p>参加型プロセスの例としては、委員会メンバーの選出プロセス(最初に立候補者が提示され、議論され、最終的に立候補者が選ばれる)、参加型予算(提案がなされ、経済的に評価され、利用可能な資金で投票される)、戦略的計画プロセス、規制や規範の共同起草、都市空間の設計、公共政策計画の作成などが挙げられます。</p>
+          contextual: '<p> <strong>議題</strong>とは、特定のトピックを定義し、決定することを目的とした一連の参加型活動(例えば、最初にアンケートに記入し、次に提案を行い、対面または仮想会議で議論し、最終的に優先順位をつける)のことです。
+            </p> <p>議題の例としては、委員会メンバーの選出された議題(最初に立候補者が提示され、議論され、最終的に立候補者が選ばれる)、参加型予算(提案がなされ、経済的に評価され、利用可能な資金で投票される)、戦略的計画プロセス、規制や規範の共同起草、都市空間の設計、公共政策計画の作成などが挙げられます。</p>
 
             '
-          page: '<p> <strong>参加型プロセス</strong>とは、特定のトピックを定義し、決定することを目的とした一連の参加型活動(例えば、最初にアンケートに記入し、次に提案を行い、対面または仮想会議で議論し、最終的に優先順位をつける)のことです。
-            </p> <p>参加型プロセスの例としては、委員会メンバーの選出プロセス(最初に立候補者が提示され、議論され、最終的に立候補者が選ばれる)、参加型予算(提案がなされ、経済的に評価され、利用可能な資金で投票される)、戦略的計画プロセス、規制や規範の共同起草、都市空間の設計、公共政策計画の作成などが挙げられます。</p>
+          page: '<p> <strong>議題</strong>とは、特定のトピックを定義し、決定することを目的とした一連の参加型活動(例えば、最初にアンケートに記入し、次に提案を行い、対面または仮想会議で議論し、最終的に優先順位をつける)のことです。
+            </p> <p>議題の例としては、委員会メンバーの選出された議題(最初に立候補者が提示され、議論され、最終的に立候補者が選ばれる)、参加型予算(提案がなされ、経済的に評価され、利用可能な資金で投票される)、戦略的計画プロセス、規制や規範の共同起草、都市空間の設計、公共政策計画の作成などが挙げられます。</p>
 
             '
-          title: 参加型プロセスとは何ですか?
+          title: 議題とは何ですか?
     initiatives:
       actions:
         answer: 回答
@@ -4600,7 +4599,7 @@ ja:
           success: あなたのリクエストはイニシアチブの作成者に送信されました。
       content_blocks:
         highlighted_initiatives:
-          name: イニシアチブを強調しました
+          name: イニシアチブをハイライトしました
       create_initiative:
         fill_data:
           back: 戻る
@@ -4735,7 +4734,7 @@ ja:
         orders:
           label: 'イニシアチブの並べ替え:'
           most_commented: コメントが多い順
-          most_voted: 最も署名されたもの
+          most_voted: 投票数が多い順
           random: Random
           recent: 直近のもの
           recently_published: 直近に公開
@@ -5131,33 +5130,33 @@ ja:
       help: ヘルプ
       home: ホーム
       initiatives: イニシアチブ
-      processes: 参加型プロセス
+      processes: 議題一覧
     messaging:
       conversation_mailer:
         new_conversation:
           greeting: Hi, %{recipient}!
-          intro: '%{sender} があなたと新しい会話を開始しました。こちらをクリックしてください:'
+          intro: '%{sender} さんがあなたと新しいメッセージを開始しました。こちらをクリックしてください:'
           outro: お楽しみください!
-          subject: '%{sender} があなたと会話を開始しました'
+          subject: '%{sender} さんがあなたとメッセージを開始しました'
         new_message:
           greeting: Hi, %{recipient}!
-          intro: '%{sender} さんがあなたの会話に新しいメッセージを投稿しました。こちらをクリックしてください：'
+          intro: '%{sender} さんがあなたに新しいメッセージを送信しました。こちらをクリックしてください：'
           outro: お楽しみください!
           subject: '%{sender} からの新しいメッセージがあります'
       conversations:
         create:
-          error: 会話が開始されませんでした。後でもう一度お試しください。
+          error: メッセージが開始されませんでした。後でもう一度お試しください。
         index:
-          no_conversations: 会話がまだありません
-          title: 会話
+          no_conversations: メッセージがまだありません
+          title: メッセージ
         reply:
           send: 送信
           title: 返信
         show:
-          title: '%{usernames} との会話'
+          title: '%{usernames} とのメッセージ'
         start:
           send: 送信
-          title: 会話を開始
+          title: メッセージを開始
         update:
           error: メッセージが送信されませんでした。後でもう一度お試しください。
     metrics:
@@ -5180,9 +5179,9 @@ ja:
       download:
         csv: ダウンロードデータ (csv)
       endorsements:
-        description: 提案へのいいねの数
-        object: いいね
-        title: いいね
+        description: 提案への承認数
+        object: 承認
+        title: 支持
       followers:
         description: この参加スペースに従う参加者数
         object: フォロワー
@@ -5196,9 +5195,9 @@ ja:
         object: 参加者
         title: 参加者
       participatory_processes:
-        description: この組織の参加型プロセス数
-        object: 参加型プロセス
-        title: 参加型プロセス
+        description: この組織の議題数
+        object: 議題一覧
+        title: 議題一覧
       proposals:
         description: 提案数
         object: 提案
@@ -5325,12 +5324,12 @@ ja:
             success: ページを保存しました。
       home:
         extended:
-          debates: ディベート
-          debates_explanation: 討論し、話し合い、意見を共有し、関連するトピックを豊かにしましょう。
-          how_to_participate: 参加型プロセスに参加するにはどうすればいいですか?
-          meetings: ミーティング
-          meetings_explanation: 公開ミーティングに参加できる場所と時間を確認します。
-          more_info: '%{resource_name} に関する詳細情報'
+          debates: 掲示板機能
+          debates_explanation: 提案を行うことができます。また、既存の提案についてコメントしたり、支持することができます。
+          how_to_participate: 本サービスには以下の機能があります。
+          meetings: イベント参加機能
+          meetings_explanation: "各種イベントの予告などが表示されます。\n日時や場所、資料などの詳細情報が掲載されていますので、参加したいイベントの参加申請をこちらからすることが可能です。また自身で申し込んだイベントの管理ができます。"
+          more_info: '詳細'
           proposals: 提案
           proposals_explanation: 提案を行い、既存のものをサポートし、見たい変更を促進します。
         footer_sub_hero:
@@ -5349,13 +5348,13 @@ ja:
           conferences_count: カンファレンス
           consultations_count: 議案
           debates_count: ディベート
-          endorsements_count: いいね
+          endorsements_count: 支持
           headline: '%{organization} の現在の状態'
           meetings_count: ミーティング
           orders_count: 投票
           pages_count: ページ
           posts_count: 投稿
-          processes_count: 参加型プロセス
+          processes_count: 議題
           projects_count: プロジェクト
           proposals_accepted: 承認された提案
           proposals_count: 提案
@@ -5398,13 +5397,13 @@ ja:
     participatory_process_groups:
       show:
         group_participatory_processes:
-          one: '%{group}用1プロセス'
-          other: '%{group}用の%{count}プロセス'
-        title: 参加型プロセスグループ
+          one: '%{group}用 議題'
+          other: '%{group}用の%{count}議題'
+        title: 議題グループ
     participatory_process_steps:
       index:
-        process_steps: 参加型プロセスのフェーズ
-        title: 参加型プロセスのフェーズ
+        process_steps: 議題のフェーズ
+        title: 議題のフェーズ
     participatory_processes:
       admin:
         content_blocks:
@@ -5412,12 +5411,12 @@ ja:
             max_results: 表示する要素の最大量
         participatory_process_copies:
           form:
-            slug_help: 'URLスラグは、この参加型プロセスを指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
+            slug_help: 'URLスラグは、この議題を指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
               %{url}'
         participatory_process_imports:
           form:
             document_legend: ドキュメントを追加
-            slug_help: 'URLスラグは、この参加型プロセスを指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
+            slug_help: 'URLスラグは、この議題を指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
               %{url}'
         participatory_process_steps:
           form:
@@ -5426,35 +5425,35 @@ ja:
             cta_text_help: 設定されていない場合、ボタンは表示されません。
         participatory_processes:
           form:
-            announcement_help: ここに入力したテキストは、参加型プロセス情報のすぐ下にユーザーに表示されます。
+            announcement_help: ここに入力したテキストは、議題内の情報のすぐ下にユーザーに表示されます。
             duration: 期間
             filters: フィルタ
             images: 画像
             metadata: メタデータ
             other: その他
-            related_processes: 関連する参加型プロセス
+            related_processes: 関連する議題一覧
             scope_type_max_depth_help: スコープフィルターの深さを制限します。フィルターは、一般から選択したスコープタイプに表示されます。
             select_an_area: エリアを選択
-            select_process_group: 参加型プロセス グループを選択
-            slug_help: 'URLスラグは、この参加型プロセスを指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
+            select_process_group: 議題 グループを選択
+            slug_help: 'URLスラグは、この議題を指すURLを生成するために使用されます。 文字、数字、ダッシュのみを受け付け、文字で始める必要があります。例:
               %{url}'
             title: 一般情報
             visbility: 公開範囲
       content_blocks:
         highlighted_processes:
-          name: ハイライトされた参加型プロセス
+          name: 注目の議題一覧
       index:
-        title: 参加型プロセス
+        title: 議題
       last_activity:
-        new_participatory_process: 参加型プロセス
+        new_participatory_process: 議題
       pages:
         home:
           highlighted_processes:
-            active_processes: アクティブな参加型プロセス
+            active_processes: アクティブな議題一覧
             active_step: アクティブフェーズ
             more_information: 詳細情報
             participate: 参加
-            see_all_processes: すべての参加型プロセスを見る
+            see_all_processes: すべての議題を見る
       participatory_process_groups:
         highlighted_meetings:
           past_meetings: 過去の会議
@@ -5467,21 +5466,21 @@ ja:
         filters:
           counters:
             active:
-              one: 1つのアクティブプロセス
-              other: '%{count} アクティブプロセス'
+              one: アクティブな議題
+              other: '%{count} 個のアクティブな議題'
             all:
-              one: 1プロセス
-              other: '%{count}処理'
+              one: 議題
+              other: '議題一覧'
             past:
-              one: 1 過去のプロセス
-              other: '%{count} 過去のプロセス'
+              one: 過去の議題
+              other: '%{count} 過去の議題一覧'
             upcoming:
-              one: 1 アップグレードプロセス
-              other: '%{count} 今後のプロセス'
+              one: 予定されている議題
+              other: 予定されている議題一覧
           explanations:
-            no_active: アクティブな参加型プロセスはありません
-            no_active_nor_upcoming: アクティブな参加型プロセスも今後の参加型プロセスもありません
-            no_active_nor_upcoming_callout: アクティブな参加型プロセスも今後予定されている参加型プロセスもありません。ここでは過去の参加型プロセスのリストを示します。
+            no_active: アクティブな議題はありません
+            no_active_nor_upcoming: アクティブな議題も今後予定されている議題もありません
+            no_active_nor_upcoming_callout: アクティブな議題も今後予定されている議題もありません。ここでは過去の議題のリストを示します。
           names:
             active: アクティブ
             all: すべて
@@ -5497,8 +5496,8 @@ ja:
         local_area: 組織エリア
         participatory_scope: 決定されるもの
         participatory_structure: どのように決められますか？
-        private_space: これはプライベートな参加型プロセスです
-        related_processes: 関連する参加型プロセス
+        private_space: これはプライベートな議題です
+        related_processes: 関連する議題
         scope: スコープ
         start_date: 開始日
         target: 参加者
@@ -5507,7 +5506,7 @@ ja:
         answers_count: 回答
         comments_count: コメント
         debates_count: ディベート
-        endorsements_count: いいね
+        endorsements_count: 支持
         followers_count: フォロワー
         headline: 統計情報
         meetings_count: ミーティング
@@ -5516,7 +5515,7 @@ ja:
         pages_count: ページ
         participants_count: 参加者
         posts_count: 投稿
-        processes_count: 参加型プロセス
+        processes_count: 議題
         projects_count: プロジェクト
         proposals_count: 提案
         results_count: 結果
@@ -5686,12 +5685,12 @@ ja:
             body: 本文
             comments_count: コメント数
             comments_negative_count: 反対
-            comments_neutral_count: ニュートラル
+            comments_neutral_count: どちらでもない
             comments_positive_count: お気に入り
             created_at: 作成日
             documents: ドキュメント
-            endorsements_count: いいね数
-            endorsements_ranking: いいねによるランキング
+            endorsements_count: エンドースメント数
+            endorsements_ranking: 承認によるランキング
             endorsers: Endorsers
             link: リンク
             n_more_endorsers:
@@ -5754,27 +5753,27 @@ ja:
           delete: '%{user_name} が %{proposal_title} の提案から評価者を解除しました'
       answers:
         accepted: 承認済み
-        evaluating: 評価
-        not_answered: 応答がありません
-        rejected: 拒否
+        evaluating: 評価中
+        not_answered: 未回答
+        rejected: 却下
         withdrawn: 引き落し
       application_helper:
         filter_category_values:
           all: すべて
         filter_origin_values:
           all: すべて
-          citizens: Citizens
+          citizens: 市民
           meetings: ミーティング
-          official: オフィシャル
+          official: 公式提案
           user_groups: グループ
         filter_scope_values:
           all: すべて
         filter_state_values:
           accepted: 承認済み
           all: すべて
-          evaluating: 評価
-          not_answered: 応答がありません
-          rejected: 拒否
+          evaluating: 評価中
+          not_answered: 未回答
+          rejected: 却下
         filter_type_values:
           all: すべて
           amendments: 修正
@@ -5841,9 +5840,9 @@ ja:
           new_collaborative_draft: 新しい共同作業の下書きを作成
         orders:
           label: '下書きの注文:'
-          most_contributed: 最も貢献したもの
-          random: Random
-          recent: 最近のもの
+          most_contributed: 貢献した順
+          random: ランダム
+          recent: 新しい順
         requests:
           accepted_request:
             error: コラボレーターとして受け入れることができませんでした。後でもう一度お試しください。
@@ -5935,13 +5934,13 @@ ja:
           endorse: いいね
       proposal_endorsements:
         create:
-          error: いいねできませんでした。
+          error: いいねができませんでした
         identities:
           done: äº†
           select_identity: アイデンティティを選択
       proposal_endorsements_helper:
         endorsement_button:
-          already_endorsed: いいね済み
+          already_endorsed: いいね
           endorse: いいね
         render_endorsements_button_card_part:
           endorse: いいね
@@ -5958,8 +5957,8 @@ ja:
           title: 投稿される内容を確認
         count:
           proposals_count:
-            one: '%{count}提案'
-            other: '%{count}の提案'
+            one: '提案一覧'
+            other: '提案一覧'
         edit:
           attachment_legend: (オプション) 添付ファイルを追加
           back: 戻る
@@ -6008,12 +6007,12 @@ ja:
         orders:
           label: 提案の順序：
           most_commented: コメントが多い順
-          most_endorsed: 最もいいねされた
-          most_followed: 最もフォローされている
-          most_voted: 最もサポートされています
+          most_endorsed: いいねが多い順
+          most_followed: フォローが多い順
+          most_voted: サポートが多い順
           random: ランダム
-          recent: 最近のもの
-          with_more_authors: より多くの著者と一緒に
+          recent: 新しい順
+          with_more_authors: 著者が多い順
         participatory_texts:
           index:
             document_index: ドキュメントのインデックス
@@ -6034,7 +6033,7 @@ ja:
           back_to: 前に戻る
           changes_at_title: 「%{title} 」に修正
           edit_proposal: 提案を編集
-          endorsements_list: いいね一覧
+          endorsements_list: 承認者一覧
           estimated_cost: 推定コスト
           hidden_endorsers_count:
             one: と%{count}より多くの人
@@ -6344,7 +6343,7 @@ ja:
         orders:
           label: 並べ替えの順序を指定します。
           random: ランダム
-          recent: 最近の
+          recent: 新しい順
         results_count:
           count:
             one: せんこうあん
@@ -6681,7 +6680,7 @@ ja:
       locked: あなたのアカウントはロックされています。
       not_found_in_database: '%{authentication_keys} またはパスワードが無効です。'
       timeout: セッションの有効期限が切れました。続行するには再度ログインしてください。
-      unauthenticated: 続行する前にサインインまたはサインアップする必要があります。
+      unauthenticated: 続行する前にサインインまたは新規登録する必要があります。
     invitations:
       edit:
         header: アカウントの作成を完了する
@@ -6726,7 +6725,7 @@ ja:
       invite_collaborator:
         subject: あなたは %{organization} でコラボレーションするよう招待されています
       invite_private_user:
-        subject: '%{organization} のプライベート参加プロセスに招待されました'
+        subject: '%{organization} のプライベートな議題に招待されました'
       join_conference:
         subject: カンファレンスへの招待
       join_meeting:
@@ -6759,7 +6758,7 @@ ja:
         change_your_password: パスワードを変更する
         confirm_new_password: 新しいパスワードを確認
         new_password: 新しいパスワード
-        password_help: '%{minimun_characters} 文字以上は一般的すぎてはいけません（例：123456）。ニックネームとメールアドレスと異なる必要があります。'
+        password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，ニックネームとメールアドレスは異なる必要があります。'
       new:
         forgot_your_password: パスワードをお忘れですか？
         send_me_reset_password_instructions: パスワードリセット手順を送信してください
@@ -6829,7 +6828,7 @@ ja:
       long_words: には長すぎる単語が含まれています（35文字以上）
       must_start_with_caps: 先頭は大文字でなければなりません
       nesting_too_deep: サブカテゴリの中にあることはできません
-      not_found: 見つかりませんでした。以前にサインアップしましたか？
+      not_found: 見つかりませんでした。以前にアカウントを登録しましたか？
       not_locked: ロックされていません
       not_saved:
         one: リクエストの処理にエラーが発生しました。
@@ -6963,14 +6962,14 @@ ja:
       participatory_process_groups:
         participatory_process_group:
           browse: 検索
-          processes_count: '参加型プロセス:'
+          processes_count: '議題:'
       participatory_process_widgets:
         show:
           active_step: アクティブフェーズ
           take_part: 参加する
       participatory_processes:
         index:
-          promoted_processes: ハイライトされた参加型プロセス
+          promoted_processes: 注目の議題一覧
         participatory_process:
           active_step: '現在のフェーズ:'
           more_info: 詳細情報
@@ -6981,9 +6980,9 @@ ja:
           take_part: 参加する
       process_header_steps:
         step: 段階 %{current} / %{total}
-        view_steps: プロセスのフェーズ
+        view_steps: フェーズ
       process_navigation:
-        process_menu_item: プロセス
+        process_menu_item: 概要
       question_components:
         question_menu_item: 質問
         unfold: 展開する
@@ -6992,7 +6991,7 @@ ja:
         back_to_question: 質問に戻る
       user_menu:
         admin_dashboard: 管理ダッシュボード
-        conversations: 会話
+        conversations: メッセージ
         notifications: 通知
         profile: マイアカウント
         public_profile: 公開プロフィール
