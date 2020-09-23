@@ -15,7 +15,6 @@ end
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   omniauth_config = Rails.application.secrets.dig(:omniauth)
-  #{:provider_ignores_state => true}
 
   if omniauth_config
     if omniauth_config[:developer].present?

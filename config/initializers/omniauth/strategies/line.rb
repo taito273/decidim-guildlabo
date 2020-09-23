@@ -9,7 +9,7 @@ module OmniAuth
         {
           name:        raw_info['displayName'],
           image:       raw_info['pictureUrl'],
-          nickname:    'nickname_sample',
+          nickname:    '',
           description: raw_info['statusMessage'],
           email:    JWT.decode(access_token.params['id_token'], '0eddb092288cbdd669e1bbe71118df3a').first['email']#追記
         }
