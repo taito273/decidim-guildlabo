@@ -468,6 +468,10 @@ h6, .h6 {
   color: #fff;
 }
 
+li.main-footer-download_open_data {
+  display: none;
+}
+
 /* Home highligt */
 @media print, screen and (min-width: 64em) {
 .highligted-content-banner .highligted-content-banner__container {
