@@ -6,16 +6,26 @@ end
 require './lib/line_const'
 
 
-def extract_pattern(str)
+def extract_translation(str)
   start_index = str.index('"ja": ') + 7
   end_index = str.index('"', start_index+1) -1
   str[start_index..end_index]
 end
 
+
+def extract_proposal_creation_permission(str)
+
+    start_index = str.index('"creation_enabled": ') + 20
+    end_index = str.index(',', start_index+1) -1
+    str[start_index..end_index]
+
+end  
+
 def show_processes(client, event)
     processes = ActiveRecord::Base.connection.select_all("select * from decidim_participatory_processes;")
     p 'line_bot_api.rb l7'
     caroucel = []
+    hostname = 'https://7654a74b91ca.ngrok.io/'
 
     button = { "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
               "imageAspectRatio": "rectangle",
@@ -53,8 +63,8 @@ def show_processes(client, event)
           print(process['id'])
 
           button_tmp['thumbnailImageUrl'] = process["banner_image"]
-          button_tmp['title'] = extract_pattern(process['title'])
-          button_tmp['text'] = extract_pattern(process['short_description']).gsub(%r{</?[^>]+?>},'')
+          button_tmp['title'] = extract_translation(process['title'])
+          button_tmp['text'] = extract_translation(process['short_description']).gsub(%r{</?[^>]+?>},'')
 
           print('button_tmp')
           #print(button_tmp)
@@ -63,23 +73,49 @@ def show_processes(client, event)
           #print(process['slug'])
           print('end_____')
 
-          button_tmp[:defaultAction][:uri] = 'https://decidim-line.guild.engineer/' + process['slug']
-          button_tmp[:actions][0][:uri] = 'https://decidim-line.guild.engineer/' + process['slug']
-          button_tmp[:actions][2][:uri] = 'https://decidim-line.guild.engineer/' + process['slug'] #+ proposalコンポーネントのid f/#{}/proposals/new
-          button_tmp[:actions][1][:text] = extract_pattern(process['title']) + ' の提案一覧'
+          button_tmp[:defaultAction][:uri] = hostname + 'processes/' + process['slug']
+          button_tmp[:actions][0][:uri] = hostname + 'processes/' + process['slug']
+          button_tmp[:actions][1][:text] = extract_translation(process['title']) + ' の提案一覧'
+          button_tmp[:actions][2][:uri] = hostname + 'processes/' + process['slug']
+          proposals_component_id = ''
+          proposal_creation_enabled = false
 
           proposals_components = ActiveRecord::Base.connection.select_all("select * from decidim_components where participatory_space_id = #{process['id']} and manifest_name = 'proposals';")
           # 提案コンポーネントのURLはプロセスからはわからないので，それを見つける
-          print(proposals_components)
-          print(proposals_components.rows)
 
           proposals_components.each do |proposals_component|
-            if proposals_component['published_at'] #一つでもパブリッシュされていれば，それで決定
+            proposals_component_id = ''
+            proposal_creation_enabled = false
+            if proposals_component['published_at'] #一つでもパブリッシュされていれば，それで決定 (提案コンポーネントは必ず存在するとしている)
               proposals_component_id = proposals_component['id']
+
+              print('______aaaa_______')
+              #print(proposals_component['settings'])
+
+              if extract_proposal_creation_permission(proposals_component['settings']) == 'true'
+                proposal_creation_enabled = true
+              end  
+
+              break
             end
           end
 
-          button_tmp[:actions][1][:text] = extract_pattern(process['title']) + ' の提案一覧'
+          print(extract_translation(process['title']))
+          print(proposals_component_id)
+          print(proposal_creation_enabled)
+          
+          #　提案作成が可能な場合のみ提案を作成アクションを残す
+          if proposal_creation_enabled then
+            button_tmp[:actions][2][:uri] = proposals_component_id != '' ? hostname + 'processes/' + process['slug'] + "/f/#{proposals_component_id}/proposals/new" : hostname + 'processes/' + process['slug']
+          else
+            #button_tmp[:actions].delete_at(2)
+            # カルーセル，選択肢の数が同じじゃないといけないらしい
+
+            button_tmp[:actions][2][:uri] = hostname + 'processes/' + process['slug'] + "/f/#{proposals_component_id}/proposals/new"
+
+          end
+          print(button_tmp)
+
 
 
 
