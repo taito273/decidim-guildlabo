@@ -58,7 +58,7 @@ def show_processes(client, event)
             }
 
     processes.each do |process|
-      if process['published_at']
+      if process['published_at'] && process['promoted']
           button_tmp =  button.deep_dup
           print(process['id'])
 
