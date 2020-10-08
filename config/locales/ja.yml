@@ -171,7 +171,7 @@ ja:
         document_number: ドキュメント番号
         email: Eメールアドレス
         name: 名前
-        nickname: ニックネーム：
+        nickname: アカウントID：
         phone: 電話番号
       id: ID
       id_document_information:
@@ -482,7 +482,7 @@ ja:
         about: 自己紹介
         email: あなたのメールアドレス
         name: あなたの名前
-        nickname: ニックネーム：
+        nickname: アカウントID：
         password: パスワード
         password_confirmation: パスワードの確認
         personal_url: 個人用URL
@@ -607,7 +607,7 @@ ja:
       decidim/user:
         current_password: 現在のパスワード
         email: Eメールアドレス
-        name: ニックネーム：
+        name: アカウントID：
         password: パスワード
         password_confirmation: パスワードの確認
         remember_me: ログイン状態を維持する
@@ -1335,7 +1335,7 @@ ja:
         search_label: 検索
         search_placeholder:
           id_string_or_title_cont: '%{collection} をIDまたはタイトルで検索します。'
-          name_or_nickname_or_email_cont: '%{collection} をメール、名前、ニックネームで検索します。'
+          name_or_nickname_or_email_cont: '%{collection} をメール、名前、アカウントIDで検索します。'
           title_cont: '%{collection} をタイトルで検索します。'
           title_or_description_or_id_string_or_author_name_or_author_nickname_cont: '%{collection}
             をタイトル、説明、ID、または著者名で検索します。'
@@ -1840,7 +1840,7 @@ ja:
           badge: バッジ
           created_at: 作成日時
           name: 名前
-          nickname: ニックネーム：
+          nickname: アカウントID：
           not_officialized: 公式化されていない
           officialize: 公式化
           officialized: 公式化済み
@@ -3546,7 +3546,7 @@ ja:
           newsletter: 関連情報を含む時折ニュースレターを受け取る
           newsletter_title: 連絡先の権限
           nickname_help: '%{organization} のエイリアス'
-          password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，ニックネームとメールアドレスは異なる必要があります。'
+          password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，アカウントIDとメールアドレスは異なる必要があります。'
           sign_in: ログイン
           sign_up: 新規登録
           sign_up_as:
@@ -3592,7 +3592,7 @@ ja:
           publish_content: コンテンツを公開する
           see_email: メールを見る
           see_name: 名前を確認してください
-          see_username: ニックネームを見る
+          see_username: アカウントIDを見る
           this_application_will_be_able_to: 'このアプリケーションは次のことができます:'
           this_application_will_not_be_able_to: このアプリケーションは次のことができません：
           update_profile: プロフィールを更新
@@ -6612,7 +6612,7 @@ ja:
               mark_as_sent: 送信されたマーク
               not_yet_sent: まだ送信されていません
               title: 継続的な検証
-              username: ニックネーム
+              username: アカウントID
               verification_code: 検証コード
           postages:
             create:
@@ -6684,9 +6684,9 @@ ja:
     invitations:
       edit:
         header: アカウントの作成を完了する
-        nickname_help: '%{organization} のニックネーム。'
+        nickname_help: '%{organization} のアカウント。'
         submit_button: 保存
-        subtitle: 招待を受け入れる場合は、ニックネームとパスワードを設定してください。
+        subtitle: 招待を受け入れる場合は、アカウントIDとパスワードを設定してください。
       invitation_removed: 招待が削除されました。
       invitation_token_invalid: 指定された招待トークンは無効です！
       new:
@@ -6713,7 +6713,7 @@ ja:
         hello: こんにちは、 %{email} さん。
         ignore: '招待を受け入れたくない場合は、このメールを無視してください。<br />
 
-          上記のリンクにアクセスし、ニックネームとパスワードを設定するまで、あなたのアカウントは作成されません。'
+          上記のリンクにアクセスし、アカウントIDとパスワードを設定するまで、あなたのアカウントは作成されません。'
         invited_you_as_admin: '%{invited_by} さんが %{application}の管理者としてあなたを招待しました。以下のリンクから承認できます。'
         invited_you_as_private_user: '%{invited_by} が %{application}の非公開参加者としてあなたを招待しました。以下のリンクから承認できます。'
         someone_invited_you: 誰かが %{application}にあなたを招待しました。以下のリンクから受け入れることができます。
@@ -6758,7 +6758,7 @@ ja:
         change_your_password: パスワードを変更する
         confirm_new_password: 新しいパスワードを確認
         new_password: 新しいパスワード
-        password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，ニックネームとメールアドレスは異なる必要があります。'
+        password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，アカウントIDとメールアドレスは異なる必要があります。'
       new:
         forgot_your_password: パスワードをお忘れですか？
         send_me_reset_password_instructions: パスワードリセット手順を送信してください
