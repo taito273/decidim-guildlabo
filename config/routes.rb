@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/line_bot_api/callback' => 'line_bot_api#callback'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
