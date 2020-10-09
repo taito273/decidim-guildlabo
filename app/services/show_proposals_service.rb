@@ -74,8 +74,6 @@ class ShowProposalsService
 
         end
 
-        print(caroucel)
-
 
         message = 
                 {
@@ -87,13 +85,6 @@ class ShowProposalsService
                     }
                 }
         result = client.reply_message(event['replyToken'], message)
-
-        print('result')
-        print(result)
-        print(result.body)
-        print(result.entity)
-        print(result.code)
-        print(result.message)
     end
 
 

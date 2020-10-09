@@ -39,8 +39,10 @@ class LineBotApiController < ApplicationController
         return
       end
 
-      if event.message['text'] == 'プロセス一覧' || event.message['text'] == '提案一覧'
+      if event.message['text'] == 'プロセス一覧'
         show_process_service.show_processes(client, event)
+      elsif event.message['text'] == '提案一覧'
+        show_process_service.show_processes(client, event, true)
       elsif event.message['text'].slice(-6, 6) == ' の提案一覧'
         # メッセージは，[id] [process_name] の提案一覧　として来る
         show_proposal_service.show_all_proposals(client, event)

@@ -4,16 +4,16 @@ class LineUserVerificationService
     def decidim_user_verification(client, event)
         hostname = "https://decidim-line.guild.engineer"
     
-        uid = event['source'][:userId]
+        uid = event['source']["userId"]
     
-        user = Decidim::Authorization.find_by(decidim_user_id: uid)
+        user = Decidim::Identity.find_by(uid: uid)
     
         if user
             return false
         else
             message = {
                 "type": "template",
-                "altText": "ユーザー情報が見つかりません",
+                "altText": "LINEユーザー情報が見つかりません",
                 "template": {
                     "type": "buttons",
                     "thumbnailImageUrl": "https://decidim-line.guild.engineer",
