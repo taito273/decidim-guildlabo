@@ -43,15 +43,13 @@ class LineBotApiController < ApplicationController
       end
 
       if event.message['text'] == 'プロセス一覧' || event.message['text'] == '提案一覧'
+        show_process_service = ShowProposalsService.new
         show_processes(client, event)
       elsif event.message['text'].slice(-6, 6) == ' の提案一覧'
         # メッセージは，[id] [process_name] の提案一覧　として来る
-        show_all_proposals(client, event)
+        show_proposal_service = ShowProposalsService.new
+        show_proposal_service.show_all_proposals(client, event)
       end
-
-
-
-
     end
 
   def error_message(client, event, error_message)
