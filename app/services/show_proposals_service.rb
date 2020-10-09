@@ -28,12 +28,12 @@ class ShowProposalsService
 
         proposals_components.each do |proposals_component|
         
-        if proposals_component.published_at #一つでも公開されていれば，それで決定 (公開された提案コンポーネントは必ず存在するとしている)
-            proposals_component_id = proposals_component.id
-            proposal_support_enabled = proposals_component.current_settings.votes_enabled
-            proposal_endorsements_enabled = proposals_component.current_settings.endorsements_enabled 
-            break
-        end
+            if proposals_component.published_at #一つでも公開されていれば，それで決定 (公開された提案コンポーネントは必ず存在するとしている)
+                proposals_component_id = proposals_component.id
+                proposal_support_enabled = proposals_component.current_settings.votes_enabled
+                proposal_endorsements_enabled = proposals_component.current_settings.endorsements_enabled 
+                break
+            end
         end
 
         proposals_component_id = proposals_component_id.to_i.to_s
@@ -41,8 +41,8 @@ class ShowProposalsService
         proposals = Decidim::Proposals::Proposal.where(decidim_component_id: proposals_component_id)
 
         if proposals.length == 0 || !proposals
-        error_message(client, event, '現在提案はありません．')
-        return 
+            error_message(client, event, '現在提案はありません．')
+            return 
         end
 
         button_templates = ButtonConst.new
@@ -62,11 +62,11 @@ class ShowProposalsService
 
             if !proposal_support_enabled
             #サポートができない場合はサポートの選択肢を削除
-            button_tmp[:actions].delete_at(1)
+                
             end
             if !proposal_endorsements_enabled
-            #エンドースができない場合はサポートの選択肢を削除
-            button_tmp[:actions].delete_at(-1)
+                #エンドースができない場合はサポートの選択肢を削除
+                button_tmp[:actions].delete_at(-1)
             end
             
             caroucel.push(button_tmp)
@@ -98,13 +98,13 @@ class ShowProposalsService
 
 
     def error_message(client, event, error_message)
-    message = {
-        "type": "message",
-        "label": error_message,
-        "text": error_message
-    }
-    result = client.reply_message(event['replyToken'], message)
-    print(result.message)
+        message = {
+            "type": "message",
+            "label": error_message,
+            "text": error_message
+        }
+        result = client.reply_message(event['replyToken'], message)
+        print(result.message)
     end
 end
 

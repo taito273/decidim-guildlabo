@@ -35,16 +35,14 @@ class LineBotApiController < ApplicationController
       # の8種類
       #p event.message['text']
 
-      if false#decidim_user_verification(client, event)#ユーザーがDecidimにLINEを登録していない場合
+      if line_user_verification_service.decidim_user_verification(client, event)#ユーザーがDecidimにLINEを登録していない場合
         return
       end
 
       if event.message['text'] == 'プロセス一覧' || event.message['text'] == '提案一覧'
-        show_process_service = ShowProcessesService.new
         show_process_service.show_processes(client, event)
       elsif event.message['text'].slice(-6, 6) == ' の提案一覧'
         # メッセージは，[id] [process_name] の提案一覧　として来る
-        show_proposal_service = ShowProposalsService.new
         show_proposal_service.show_all_proposals(client, event)
       end
     end
@@ -61,5 +59,16 @@ class LineBotApiController < ApplicationController
       }
     end
 
+    def show_proposal_service
+      @show_proposal_service = ShowProposalsService.new
+    end
+
+    def show_process_service
+      @show_process_service = ShowProcessesService.new
+    end
+
+    def line_user_verification_service
+      @line_user_verification_service = LineUserVerificationService.new
+    end
 
 end

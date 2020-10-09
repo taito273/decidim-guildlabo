@@ -38,7 +38,7 @@ class LineUserVerificationService
                 }
             client.reply_message(event['replyToken'], message)
             return true
-            end
+        end
     end
 end
 
