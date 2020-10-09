@@ -1,8 +1,5 @@
 class LineBotApiController < ApplicationController
     require 'line/bot'
-    require './lib/line/show_processes'
-    require './lib/line/show_proposals'
-    require './lib/line/decidim_user_verification'
 
     skip_before_action :verify_authenticity_token
   
@@ -43,8 +40,8 @@ class LineBotApiController < ApplicationController
       end
 
       if event.message['text'] == 'プロセス一覧' || event.message['text'] == '提案一覧'
-        show_process_service = ShowProposalsService.new
-        show_processes(client, event)
+        show_process_service = ShowProcessesService.new
+        show_process_service.show_processes(client, event)
       elsif event.message['text'].slice(-6, 6) == ' の提案一覧'
         # メッセージは，[id] [process_name] の提案一覧　として来る
         show_proposal_service = ShowProposalsService.new
