@@ -49,7 +49,7 @@ ja:
         local_area: 組織エリア
         meta_scope: スコープメタデータ
         parent_id: 親の会議体
-        participatory_processes_ids: 関連する議題一覧
+        participatory_processes_ids: 関連する議題
         participatory_scope: 決定されるもの
         participatory_structure: どのように決められますか？
         private_space: プライベートスペース
@@ -78,7 +78,7 @@ ja:
         position: ポジション
       assembly_user_role:
         email: Eメールアドレス
-        name: 名前
+        name: ニックネーム
         role: ロール
       attachment:
         attachment_collection_id: フォルダ
@@ -122,7 +122,7 @@ ja:
         description: 説明
         hashtag: ハッシュタグ
         hero_image: ホーム画像
-        participatory_processes_ids: 関連する議題一覧
+        participatory_processes_ids: 関連する議題
         promoted: ハイライト
         published_at: 公開日時
         scope_id: スコープ
@@ -136,7 +136,7 @@ ja:
         full_name: フルネーム
       conference_user_role:
         email: Eメールアドレス
-        name: 名前
+        name: ニックネーム
         role: ロール
       config:
         available_methods: 利用可能な方法
@@ -167,7 +167,7 @@ ja:
         user_group_id: ディベートを作成
       group:
         about: About
-        avatar: アバター
+        avatar: アイコン画像
         document_number: ドキュメント番号
         email: Eメールアドレス
         name: 名前
@@ -311,7 +311,7 @@ ja:
       organization_data:
         address: 住所
         id_document: ID ドキュメント
-        name: 完全な名前
+        name: 名前
       participatory_process:
         announcement: お知らせ
         area_id: エリア
@@ -333,7 +333,7 @@ ja:
         participatory_structure: どのように決められますか？
         promoted: プロモート
         published_at: 公開日時
-        related_process_ids: 関連する議題一覧
+        related_process_ids: 関連する議題
         scope_id: スコープ
         scope_type_max_depth_id: スコープフィルタの深さ
         scopes_enabled: スコープは有効です
@@ -349,7 +349,7 @@ ja:
         description: 説明
         hero_image: 画像
         name: 名前
-        participatory_process_ids: 関連する議題一覧
+        participatory_process_ids: 関連する議題
       participatory_process_step:
         cta_path: コールからアクションパス
         cta_text: アクションテキストの呼び出し
@@ -360,7 +360,7 @@ ja:
         title: タイトル
       participatory_process_user_role:
         email: Eメールアドレス
-        name: 名前
+        name: ニックネーム
         role: ロール
       postal_letter_address:
         full_address: 住所
@@ -481,12 +481,12 @@ ja:
       user:
         about: 自己紹介
         email: あなたのメールアドレス
-        name: あなたの名前
+        name: あなたのニックネーム
         nickname: アカウントID：
         password: パスワード
         password_confirmation: パスワードの確認
         personal_url: 個人用URL
-        remove_avatar: アバターを削除
+        remove_avatar: アイコンを削除
       user_group_csv_verification:
         file: ファイル
       valuation_assignment:
@@ -579,8 +579,8 @@ ja:
       decidim/meetings/meeting_registrations_over_percentage_event: 上限を超える登録
       decidim/meetings/upcoming_meeting_event: 今後のミーティング
       decidim/meetings/update_meeting_event: ミーティングが更新されました
-      decidim/participatory_process_step_activated_event: フェーズ有効化
-      decidim/participatory_process_step_changed_event: フェーズ変更
+      decidim/participatory_process_step_activated_event: ステップ有効化
+      decidim/participatory_process_step_changed_event: ステップ変更
       decidim/profile_updated_event: プロフィールが更新されました
       decidim/promote_to_admin: グループ管理者に昇格しました
       decidim/proposals/accepted_proposal_event: 提案が承認されました
@@ -695,8 +695,8 @@ ja:
         one: 議題グループ
         other: 議題グループ
       decidim/participatory_process_step:
-        one: フェーズ
-        other: フェーズ
+        one: ステップ
+        other: ステップ
       decidim/proposals/collaborative_draft:
         one: コラボレーションドラフト
         other: コラボレーションドラフト
@@ -941,7 +941,7 @@ ja:
         new_initiative_type: 新しいイニシアチブ種別
         new_process: 新規議題
         new_process_group: 新規 議題グループ
-        new_process_step: 新しいフェーズ
+        new_process_step: 新しいステップ
         new_process_user_role: 新しい議題管理者
         new_question: 新しい質問
         new_response: 新しい応答
@@ -1335,14 +1335,14 @@ ja:
         search_label: 検索
         search_placeholder:
           id_string_or_title_cont: '%{collection} をIDまたはタイトルで検索します。'
-          name_or_nickname_or_email_cont: '%{collection} をメール、名前、アカウントIDで検索します。'
+          name_or_nickname_or_email_cont: '%{collection} をメールアドレス、ニックネーム、アカウントIDで検索します。'
           title_cont: '%{collection} をタイトルで検索します。'
           title_or_description_or_id_string_or_author_name_or_author_nickname_cont: '%{collection}
             をタイトル、説明、ID、または著者名で検索します。'
         state_eq:
           values:
             evaluating: 評価
-            withdrawn: 撤退
+            withdrawn: 取り下げ
         state_null:
           label: ステータス
           values:
@@ -1364,7 +1364,7 @@ ja:
           impersonate: なりすまし
           impersonate_new_managed_user: 新規参加者の管理
           managed: 管理
-          name: 名前
+          name: ニックネーム
           needs_authorization_warning: この組織に対して少なくとも1つの承認が有効になっている必要があります。
           not_managed: 未管理
           promote: プロモート
@@ -1479,7 +1479,7 @@ ja:
         oauth_applications: OAuthアプリケーション
         participants: 参加者
         participatory_process_groups: 議題グループ
-        participatory_processes: 議題一覧
+        participatory_processes: 議題
         participatory_processes_submenu:
           attachment_collections: フォルダ
           attachment_files: ファイル
@@ -1490,7 +1490,7 @@ ja:
           moderations: モデレーション
           private_users: プライベート参加者
           process_admins: 議題 管理者
-          steps: フェーズ
+          steps: ステップ
         questions_submenu:
           components: コンポーネント
           configuration: 設定
@@ -1528,7 +1528,7 @@ ja:
           fields:
             ceased_date: 終了日
             designation_date: 指定日
-            full_name: 名前
+            full_name: ニックネーム
             position: ポジション
           name: メンバー
           positions:
@@ -1539,7 +1539,7 @@ ja:
         assembly_user_role:
           fields:
             email: Eメールアドレス
-            name: 名前
+            name: ニックネーム
             role: ロール
           name: 会議体管理者
           roles:
@@ -1573,7 +1573,7 @@ ja:
         conference_user_role:
           fields:
             email: Eメールアドレス
-            name: 名前
+            name: ニックネーム
             role: ロール
           name: カンファレンス管理
           roles:
@@ -1664,11 +1664,11 @@ ja:
             end_date: 終了日
             start_date: 開始日
             title: タイトル
-          name: フェーズ
+          name: ステップ
         participatory_process_user_role:
           fields:
             email: Eメールアドレス
-            name: 名前
+            name: ニックネーム
             role: ロール
           name: 議題管理者
           roles:
@@ -1682,7 +1682,7 @@ ja:
           fields:
             link: リンク
             logo: ロゴ
-            name: 名前
+            name: ニックネーム
             partner_type: タイプ
           name: パートナー
           types:
@@ -1729,7 +1729,7 @@ ja:
             invitation_accepted_at: 招待が承認されました
             invitation_sent_at: 招待状が送信された日時
             last_sign_in_at: 最終ログイン日
-            name: 名前
+            name: ニックネーム
             role: ロール
             roles:
               admin: 管理者
@@ -1766,7 +1766,7 @@ ja:
           save_and_preview: 保存してプレビュー
           title: ニュースレターを編集
         form:
-          interpolations_hint: ヒント：本文や件名のどこにでも「%{name}」を使用すると、受信者の名前に置き換えられます。
+          interpolations_hint: ヒント：本文や件名のどこにでも「%{name}」を使用すると、受信者のニックネームに置き換えられます。
         index:
           all: すべて
           all_users: 'すべてのユーザー '
@@ -1839,7 +1839,7 @@ ja:
           actions: アクション
           badge: バッジ
           created_at: 作成日時
-          name: 名前
+          name: ニックネーム
           nickname: アカウントID：
           not_officialized: 公式化されていない
           officialize: 公式化
@@ -1921,30 +1921,30 @@ ja:
           success: 議題を正常に非公開にしました。
       participatory_process_step_activations:
         create:
-          error: この議題のフェーズの有効化に問題が発生しました。
-          success: 議題のフェーズが正常にアクティベートされました。
+          error: この議題のステップの有効化に問題が発生しました。
+          success: 議題のステップが正常にアクティベートされました。
       participatory_process_steps:
         create:
-          error: 新しい議題のフェーズの作成に問題がありました。
-          success: 議題のフェーズが正常に作成されました。
+          error: 新しい議題のステップの作成に問題がありました。
+          success: 議題のステップが正常に作成されました。
         default_title: イントロダクション
         destroy:
           error:
-            active_step: アクティブなフェーズは削除できません。
-            last_step: 議題の最後のフェーズは削除できません。
-          success: 議題のフェーズが正常に削除されました。
+            active_step: アクティブなステップは削除できません。
+            last_step: 議題の最後のステップは削除できません。
+          success: 議題のステップが正常に削除されました。
         edit:
-          title: 議題のフェーズを編集
+          title: 議題のステップを編集
           update: 更新
         index:
-          steps_title: フェーズ
+          steps_title: ステップ
         new:
           create: 作成
-          title: 新しいフェーズ
+          title: 新しいステップ
         ordering:
-          error: 議題のこれらのフェーズの順序変更に問題がありました。
+          error: 議題のこれらのステップの順序変更に問題がありました。
         update:
-          error: 議題のこのフェーズの更新に問題がありました。
+          error: 議題のこのステップの更新に問題がありました。
           success: 参加段階が正常に更新されました。
       participatory_process_user_roles:
         create:
@@ -1966,7 +1966,7 @@ ja:
       participatory_processes:
         create:
           error: 新しい議題の作成に問題がありました。
-          success: 議題が正常に作成されました。今度はそのフェーズを構成します。
+          success: 議題が正常に作成されました。今度はそのステップを構成します。
         edit:
           update: 更新
         index:
@@ -2006,7 +2006,7 @@ ja:
           invalid: CSVファイルの読み込みに問題が発生しました。
           success: CSVファイルが正常にアップロードされました。出席者に招待メールを送信します。時間がかかる場合があります。
         new:
-          explanation: CSV ファイルをアップロードします。 ファイルの最初の列に電子メールを含む2つの列とファイルの最後の列に名前を持つ必要があります(電子メール)。
+          explanation: CSV ファイルをアップロードします。 ファイルの最初の列に電子メールを含む2つの列とファイルの最後の列にニックネームを持つ必要があります(電子メール)。
             を選択します。
           title: CSVファイルをアップロード
           upload: アップロード
@@ -2210,7 +2210,7 @@ ja:
         initiatives_types: イニシアチブ種別
         participants: 参加者
         participatory_process_groups: 議題グループ
-        participatory_processes: 議題一覧
+        participatory_processes: 議題
         questions: 質問
         response_groups: 応答グループ
         responses: 回答
@@ -2259,7 +2259,7 @@ ja:
           success: 参加者は管理者ではありません。
         form:
           email: Eメールアドレス
-          name: 名前
+          name: ニックネーム
           role: ロール
         new:
           create: 招待
@@ -2354,10 +2354,10 @@ ja:
         create: '%{user_name} が %{resource_name} 議題グループを作成しました'
         update: '%{user_name} が %{resource_name} 議題グループを更新しました'
       participatory_process_step:
-        activate: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを有効化しました'
-        create: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを作成しました'
-        delete: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを削除しました'
-        update: '%{user_name} が %{resource_name} の議題で %{space_name} フェーズを更新しました'
+        activate: '%{user_name} が %{resource_name} の議題で %{space_name} ステップを有効化しました'
+        create: '%{user_name} が %{resource_name} の議題で %{space_name} ステップを作成しました'
+        delete: '%{user_name} が %{resource_name} の議題で %{space_name} ステップを削除しました'
+        update: '%{user_name} が %{resource_name} の議題で %{space_name} ステップを更新しました'
       participatory_process_user_role:
         create: '%{user_name} が参加者 %{resource_name} を %{space_name} 議題に招待しました'
         delete: '%{user_name} が参加者 %{resource_name} を %{space_name} 議題から削除しました'
@@ -2467,8 +2467,8 @@ ja:
         all: 修正はすべての人に見えるようになっています。
         participants: 修正は作成者にのみ表示されます。
       withdraw:
-        error: 修正の撤回中にエラーが発生しました
-        success: 修正は正常に撤回されました
+        error: 修正の取り下げ中にエラーが発生しました
+        success: 修正は正常に取り下げられました
       wizard_step_form:
         steps:
           1: 修正案を作成する
@@ -2592,7 +2592,7 @@ ja:
         purpose_of_action: アクションの目的
         read_less: 未読にする
         read_more: もっと読む
-        related_participatory_processes: 関連する議題一覧
+        related_participatory_processes: 関連する議題
         scope: スコープ
         social_networks: ソーシャル ネットワーク
         target: 参加者
@@ -2618,7 +2618,7 @@ ja:
       index:
         title: メンバー
     author:
-      avatar: アバター
+      avatar: アイコン
       comments:
         one: コメント
         other: 註釈
@@ -2672,7 +2672,7 @@ ja:
         explanation: 本人確認書類をアップロードすると、本人確認ができるようになります。
         name: 本人確認書類
       multistep: マルチステップ
-      name: 名前
+      name: ニックネーム
       postal_letter:
         explanation: 住所確認ができるように、入力していただくコードを添えて郵便物をお送りします。
         name: 郵便物によるコード
@@ -3314,7 +3314,7 @@ ja:
         objectives: 目的
         related_assemblies: 関連する参加スペース
         related_consultations: 関連する議案
-        related_participatory_processes: 関連する議題一覧
+        related_participatory_processes: 関連する議題
       statistics:
         answers_count: 回答
         comments_count: コメント
@@ -3448,7 +3448,7 @@ ja:
         name: サブヒーローバナー
     core:
       actions:
-        login_before_access: アクセスする前にアカウントでログインしてください
+        login_before_access: アクセスする場合は、ログインをしてください。
         unauthorized: この操作を実行する権限がありません。
     data_portability:
       export:
@@ -3536,16 +3536,16 @@ ja:
           email_already_exists: 別のアカウントは同じメールアドレスを使用しています
         new:
           complete_profile: プロファイルを完了
-          nickname_help: '%{organization} のエイリアス'
+          nickname_help: ' '
           sign_up: プロフィールを完成してください
           subtitle: を完了するには、次のフォームに記入してください
-          username_help: 投稿に表示される名前。匿名性を保証する目的で、任意の名前にすることができます。
+          username_help: あなたの投稿に表示されるニックネームです。匿名性を保証する目的で、任意のニックネームにすることができます。
       registrations:
         new:
           already_have_an_account?: 既にアカウントをお持ちですか？
-          newsletter: 関連情報を含む時折ニュースレターを受け取る
-          newsletter_title: 連絡先の権限
-          nickname_help: '%{organization} のエイリアス'
+          newsletter: 協議会からのお知らせをメールで受け取る
+          newsletter_title: お知らせの受け取り
+          nickname_help: '　'
           password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，アカウントIDとメールアドレスは異なる必要があります。'
           sign_in: ログイン
           sign_up: 新規登録
@@ -3591,7 +3591,7 @@ ja:
           connect_your_account_html: <strong>%{organization}</strong> にサインインしてアカウントに接続します
           publish_content: コンテンツを公開する
           see_email: メールを見る
-          see_name: 名前を確認してください
+          see_name: ニックネームを確認してください
           see_username: アカウントIDを見る
           this_application_will_be_able_to: 'このアプリケーションは次のことができます:'
           this_application_will_not_be_able_to: このアプリケーションは次のことができません：
@@ -3938,17 +3938,17 @@ ja:
         notification_title: <a href="%{resource_path}">%{resource_title}</a> にイベントが発生しました。
       participatory_process:
         step_activated:
-          email_intro: '%{resource_title} フェーズが %{participatory_space_title}に有効になりました。このページから確認できます:'
+          email_intro: '%{resource_title} ステップが %{participatory_space_title}に有効になりました。このページから確認できます:'
           email_outro: '%{participatory_space_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
           email_subject: '%{participatory_space_title} への更新'
-          notification_title: '%{resource_title} フェーズが <a href="%{resource_path}">%{participatory_space_title}</a>
+          notification_title: '%{resource_title} ステップが <a href="%{resource_path}">%{participatory_space_title}</a>
             に有効になりました'
         step_changed:
-          email_intro: '%{resource_title} の %{participatory_space_title} フェーズの日付が更新されました。このページから見ることができます：'
+          email_intro: '%{resource_title} の %{participatory_space_title} ステップの日付が更新されました。このページから見ることができます：'
           email_outro: '%{participatory_space_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
           email_subject: '%{participatory_space_title} への更新'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> の <a
-            href="%{participatory_space_url}">%{participatory_space_title}</a> フェーズの日付が更新されました。
+            href="%{participatory_space_url}">%{participatory_space_title}</a> ステップの日付が更新されました。
       proposals:
         collaborative_draft_access_accepted:
           email_intro: '%{requester_name} は、 <a href="%{resource_path}">%{resource_title}</a>
@@ -3987,11 +3987,11 @@ ja:
           notification_title: 共同草稿<a href="%{resource_path}">%{resource_title}</a>の<strong>投稿者としてのアクセスを拒否</strong>されました。
         collaborative_draft_withdrawn:
           email_intro: <a href="%{author_path}">%{author_name} %{author_nickname}</a>
-            は、 <a href="%{resource_path}">%{resource_title}</a> の共同ドラフトを撤回しました。
+            は、 <a href="%{resource_path}">%{resource_title}</a> の共同ドラフトを取り下げました。
           email_outro: <a href="%{resource_path}">%{resource_title}</a> のコラボレーターであるため、この通知を受け取りました。
-          email_subject: '%{author_name} %{author_nickname} は %{resource_title} の共同ドラフトを撤回しました。'
+          email_subject: '%{author_name} %{author_nickname} は %{resource_title} の共同ドラフトを取り下げました。'
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a>
-            が、共同草稿 <a href="%{resource_path}">%{resource_title}</a> を<strong>撤回しました。</strong>
+            が、共同草稿 <a href="%{resource_path}">%{resource_title}</a> を<strong>取り下げました。</strong>
         creation_enabled:
           email_intro: '%{participatory_space_title}で新しい提案を作成できるようになりました! このページに参加してください:'
           email_outro: '%{participatory_space_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
@@ -5088,7 +5088,7 @@ ja:
         invite:
           fields:
             email: Eメールアドレス
-            name: 名前
+            name: ニックネーム
             sent_at: 送信日時
             status: ステータス
           status:
@@ -5130,7 +5130,7 @@ ja:
       help: ヘルプ
       home: ホーム
       initiatives: イニシアチブ
-      processes: 議題一覧
+      processes: 議題
     messaging:
       conversation_mailer:
         new_conversation:
@@ -5196,8 +5196,8 @@ ja:
         title: 参加者
       participatory_processes:
         description: この組織の議題数
-        object: 議題一覧
-        title: 議題一覧
+        object: 議題
+        title: 議題
       proposals:
         description: 提案数
         object: 提案
@@ -5281,13 +5281,13 @@ ja:
       no_notifications: まだ通知はありません。
     notifications_settings:
       show:
-        email_on_notification: 通知を受け取るたびにメールを受信します。
+        email_on_notification: 通知がある場合、メールでも受信する
         everything_followed: 自分がフォローしている提案等に関する通知
         newsletter_notifications: ニュースレターを受け取る
         newsletters: メールマガジン
-        own_activity: 誰かが提案にコメントしたり、私に言及したりした時など
-        receive_notifications_about: 通知を受け取りたい
-        send_notifications_by_email: 電子メールで通知を送信
+        own_activity: 誰かが提案にコメントしたり、自分に質問してきたときなど
+        receive_notifications_about: 通知を受け取る
+        send_notifications_by_email: 通知のメール送信
         update_notifications_settings: 変更を保存
       update:
         error: 通知設定の更新中に問題が発生しました。
@@ -5324,14 +5324,14 @@ ja:
             success: ページを保存しました。
       home:
         extended:
-          debates: 掲示板機能
-          debates_explanation: 提案を行うことができます。また、既存の提案についてコメントしたり、支持することができます。
-          how_to_participate: 本サービスには以下の機能があります。
-          meetings: イベント参加機能
-          meetings_explanation: "各種イベントの予告などが表示されます。\n日時や場所、資料などの詳細情報が掲載されていますので、参加したいイベントの参加申請をこちらからすることが可能です。また自身で申し込んだイベントの管理ができます。"
+          debates: オンラインで議論しましょう
+          debates_explanation: 議題ごとに提示されるアイデアについて意見を出し、より良い街づくりに向けた議論に参加しましょう。各提案について、賛成や反対のコメントを付けたり、フォローして更新状況を確認したりすることができます。
+          how_to_participate: このサイトでは、イノベーション都市横浜の未来に向けたアイデアの議論を議題ごとに行なっています。この議論に対してあなたの意見や意思表示をオンライン上で行うことが可能です。ぜひ、ご参加ください！
+          meetings: リアルな議論の場にも参加できます
+          meetings_explanation: "議題やアイデアについての議論が行われる説明会に参加しましょう。説明会の日時や場所、資料などの詳細情報をサイトから確認し、参加したい会があれば参加申し込みができます。"
           more_info: '詳細'
-          proposals: 提案
-          proposals_explanation: 提案を行い、既存のものをサポートし、見たい変更を促進します。
+          proposals: あなたも議題に提案できます
+          proposals_explanation: あなた自身で議題に対しアイデアを提案して、あなたの手による街づくりを実現しましょう。新しい提案は、他の案と同様にオープンに議論されます。基本的には所属組織・団体の名前で提案することができます。
         footer_sub_hero:
           footer_sub_hero_body: より開かれた透明で協働的な社会を作りましょう。<br /> 参加し、決断しましょう。
           footer_sub_hero_headline: '%{organization} 参加型プラットフォームへようこそ。'
@@ -5402,8 +5402,8 @@ ja:
         title: 議題グループ
     participatory_process_steps:
       index:
-        process_steps: 議題のフェーズ
-        title: 議題のフェーズ
+        process_steps: 議題の流れ
+        title: 議題の流れ
     participatory_processes:
       admin:
         content_blocks:
@@ -5431,7 +5431,7 @@ ja:
             images: 画像
             metadata: メタデータ
             other: その他
-            related_processes: 関連する議題一覧
+            related_processes: 関連する議題
             scope_type_max_depth_help: スコープフィルターの深さを制限します。フィルターは、一般から選択したスコープタイプに表示されます。
             select_an_area: エリアを選択
             select_process_group: 議題 グループを選択
@@ -5441,7 +5441,7 @@ ja:
             visbility: 公開範囲
       content_blocks:
         highlighted_processes:
-          name: 注目の議題一覧
+          name: 注目の議題
       index:
         title: 議題
       last_activity:
@@ -5449,8 +5449,8 @@ ja:
       pages:
         home:
           highlighted_processes:
-            active_processes: アクティブな議題一覧
-            active_step: アクティブフェーズ
+            active_processes: アクティブな議題
+            active_step: 現在のステップ
             more_information: 詳細情報
             participate: 参加
             see_all_processes: すべての議題を見る
@@ -5470,13 +5470,13 @@ ja:
               other: '%{count} 個のアクティブな議題'
             all:
               one: 議題
-              other: '議題一覧'
+              other: '議題'
             past:
               one: 過去の議題
-              other: '%{count} 過去の議題一覧'
+              other: '%{count} 過去の議題'
             upcoming:
               one: 予定されている議題
-              other: 予定されている議題一覧
+              other: 予定されている議題
           explanations:
             no_active: アクティブな議題はありません
             no_active_nor_upcoming: アクティブな議題も今後予定されている議題もありません
@@ -5572,7 +5572,7 @@ ja:
         answer_proposal: 提案に回答
         edit_proposal: 提案を編集
         import: 別のコンポーネントからインポート
-        new: 新しい提案
+        new: 提案する
         participatory_texts: 参加するテキスト
         show: 提案を表示
         title: アクション
@@ -5756,7 +5756,7 @@ ja:
         evaluating: 評価中
         not_answered: 未回答
         rejected: 却下
-        withdrawn: 引き落し
+        withdrawn: 取り下げ
       application_helper:
         filter_category_values:
           all: すべて
@@ -5794,9 +5794,9 @@ ja:
             irreversible_action_modal:
               body: ドラフトを閉じた後、ドラフトは編集できなくなります。ドラフトは新しい投稿者や投稿を受け入れません。
               cancel: キャンセル
-              ok: 共同作業の下書きを撤回する
+              ok: 共同作業の下書きを取り下げる
               title: 次のアクションは取り消せません
-            success: 共同ドラフトは正常に撤回されました。
+            success: 共同ドラフトは正常に取り下げられました。
         compare:
           mine_is_different: 私の共同作業の下書きは違います
           no_similars_found: よくできました！似たような共同作業の下書きが見つかりませんでした
@@ -5876,11 +5876,11 @@ ja:
           see_other_versions: 他のバージョンを見る
           version: バージョン %{number}
           version_history: この提案のバージョン履歴を参照してください。
-          withdraw: 草案を撤回する
+          withdraw: 草案を取り下げる
         states:
           open: 開く
           published: 公開済み
-          withdrawn: 引き落し
+          withdrawn: 取り下げ
         update:
           error: 共同作業のドラフトを保存する際に問題が発生しました。
           success: 共同作業の下書きが正常に更新されました。
@@ -5994,8 +5994,8 @@ ja:
           unfold: 展開する
         index:
           collaborative_drafts_list: 共同作業の下書きにアクセスする
-          new_proposal: 新しい提案
-          see_all_withdrawn: すべての撤回された提案を見る
+          new_proposal: 提案する
+          see_all_withdrawn: 取り下げられた提案を見る
           view_proposal: 提案を表示
         linked_proposals:
           proposal_votes:
@@ -6050,14 +6050,14 @@ ja:
           read_less: 未読にする
           read_more: もっと読む
           report: レポート
-          withdraw_btn_hint: サポートを受けていない限り、気が変わった場合は提案を撤回することができます。 提案は削除されず、撤回された提案のリストに表示されます。
-          withdraw_confirmation: 本当にこの提案を撤回しますか？
-          withdraw_proposal: 提案の撤回
+          withdraw_btn_hint: サポートを受けていない限り、気が変わった場合は提案を取り下げることができます。 提案は削除されず、取り下げられた提案のリストに表示されます。
+          withdraw_confirmation: 本当にこの提案を取り下げますか？
+          withdraw_proposal: 提案の取り下げ
         tags:
           changed_from: (管理者によって <u>%{previous_name}</u> から変更されました)
         vote_button:
           already_voted: サポート済みです
-          already_voted_hover: サポートを撤回する
+          already_voted_hover: サポートを取り下げる
           maximum_votes_reached: サポートの上限に達しました
           no_votes_remaining: サポートがありません
           vote: サポート
@@ -6122,7 +6122,7 @@ ja:
           version_index: バージョン %{index}
       withdraw:
         errors:
-          has_supports: すでにサポートがあるため、この提案は撤回できません。
+          has_supports: すでにサポートがあるため、この提案は取り下げられません。
     questions:
       next_button: 次の質問
       previous_button: 前の質問
@@ -6257,7 +6257,7 @@ ja:
         represent_user_group: 私はグループを代表します
         select_user_group: グループを選択
       results_per_page:
-        label: 'ページごとの結果:'
+        label: 'ページごとの表示数:'
       share_modal:
         close_window: ウィンドウを閉じる
         share: 共有
@@ -6761,7 +6761,7 @@ ja:
         password_help: 'パスワードは %{minimun_characters} 文字以上かつ，数字とアルファベットを組み合わせた，単純でないものを使用してください。また，アカウントIDとメールアドレスは異なる必要があります。'
       new:
         forgot_your_password: パスワードをお忘れですか？
-        send_me_reset_password_instructions: パスワードリセット手順を送信してください
+        send_me_reset_password_instructions: パスワードリセットのメールを送信
       no_token: このページにアクセスするには、パスワードリセットメールからアクセスします。 パスワードリセットメールからの場合は、提供されたURLを使用したことを確認してください。
       send_instructions: 数分でパスワードをリセットする方法が記載されたメールが届きます。
       send_paranoid_instructions: 当社のデータベースにあなたのメールアドレスが存在する場合、数分後にあなたのメールアドレスにパスワード回復リンクが届きます。
@@ -6795,8 +6795,8 @@ ja:
     shared:
       links:
         back: 戻る
-        didn_t_receive_confirmation_instructions: 確認手順の情報が届かなかった方
-        didn_t_receive_unlock_instructions: ロック解除のお知らせが届かなかった方
+        didn_t_receive_confirmation_instructions: ユーザー登録後 登録アドレス宛に確認メールが届かなかった方
+        didn_t_receive_unlock_instructions: アカウントがロックされた方
         forgot_your_password: パスワードをお忘れですか？
         sign_in: ログイン
         sign_in_with_provider: '%{provider} でサインイン'
@@ -6806,7 +6806,7 @@ ja:
         other: (%{count}文字以上)
     unlocks:
       new:
-        resend_unlock_instructions: ロック解除の手順を再送信する
+        resend_unlock_instructions: アカウントロック解除のメールを再送信
       send_instructions: 数分でアカウントのロックを解除する方法が記載されたメールが届きます。
       send_paranoid_instructions: アカウントが存在する場合、数分でロックを解除する方法が記載されたメールが届きます。
       unlocked: アカウントのロックが解除されました。続行するにはログインしてください。
@@ -6965,24 +6965,24 @@ ja:
           processes_count: '議題:'
       participatory_process_widgets:
         show:
-          active_step: アクティブフェーズ
+          active_step: 現在のステップ
           take_part: 参加する
       participatory_processes:
         index:
-          promoted_processes: 注目の議題一覧
+          promoted_processes: 注目の議題
         participatory_process:
-          active_step: '現在のフェーズ:'
+          active_step: '現在のステップ:'
           more_info: 詳細情報
           take_part: 参加する
         promoted_process:
-          active_step: '現在のフェーズ:'
+          active_step: '現在のステップ:'
           more_info: 詳細情報
           take_part: 参加する
       process_header_steps:
         step: 段階 %{current} / %{total}
-        view_steps: フェーズ
+        view_steps: 段階の詳細
       process_navigation:
-        process_menu_item: 概要
+        process_menu_item: 議題の概要
       question_components:
         question_menu_item: 質問
         unfold: 展開する
@@ -7003,7 +7003,7 @@ ja:
         my_data: 自分のデータ
         my_interests: 興味のあるもの
         notifications_settings: 通知の設定
-        title: 参加者の設定
+        title: アカウントの設定
         user_groups: グループ
       widget:
         see_more: もっと見る
@@ -7013,7 +7013,7 @@ ja:
     domain_included_in_password: このドメイン名に似ています
     email_included_in_password: はあなたのメールアドレスに似ています
     fallback: 有効ではありません
-    name_included_in_password: あなたの名前に似ています
+    name_included_in_password: あなたのニックネームに似ています
     not_enough_unique_characters: ユニークな文字が十分ではありません
     password_not_allowed: は許可されていません
     password_too_common: あまりにも一般的です
