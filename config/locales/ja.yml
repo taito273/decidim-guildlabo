@@ -5284,7 +5284,7 @@ ja:
         email_on_notification: 通知がある場合、メールでも受信する
         everything_followed: 自分がフォローしている提案等に関する通知
         newsletter_notifications: ニュースレターを受け取る
-        newsletters: メールマガジン
+        newsletters: ニュースレター
         own_activity: 誰かが提案にコメントしたり、自分に質問してきたときなど
         receive_notifications_about: 通知を受け取る
         send_notifications_by_email: 通知のメール送信
