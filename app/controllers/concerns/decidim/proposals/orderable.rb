@@ -41,7 +41,7 @@ module Decidim
           most_voted_order_available? && current_settings.votes_blocked?
         end
 
-        def reorder(proposals)z
+        def reorder(proposals)
           case order
           when "most_commented"
             proposals.left_joins(:comments).group(:id).order(Arel.sql("COUNT(decidim_comments_comments.id) DESC"))
