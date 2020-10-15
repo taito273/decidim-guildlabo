@@ -5,7 +5,7 @@ Decidim.configure do |config|
   config.mailer_sender = "yufune@gild.work"
 
   # Change these lines to set your preferred locales
-  config.default_locale = :en
+  config.default_locale = :ja
   config.available_locales = [:en, :ca, :es, :ja]
 
   # Geocoder configuration
