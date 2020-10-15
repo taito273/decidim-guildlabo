@@ -77,7 +77,7 @@ ja:
         gender: 性別
         position: ポジション
       assembly_user_role:
-        email: Eメールアドレス
+        email: メールアドレス
         name: ニックネーム
         role: ロール
       attachment:
@@ -135,7 +135,7 @@ ja:
       conference_speaker:
         full_name: フルネーム
       conference_user_role:
-        email: Eメールアドレス
+        email: メールアドレス
         name: ニックネーム
         role: ロール
       config:
@@ -169,7 +169,7 @@ ja:
         about: About
         avatar: アイコン画像
         document_number: ドキュメント番号
-        email: Eメールアドレス
+        email: メールアドレス
         name: 名前
         nickname: アカウントID：
         phone: 電話番号
@@ -359,7 +359,7 @@ ja:
         start_date: 開始日
         title: タイトル
       participatory_process_user_role:
-        email: Eメールアドレス
+        email: メールアドレス
         name: ニックネーム
         role: ロール
       postal_letter_address:
@@ -606,7 +606,7 @@ ja:
         title: タイトル
       decidim/user:
         current_password: 現在のパスワード
-        email: Eメールアドレス
+        email: メールアドレス
         name: アカウントID：
         password: パスワード
         password_confirmation: パスワードの確認
@@ -1538,7 +1538,7 @@ ja:
             vice_president: 副代表
         assembly_user_role:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: ニックネーム
             role: ロール
           name: 会議体管理者
@@ -1572,7 +1572,7 @@ ja:
           name: カンファレンススピーカー
         conference_user_role:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: ニックネーム
             role: ロール
           name: カンファレンス管理
@@ -1667,7 +1667,7 @@ ja:
           name: ステップ
         participatory_process_user_role:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: ニックネーム
             role: ロール
           name: 議題管理者
@@ -1725,7 +1725,7 @@ ja:
         user:
           fields:
             created_at: 作成日
-            email: Eメールアドレス
+            email: メールアドレス
             invitation_accepted_at: 招待が承認されました
             invitation_sent_at: 招待状が送信された日時
             last_sign_in_at: 最終ログイン日
@@ -2258,7 +2258,7 @@ ja:
           error: 管理者の削除中に問題が発生しました。
           success: 参加者は管理者ではありません。
         form:
-          email: Eメールアドレス
+          email: メールアドレス
           name: ニックネーム
           role: ロール
         new:
@@ -3263,7 +3263,7 @@ ja:
       models:
         conference_invite:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: 名前
             registration_type: 登録タイプ
             sent_at: 送信日時
@@ -3274,7 +3274,7 @@ ja:
             sent: 送信済み
         conference_registration:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: 名前
             registration_type: 登録タイプ
             state: ステータス
@@ -4383,7 +4383,7 @@ ja:
         update_user_group: グループを更新
       form:
         document_number_help: ダッシュやスペースを使用しない
-        email_help: 組織、団体、集団、グループなどのEメールアドレスです。
+        email_help: 組織、団体、集団、グループなどのメールアドレスです。
         fill_in_for_verification: グループを認証させたい場合は、以下の項目を入力してください。
         name_help: 組織名、団体名、団体名、グループ名など。
         nickname_help: 団体名、団体名、団体名、団体名などスペースやアクセントは使用しないでください。
@@ -5087,7 +5087,7 @@ ja:
       models:
         invite:
           fields:
-            email: Eメールアドレス
+            email: メールアドレス
             name: ニックネーム
             sent_at: 送信日時
             status: ステータス
@@ -6428,7 +6428,7 @@ ja:
         admin:
           fields:
             created_at: 作成日時
-            email: Eメールアドレス
+            email: メールアドレス
           name: 管理者
           validations:
             email_uniqueness: 同じメールアドレスを持つ別の管理者が既に存在します
@@ -7022,7 +7022,7 @@ ja:
   social_share_button:
     delicious: おいしいです
     douban: Douban
-    email: Eメールアドレス
+    email: メールアドレス
     facebook: Facebook
     google_bookmark: Google ブックマーク
     google_plus: Google+
