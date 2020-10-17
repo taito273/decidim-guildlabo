@@ -2,10 +2,10 @@ class LineBotApiController < ApplicationController
     require 'line/bot'
     require './lib/line/show_processes'
     require './lib/line/show_proposals'
-    require './lib/line/decidim_user_verification'
+    #require './lib/line/decidim_user_verification'
 
     skip_before_action :verify_authenticity_token
-  
+
     def callback
       body = request.body.read
       signature = request.env['HTTP_X_LINE_SIGNATURE']
@@ -48,16 +48,16 @@ class LineBotApiController < ApplicationController
         # メッセージは，[id] [process_name] の提案一覧　として来る
         show_all_proposals(client, event)
       end
+    end
 
-
-
-
+    def send_multicast_push_msg(user_ids, message)
+      client.multicast(user_ids, message)
     end
 
   def error_message(client, event, error_message)
   end
   private
-  
+
   # LINE Developers登録完了後に作成される環境変数の認証
     def client
       @client ||= Line::Bot::Client.new { |config|
