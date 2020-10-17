@@ -6,6 +6,7 @@ ruby RUBY_VERSION
 gem 'omniauth-line'
 gem 'line-bot-api'
 gem "decidim", "0.21.0"
+gem 'line-bot-api'
 # gem "decidim-consultations", "0.21.0"
 # gem "decidim-initiatives", "0.21.0"
 
