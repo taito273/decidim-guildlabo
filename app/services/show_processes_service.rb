@@ -20,7 +20,7 @@ class ShowProcessesService
             error_message(client, event, '現在議題はありません．')
         end
         
-        if only_followed
+        if only_followed # そのユーザーがフォローしているものだけ
             line_uid = event['source']['userId']
             decidim_user = Decidim::Identity.find_by(uid: line_uid)
   
@@ -29,8 +29,6 @@ class ShowProcessesService
             follows_ids = follows.map {|follow|  follow.decidim_followable_id}
 
             processes = processes.select { |process|  follows_ids.include?(process.id) }
-            print('___processes____')
-            print(processes)
 
             if processes.length == 0
               error_message(client, event, '現在フォローしている議題はありません．')
@@ -38,10 +36,10 @@ class ShowProcessesService
         end
 
         caroucel = []
-        hostname = 'https://3c5c61fd887a.ngrok.io/'
 
-        button_templates = ButtonConst.new
         button = button_templates.button_process
+        puts('asdrfgvzsdgsr')
+        puts(button_templates.home_uri)
 
         processes.each do |process|
         # 公開されている，かつハイライトされているものだけを表示
@@ -54,10 +52,10 @@ class ShowProcessesService
             button_tmp['text'] = process.short_description["ja"].gsub(%r{</?[^>]+?>},'').slice(0, 50)
 
 
-            button_tmp[:defaultAction][:uri] = hostname + 'processes/' + process.slug
-            button_tmp[:actions][0][:uri] = hostname + 'processes/' + process.slug
+            button_tmp[:defaultAction][:uri] = button_templates.home_uri + 'processes/' + process.slug
+            button_tmp[:actions][0][:uri] = button_templates.home_uri + 'processes/' + process.slug
             button_tmp[:actions][1][:text] = process.id.to_s + ' ' + process.title['ja'] + ' の提案一覧'
-            button_tmp[:actions][2][:uri] = hostname + 'processes/' + process.slug
+            button_tmp[:actions][2][:uri] = button_templates.home_uri + 'processes/' + process.slug
             proposals_component_id = ''
             proposal_creation_enabled = false
 
@@ -80,16 +78,17 @@ class ShowProcessesService
             
             #　提案作成が可能な場合のみ提案を作成アクションを残す
         if proposal_creation_enabled then
-            button_tmp[:actions][2][:uri] = proposals_component_id != '' ? hostname + 'processes/' + process.slug + "/f/#{proposals_component_id}/proposals/new" : hostname + 'processes/' + process.slug
+            button_tmp[:actions][2][:uri] = proposals_component_id != '' ? button_templates.home_uri + 'processes/' + process.slug + "/f/#{proposals_component_id}/proposals/new" : button_templates.home_uri + 'processes/' + process.slug
         else
             button_tmp[:actions][2][:label] = '現在提案を作成できません．'
-            button_tmp[:actions][2][:uri] = hostname + 'processes/' + process.slug + "/f/#{proposals_component_id}/proposals/"
+            button_tmp[:actions][2][:uri] = button_templates.home_uri + 'processes/' + process.slug + "/f/#{proposals_component_id}/proposals/"
         end
 
         caroucel.push(button_tmp)
         end
     end
 
+       puts(caroucel)
         message = 
                 {
                     "type": "template",
@@ -105,11 +104,15 @@ class ShowProcessesService
 
     def error_message(client, event, error_message)
         message = {
-            "type": "message",
+            "type": "text",
             "label": error_message,
             "text": error_message
         }
         result = client.reply_message(event['replyToken'], message)
+    end
+
+    def button_templates
+        @button_templates = ButtonConst.new
     end
 end
 

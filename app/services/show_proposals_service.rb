@@ -45,27 +45,29 @@ class ShowProposalsService
             return 
         end
 
-        button_templates = ButtonConst.new
         button = button_templates.button_proposal
-        hostname = "https://decidim-line.guild.engineer/"
 
         proposals.each do |proposal|
             button_tmp = button.deep_dup
             button_tmp[:title] = proposal.title
             button_tmp[:text] = proposal.body.slice(0, 50)
 
+            # URLの指定
+            button_tmp[:defaultAction][:uri] =  button_templates.home_uri + 'processes/' + process_slug + "/f/" + proposals_component_id + "/proposals/" + proposal.id.to_s + "/?locale=ja"
+            button_tmp[:actions][0][:uri] = button_templates.home_uri + 'processes/' + process_slug + "/f/" + proposals_component_id + "/proposals/" + proposal.id.to_s + "/?locale=ja"
 
-            button_tmp[:defaultAction][:uri] =  hostname + 'processes/' + process_slug + "/f/" + proposals_component_id + "/proposals/" + proposal.id.to_s + "/?locale=ja"
-            button_tmp[:actions][0][:uri] = hostname + 'processes/' + process_slug + "/f/" + proposals_component_id + "/proposals/" + proposal.id.to_s + "/?locale=ja"
-            button_tmp[:actions][2][:uri] = hostname + 'processes/' + process_slug
+
+            # サポート，エンドースアクションの指定
+            button_tmp[:actions][1][:data] = "id=#{proposal.id.to_s}&action=support&flug=#{process_slug}&confirmed=false"
+            button_tmp[:actions][2][:data] = "id=#{proposal.id.to_s}&action=endorse&flug=#{process_slug}&confirmed=false"
 
 
             if !proposal_support_enabled
             #サポートができない場合はサポートの選択肢を削除
-                
+              button_tmp[:actions].delete_at(-2)
             end
             if !proposal_endorsements_enabled
-                #エンドースができない場合はサポートの選択肢を削除
+                #エンドースができない場合はエンドースの選択肢を削除
                 button_tmp[:actions].delete_at(-1)
             end
             
@@ -90,12 +92,16 @@ class ShowProposalsService
 
     def error_message(client, event, error_message)
         message = {
-            "type": "message",
+            "type": "text",
             "label": error_message,
             "text": error_message
         }
         result = client.reply_message(event['replyToken'], message)
         print(result.message)
+    end
+
+    def button_templates
+        @button_templates = ButtonConst.new
     end
 end
 
