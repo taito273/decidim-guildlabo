@@ -85,5 +85,4 @@ class EndorseProposalService
     def const_button_templates
         @const_button_templates = ButtonConst.new()
     end
-    
 end

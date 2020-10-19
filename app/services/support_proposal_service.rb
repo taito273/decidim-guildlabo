@@ -52,11 +52,13 @@ class SupportProposalService
 
     end
 
+
     def success_message(client, event, proposal, process_flug)
 
         button = const_button_templates.result_button
 
-        button["text"] = "提案 #{proposal.title} に投票しました．"
+        button['title'] = "提案に投票しました!"
+        button["text"] = "提案 #{proposal.title} に投票しました!"
         # 加えてURLを指定する必要あり
         button[:defaultAction][:uri] = "#{const_button_templates.home_uri}processes/#{process_flug}/f/#{proposal.decidim_component_id}/proposals/#{proposal.id}"
         button[:actions][0][:uri] = "#{const_button_templates.home_uri}processes/#{process_flug}/f/#{proposal.decidim_component_id}/proposals/#{proposal.id}"
