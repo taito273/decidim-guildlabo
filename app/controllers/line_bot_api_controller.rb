@@ -1,5 +1,6 @@
 class LineBotApiController < ApplicationController
     require 'line/bot'
+    require 'uri'
 
     skip_before_action :verify_authenticity_token
   
@@ -15,14 +16,20 @@ class LineBotApiController < ApplicationController
         when Line::Bot::Event::Message
           case event.type
           when Line::Bot::Event::MessageType::Text
-            line_bot_handler(event)
+            line_bot_text_handler(event)
           end
+
+        when Line::Bot::Event::Postback
+          line_bot_postback_handler(event)
+        
         end
       end
+
+
       head :ok
     end
 
-    def line_bot_handler(event)
+    def line_bot_text_handler(event)
       # テキストの種類が
       # 1. プロセス一覧
       # 2. 提案一覧
@@ -49,7 +56,28 @@ class LineBotApiController < ApplicationController
       end
     end
 
+
+    def line_bot_postback_handler(event)
+      query_array = URI::decode_www_form(event["postback"]["data"])
+      query_params = Hash[query_array]
+
+
+      if query_params["action"] == "endorse" && query_params["confirmed"] == 'true'
+        endorse_proposal_service.endorse_proposal(client, event, query_params)
+      elsif query_params["action"] == "endorse"
+        endorse_proposal_service.confirm_endorsement(client, event, query_params)
+      elsif query_params["action"] == "support" && query_params["confirmed"] == 'true'
+        support_proposal_service.support_proposal(client, event, query_params)
+      elsif query_params["action"] == "support"
+        support_proposal_service.confirm_support(client, event, query_params)
+      else
+        error_message(client, event, '下のメニューを開いて閲覧したいコンテンツを選択してください．')
+      end
+      
+    end
+
   def error_message(client, event, error_message)
+
   end
   private
   
@@ -67,6 +95,14 @@ class LineBotApiController < ApplicationController
 
     def show_process_service
       @show_process_service = ShowProcessesService.new
+    end
+
+    def endorse_proposal_service
+      @endorse_proposal_service = EndorseProposalService.new
+    end
+
+    def support_proposal_service
+      @support_proposal_service = SupportProposalService.new
     end
 
     def line_user_verification_service
