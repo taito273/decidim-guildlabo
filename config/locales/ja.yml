@@ -518,7 +518,7 @@ ja:
         meeting_registration_invite:
           attributes:
             email:
-              already_invited: このメールアカウントは既に招待されています
+              already_invited: このメールアドレスは既に招待されています
         oauth_application:
           attributes:
             redirect_uri:
@@ -3564,21 +3564,16 @@ ja:
           sign_up_disabled: 新規登録は無効です。既存のアカウントを使用してアクセスすることができます
       shared:
         newsletter_modal:
-          buttons:
-            check: 確認して続ける
+          buttons: 
+            check: 通知を受け取る
             close_modal: モーダルを閉じる
             uncheck: チェックを外し続ける
-          notice: '<p>本当にニュースレターを購読しなくて良いですか？<br>
+          notice: '<p>本当にニュースレターを購読しなくてよろしいですか？<br>
+            ニュースレターの通知を是非オンにしてください。<br>
 
-            ニュースレターのチェックボックスを是非オンにしてください。<br>
+            お知らせメールを受け取っていただくことは、私たちにとって非常に重要なことです。通知設定ページでいつでもこれを変更することができます。</p>
 
-            重要なお知らせメールを受け取ってもらうことは、私たちにとって非常に重要なことです。通知設定ページでいつでもこれを変更することができます。</p>
-
-            <p>ボックスにチェックを入れないと、プラットフォーム内での新しい参加機会についての関連情報を見逃してしまう可能性があります。<br>
-
-            それでもニュースレターの受信を避けたい場合は、私たちはその決定を尊重します。 </p>
-
-            <p>読んでくれてありがとうございます！</p>'
+            <p>ボックスにチェックを入れないと、プラットフォーム内での新しい参加機会についての関連情報を見逃してしまう可能性があります。<br></p>'
           title: ニュースレター通知
         omniauth_buttons:
           or: または
@@ -6676,7 +6671,7 @@ ja:
       inactive: あなたのアカウントはまだアクティベートされていません。
       invalid: '%{authentication_keys} またはパスワードが無効です。'
       invited: 保留中の招待状があります。アカウントの作成を完了するには承認してください。
-      last_attempt: アカウントがロックされる前にもう1回試行があります。
+      last_attempt: あと1回パスワードを間違えるとアカウントがロックされます。
       locked: あなたのアカウントはロックされています。
       not_found_in_database: '%{authentication_keys} またはパスワードが無効です。'
       timeout: セッションの有効期限が切れました。続行するには再度ログインしてください。
@@ -6694,18 +6689,18 @@ ja:
         submit_button: 招待状を送信
       no_invitations_remaining: 招待状は残っていません
       send_instructions: '%{email} に招待メールが送信されました。'
-      updated: パスワードは正常に設定されました。サインインしています。
+      updated: パスワードは正常に設定されました。
       updated_not_active: パスワードが正常に設定されました。
     mailer:
       confirmation_instructions:
-        action: アカウントを確認する
+        action: メールアドレスを確認する
         greeting: '%{recipient} さん、ようこそ！'
-        instruction: 以下のリンクからメールアカウントを確認できます。
-        subject: 確認の手順
+        instruction: 以下のリンクからメールアドレスを確認できます。
+        subject: メールアドレスを確認する．
       email_changed:
-        greeting: こんにちは、 %{recipient}!
-        message: メールアドレスが %{email}に変更されていることをお知らせするためにご連絡しています。
-        subject: メールアドレスを変更しました
+        greeting: こんにちは、 %{recipient}さん!
+        message: メールアドレスが %{email}に変更されました。
+        subject: メールアドレスが変更されました
       invitation_instructions:
         accept: 招待を承認する
         accept_until: この招待は %{due_date}後に期限が切れます。
@@ -6748,7 +6743,7 @@ ja:
         greeting: こんにちは、 %{recipient}!
         instruction: 'アカウントのロックを解除するには、下のリンクをクリックしてください:'
         message: あなたのアカウントは、試行中のサインインに失敗したためロックされています。
-        subject: 説明のロックを解除する
+        subject: アカウントのロックを解除する
     omniauth_callbacks:
       failure: 「 %{kind} 」のため、%{reason}から認証できませんでした。
       success: '%{kind} アカウントから正常に認証されました。'
