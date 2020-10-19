@@ -49,18 +49,68 @@ class ButtonConst
             "uri": "https://decidim-line.guild.engineer"
           },
           {
-            "type": "message",
-            "label": "サポートする",
-            "text": "サポートする"
+            "type": "postback",
+            "label": "support",
+            "data": ""
           },
           {
-            "type": "uri",
-            "label": "エンドースする",
-            "uri": "https://google.com"
+            "type": "postback",
+            "label": "いいねする",
+            "data": ""
           },
       ]
     }
   
         button
     end
+
+
+    def result_button
+      button = {
+        "type": 'buttons',
+        "title": "提案にいいねしました！",
+        "text": "提案にいいねしました！",
+        "defaultAction": {
+            "type": "uri",
+            "label": "詳細を見る・コメントする",
+            "uri": "https://example.com/page/123"
+        },
+        "actions": [
+            {
+              "type": "uri",
+              "label": "詳細を見る・コメントする",
+              "uri": "https://decidim-line.guild.engineer"
+            }]
+        }
+        button
+      end
+
+      def home_uri
+        home_uri = "https://baeece939f51.ngrok.io/"#"https://decidim-line.guild.engineer/"
+        home_uri
+      end
+
+      def confirmation
+        confirmation = {
+          "type": "template",
+          "altText": "",
+          "template": {
+              "type": "confirm",
+              "text": "",
+              "actions": [
+                  {
+                    "type": "postback",
+                    "label": "はい",
+                    "data": "yes"
+                  },
+                  {
+                    "type": "postback",
+                    "label": "いいえ",
+                    "data": "no"
+                  }
+              ]
+          }
+        }
+        confirmation
+      end
   end
