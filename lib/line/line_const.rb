@@ -50,7 +50,7 @@ class ButtonConst
           },
           {
             "type": "postback",
-            "label": "support",
+            "label": "投票する",
             "data": ""
           },
           {
