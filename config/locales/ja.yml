@@ -710,8 +710,8 @@ ja:
         one: 留意事項
         other: 注意事項
       decidim/proposals/proposal_vote:
-        one: サポート
-        other: サポート
+        one: 支持する
+        other: 支持する
       decidim/sortitions/sortition:
         one: 並び替え
         other: 並び替え
@@ -903,7 +903,7 @@ ja:
             version_created_at: で作成されたバージョン
             version_number: バージョン番号
             version_number_out_of_total: '%{total_count}の%{current_version}アウト'
-            votes: サポート
+            votes: 支持
         timeline:
           title: プロジェクトの進化
       versions:
@@ -2611,7 +2611,7 @@ ja:
         results_count: 結果
         surveys_count: 調査
         users_count: 参加者
-        votes_count: サポート
+        votes_count: 支持
     assembly_members:
       assembly_member:
         designated_on: 指定日時：
@@ -2853,8 +2853,8 @@ ja:
         project:
           add: プロジェクト %{resource_name} をあなたの投票に追加
           count:
-            one: 1つのサポート
-            other: '%{count}はサポートしています。'
+            one: 1 票
+            other: '%{count} 票'
           remove: プロジェクト %{resource_name} を投票から削除する
           view: 表示
         project_budget_button:
@@ -3029,7 +3029,7 @@ ja:
           amend: 修正
           create: 作成
           endorse: 承認する
-          vote: サポート
+          vote: 支持
           withdraw: 出金する
         name: 提案
         settings:
@@ -3040,11 +3040,11 @@ ja:
             amendments_wizard_help_text: 修正ウィザードのヘルプテキスト
             announcement: お知らせ
             attachments_allowed: 添付ファイルを許可
-            can_accumulate_supports_beyond_threshold: 閾値を超えてサポートを蓄積できます。
+            can_accumulate_supports_beyond_threshold: 閾値を超えて支持を蓄積できます。
             collaborative_drafts_enabled: 共同作業の下書きを有効にする
             comments_enabled: コメントは有効です
             geocoding_enabled: ジオコーディングを有効にする
-            minimum_votes_per_user: ユーザーあたりの最小サポート数
+            minimum_votes_per_user: ユーザーあたりの最小支持数
             new_proposal_body_template: 新しい提案本文テンプレート
             new_proposal_body_template_help: 新しい提案に含まれる予定のテキストを定義することができます。
             new_proposal_help_text: 新しい提案ヘルプテキスト
@@ -3062,7 +3062,7 @@ ja:
             proposal_wizard_step_4_help_text: 提案書ウィザード「発行」ステップヘルプテキスト
             resources_permissions_enabled: 各提案に対してアクションの権限を設定することができます。
             threshold_per_proposal: 提案ごとのしきい値
-            vote_limit: 参加者一人あたりのサポート限度額
+            vote_limit: 参加者一人あたりの支持限度額
           step:
             amendment_creation_enabled: 修正の作成は有効です
             amendment_creation_enabled_help: 参加者は提案を修正できます。
@@ -3082,9 +3082,9 @@ ja:
             proposal_answering_enabled: 提案の回答を有効にする
             publish_answers_immediately: 提案の回答をすぐに公開
             suggested_hashtags: 新しい提案のために参加者に提案したハッシュタグ
-            votes_blocked: ブロックされたサポート
-            votes_enabled: サポートは有効です
-            votes_hidden: サポート非表示（サポートが有効な場合、チェックを入れるとサポート数が非表示になります）
+            votes_blocked: 支持を無効にする
+            votes_enabled: 支持を有効にする
+            votes_hidden: 支持数非表示（支持が有効な場合、チェックを入れると支持数が非表示になります）
       sortitions:
         name: 並び替え
         settings:
@@ -3331,7 +3331,7 @@ ja:
         results_count: 結果
         surveys_count: 調査
         users_count: 参加者
-        votes_count: サポート
+        votes_count: 支持
     consultations:
       admin:
         content_blocks:
@@ -3875,10 +3875,10 @@ ja:
             notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブは署名の
               %{percentage}%を達成している。
         support_threshold_reached:
-          email_intro: イニシアチブ %{resource_title} がサポートのしきい値に達しました
+          email_intro: イニシアチブ %{resource_title} が支持のしきい値に達しました
           email_outro: あなたはプラットフォームの管理者であるため、この通知を受け取りました。
-          email_subject: サポートのしきい値に達しました
-          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブはサポートのしきい値に達しました
+          email_subject: 支持のしきい値に達しました
+          notification_title: <a href="%{resource_path}">%{resource_title}</a> イニシアチブは支持のしきい値に達しました
       meetings:
         meeting_closed:
           affected_user:
@@ -4071,9 +4071,9 @@ ja:
           email_subject: '%{resource_title} の提案範囲が更新されました'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案スコープが管理者によって更新されました。
         voting_enabled:
-          email_intro: 'あなたは %{participatory_space_title}で提案をサポートすることができます! このページに参加してください:'
+          email_intro: 'あなたは %{participatory_space_title}で提案を支持することができます! このページに参加してください:'
           email_outro: '%{participatory_space_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
-          email_subject: '%{participatory_space_title} の提案サポートが開始されました'
+          email_subject: '提案 %{participatory_space_title} の支持が開始されました'
           notification_title: <a href="%{resource_path}">supporting proposition</a>
             in <a href="%{participatory_space_url}">%{participatory_space_title}</a>
       sortitions:
@@ -4299,13 +4299,13 @@ ja:
         proposal_votes:
           conditions:
           - 閲覧し、他の人の提案を読んでいくつかの時間を過ごします
-          - あなたが好きな提案をサポートするか、興味深いものを見つけましょう
+          - あなたが好きな提案を支持するか、興味のあるものを見つけましょう
           description: このバッジは、あなたが他の人の提案を支持するときに付与されます。
-          description_another: この参加者は %{score} の提案をサポートしています。
-          description_own: '%{score} の提案をサポートしました。'
-          name: 提案サポート
-          next_level_in: さらに %{score} の提案をサポートして次のレベルに到達しましょう！
-          unearned_another: この参加者はまだどの提案もサポートしていません。
+          description_another: この参加者は %{score} の提案を支持しています。
+          description_own: '%{score} の提案を支持しました。'
+          name: 提案を支持
+          next_level_in: さらに %{score} の提案を支持して次のレベルに到達しましょう！
+          unearned_another: この参加者はまだどの提案も支持していません。
           unearned_own: まだ提案がありません。
         proposals:
           conditions:
@@ -5210,9 +5210,9 @@ ja:
         object: 参加者
         title: 参加者
       votes:
-        description: 提案へのサポート数
-        object: サポート
-        title: サポート
+        description: 提案への支持数
+        object: 支持
+        title: 支持
     moderations:
       actions:
         hidden: Hidden
@@ -5515,7 +5515,7 @@ ja:
         proposals_count: 提案
         results_count: 結果
         sortitions_count: 並び替え
-        supports_count: サポート
+        supports_count: 支持
         surveys_count: 調査
         users_count: 参加者
     participatory_space_private_users:
@@ -5698,8 +5698,8 @@ ja:
             remove_assignment: 課題を削除
             remove_assignment_confirmation: この提案から評価者を削除してもよろしいですか？
             valuators: Valuators
-            votes_count: サポート数
-            votes_ranking: サポートによるランキング
+            votes_count: 支持数
+            votes_ranking: 支持数によるランキング
           update_category:
             invalid: 'これらの提案は既に %{subject_name} カテゴリ: %{proposals} を持っています。'
             select_a_category: カテゴリを選択してください
@@ -5931,8 +5931,8 @@ ja:
         create:
           error: いいねができませんでした
         identities:
-          done: äº†
-          select_identity: アイデンティティを選択
+          done: 選択
+          select_identity: どの名義でいいねしますか？
       proposal_endorsements_helper:
         endorsement_button:
           already_endorsed: いいね
@@ -5981,7 +5981,7 @@ ja:
           search: 検索
           state: ステータス
           type: タイプ
-          voted: サポート
+          voted: 支持
         filters_small_view:
           close_modal: モーダルを閉じる
           filter: フィルター
@@ -6004,7 +6004,7 @@ ja:
           most_commented: コメントが多い順
           most_endorsed: いいねが多い順
           most_followed: フォローが多い順
-          most_voted: サポートが多い順
+          most_voted: 支持数が多い順
           random: ランダム
           recent: 新しい順
           with_more_authors: 著者が多い順
@@ -6045,40 +6045,40 @@ ja:
           read_less: 未読にする
           read_more: もっと読む
           report: レポート
-          withdraw_btn_hint: サポートを受けていない限り、気が変わった場合は提案を取り下げることができます。 提案は削除されず、取り下げられた提案のリストに表示されます。
+          withdraw_btn_hint: 支持されていない限り、提案を取り下げることができます。 提案は削除されず、取り下げられた提案のリストに表示されます。
           withdraw_confirmation: 本当にこの提案を取り下げますか？
           withdraw_proposal: 提案の取り下げ
         tags:
           changed_from: (管理者によって <u>%{previous_name}</u> から変更されました)
         vote_button:
-          already_voted: サポート済みです
-          already_voted_hover: サポートを取り下げる
-          maximum_votes_reached: サポートの上限に達しました
-          no_votes_remaining: サポートがありません
-          vote: サポート
-          votes_blocked: サポートは無効です
+          already_voted: 支持済みです
+          already_voted_hover: 支持を取り下げる
+          maximum_votes_reached: 支持の上限に達しました
+          no_votes_remaining: 支持がありません
+          vote: 支持
+          votes_blocked: 支持は無効です
         votes_count:
           count:
-            one: サポート
-            other: サポーター
+            one: 支持者
+            other: 支持者
           most_popular_proposal: 最も人気のある提案
-          need_more_votes: さらにサポートが必要です
+          need_more_votes: さらに投票が必要です
         voting_rules:
           can_accumulate_supports_beyond_threshold:
-            description: 各提案は %{limit} 以上のサポートを蓄積できます
+            description: 各提案は %{limit} 以上の投票を獲得できます
           minimum_votes_per_user:
-            description: 異なる提案に最低 %{votes} のサポートを配布する必要があります。
-            given_enough_votes: 十分なサポートがあります。
-            supports_remaining: サポートを考慮するためには、あと %{remaining_votes} 件の提案をサポートする必要があります。
+            description: 異なる提案に最低 %{votes} 票を投票する必要があります。
+            given_enough_votes: 十分な投票数があります。
+            supports_remaining: あと %{remaining_votes} 件の提案に投票できます。
           proposal_limit:
             description: 最大 %{limit} 件の提案を作成できます。
           threshold_per_proposal:
-            description: 検証されるためには、 %{limit} のサポートに到達する必要があります
-          title: 'サポートは以下のルールに従います:'
+            description: 検証されるためには、 %{limit} 票の投票を獲得する必要があります
+          title: '投票は以下のルールに従います:'
           vote_limit:
-            description: 最大 %{limit} 件の提案をサポートできます。
+            description: 最大 %{limit} 件の提案を投票できます。
             left: 残り
-            votes: サポート
+            votes: 票
         wizard_aside:
           back: 戻る
           info: <strong>提案</strong> を作成しています。
@@ -6117,7 +6117,7 @@ ja:
           version_index: バージョン %{index}
       withdraw:
         errors:
-          has_supports: すでにサポートがあるため、この提案は取り下げられません。
+          has_supports: すでに獲得した投票があるため、この提案は取り下げられません。
     questions:
       next_button: 次の質問
       previous_button: 前の質問
@@ -6230,10 +6230,10 @@ ja:
         already_reported: このコンテンツはすでに報告されており、管理者が確認します。
         close: 閉じる
         description: このコンテンツは不適切ですか？
-        does_not_belong: 違法行為、自殺の脅威、個人情報、または %{organization_name} に属していないと思われる何かが含まれています。
-        offensive: 人種差別、性差別、スラー、個人攻撃、死の脅威、自殺要求やあらゆる形態の憎悪スピーチが含まれています。
+        does_not_belong: 違法行為、または %{organization_name} に適していないと思われる内容が含まれている。
+        offensive: 人種差別、性差別などのヘイトスピーチが含まれている。
         report: レポート
-        spam: クリックベイト、広告、詐欺やスクリプトボットが含まれています。
+        spam: 不適切な広告や詐欺、悪意のあるスクリプトが含まれている。
         title: 不適切な内容を報告する
       floating_help:
         help: ヘルプ
@@ -6830,7 +6830,7 @@ ja:
         other: リクエストを処理する際に複数のエラーが発生しました。
       too_many_marks: '連続する句読点が多すぎます (例: !, ?)'
       too_much_caps: 大文字が多すぎます(テキストの25%以上)
-      too_short: 短すぎます（15文字未満）
+      too_short: 短すぎます（15文字以上にしてください．）
       uppercase_only_letters_numbers: すべて大文字で、文字および/または数字のみを含む必要があります。
   forms:
     required: 必須項目

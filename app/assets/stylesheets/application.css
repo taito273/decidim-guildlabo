@@ -560,3 +560,8 @@ input:checked ~ .switch-paddle {
 .opinion-toggle--meh:hover, .opinion-toggle--meh:focus, .opinion-toggle--meh.is-active {
   color: #e99401;
 }
+
+
+.card.card--proposal {
+	width: 100%;
+}
