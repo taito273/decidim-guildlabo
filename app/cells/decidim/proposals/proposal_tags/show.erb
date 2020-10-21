@@ -1,0 +1,44 @@
+<figure>
+  <ul class="tags tags--proposal tags--list">
+    <% if category.present? %>
+      <li>
+        <%= link_to translated_attribute(category.name), resource_locator(model).index(filter: { category_id: [category.id.to_s] }) %>
+        <% if previous_category.present? && show_previous_category? %>
+          &nbsp;
+          <small class="text-small">
+            <%= t("changed_from", scope: "decidim.proposals.proposals.tags", previous_name: "#{previous_category.translated_name}").html_safe %>
+          </small>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if has_visible_scopes?(model) %>
+      <li>
+        <%= link_to translated_attribute(scope.name), resource_locator(model).index(filter: { scope_id: [scope.id] }) %>
+        <% if previous_scope.present? && show_previous_scope? %>
+          &nbsp;
+          <small class="text-small">
+            <%= t("changed_from", scope: "decidim.proposals.proposals.tags", previous_name: "#{translated_attribute(previous_scope.name)}").html_safe %>
+          </small>
+        <% end %>
+      </li>
+    <% end %>
+
+    <li>
+
+
+
+    <%
+    @good_comments = Decidim::Comments::Comment.where(alignment: 1, decidim_commentable_type: 'Decidim::Proposals::Proposal', decidim_commentable_id: model.id).length
+            @bad_comments = Decidim::Comments::Comment.where(alignment: -1, decidim_commentable_type: 'Decidim::Proposals::Proposal', decidim_commentable_id: model.id).length
+            #@neutral_comments = Decidim::Comments::Comment.where(alignment: 0, decidim_commentable_type: Decidim::Proposals:Proposal, decidim_commentable_id: model.id).length
+    %>
+    <% puts('sdfvzdsvg') %>
+    <% puts(model.id) %>
+
+     <p>賛成 <%= @good_comments %> 反対 <%= @bad_comments %></p>
+
+    </li>
+
+  </ul>
+</figure>
