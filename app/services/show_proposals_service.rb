@@ -5,12 +5,15 @@ class ShowProposalsService
 
     def show_all_proposals(client, event)
 
+
         space_index = event.message['text'].index(' ')
         process_name = event.message['text'][space_index+1, event.message['text'].length - space_index - 7]
         process_id = event.message['text'].slice(0, space_index).to_i
         target_process = Decidim::ParticipatoryProcess.find(process_id)
 
-        if !target_process || target_process.title['ja'] != process_name #該当プロセスが存在しないとき，もしくはidと名前が一致しない時
+        title = target_process.title['ja'] ? target_process.title['ja'] : target_process.title['en']
+
+        if !target_process || title != process_name #該当プロセスが存在しないとき，もしくはidと名前が一致しない時
         error_message(client, event, 'そのような議題は存在しません．お手数ですが，画面下のタップボタンよりもう一度お試しください．')
         return
         end
@@ -40,6 +43,8 @@ class ShowProposalsService
 
         proposals = Decidim::Proposals::Proposal.where(decidim_component_id: proposals_component_id)
 
+        proposals = proposals.select{ |proposal| proposal.state != 'withdrawn' and proposal.state != 'rejected'}
+
         if proposals.length == 0 || !proposals
             error_message(client, event, '現在提案はありません．')
             return 
@@ -47,10 +52,14 @@ class ShowProposalsService
 
         button = button_templates.button_proposal
 
+        proposals = proposals.length > 10 ? proposals.sample(10) : proposals
+
+        
+
         proposals.each do |proposal|
             button_tmp = button.deep_dup
             button_tmp[:title] = proposal.title
-            button_tmp[:text] = proposal.body.slice(0, 50)
+            button_tmp[:text] = proposal.body.gsub(%r{</?[^>]+?>},'').slice(0, 50)
 
             # URLの指定
             button_tmp[:defaultAction][:uri] =  button_templates.home_uri + 'processes/' + process_slug + "/f/" + proposals_component_id + "/proposals/" + proposal.id.to_s + "/?locale=ja"
@@ -87,6 +96,7 @@ class ShowProposalsService
                     }
                 }
         result = client.reply_message(event['replyToken'], message)
+        Rails.logger.fatal(result.body)
     end
 
 

@@ -9,7 +9,7 @@ class EndorseProposalService
   
         confirmation[:altText] = "提案 #{target_proposal.title} をいいねしますか？"
         confirmation[:template][:text] = "提案 #{target_proposal.title} をいいねしますか？"
-        confirmation[:template][:actions][0][:data] = "id=#{params['id'].to_s}&action=endorse&flug=#{params["process_slug"]}&confirmed=true"
+        confirmation[:template][:actions][0][:data] = "id=#{params['id'].to_s}&action=endorse&flug=#{params["flug"]}&confirmed=true"
         confirmation[:template][:actions][1][:data] = "quit=true"
 
         result = client.reply_message(event['replyToken'], confirmation)

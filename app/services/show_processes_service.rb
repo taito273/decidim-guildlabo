@@ -15,7 +15,7 @@ class ShowProcessesService
 
 
     def show_processes(client, event, only_followed=false)
-        processes = Decidim::ParticipatoryProcess.where(decidim_organization_id: 1, promoted: true)#organization_idは適宜変更する必要あり
+        processes = Decidim::ParticipatoryProcess.where(decidim_organization_id: 3, promoted: true)#organization_idは適宜変更する必要あり
         if processes.length == 0
             error_message(client, event, '現在議題はありません．')
         end
@@ -38,8 +38,6 @@ class ShowProcessesService
         caroucel = []
 
         button = button_templates.button_process
-        puts('asdrfgvzsdgsr')
-        puts(button_templates.home_uri)
 
         processes.each do |process|
         # 公開されている，かつハイライトされているものだけを表示
@@ -48,13 +46,15 @@ class ShowProcessesService
 
             button_tmp['thumbnailImageUrl'] = "https://google.com"#process.banner_image
 
-            button_tmp['title'] = process.title["ja"]
-            button_tmp['text'] = process.short_description["ja"].gsub(%r{</?[^>]+?>},'').slice(0, 50)
+            language = 'en'
+
+            button_tmp['title'] = process.title[language]
+            button_tmp['text'] = process.short_description[language].gsub(%r{</?[^>]+?>},'').slice(0, 50)
 
 
             button_tmp[:defaultAction][:uri] = button_templates.home_uri + 'processes/' + process.slug
             button_tmp[:actions][0][:uri] = button_templates.home_uri + 'processes/' + process.slug
-            button_tmp[:actions][1][:text] = process.id.to_s + ' ' + process.title['ja'] + ' の提案一覧'
+            button_tmp[:actions][1][:text] = process.id.to_s + ' ' + process.title[language] + ' の提案一覧'
             button_tmp[:actions][2][:uri] = button_templates.home_uri + 'processes/' + process.slug
             proposals_component_id = ''
             proposal_creation_enabled = false

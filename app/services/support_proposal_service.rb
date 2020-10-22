@@ -9,7 +9,7 @@ class SupportProposalService
   
         confirmation[:altText] = "提案 #{target_proposal.title} に投票しますか？"
         confirmation[:template][:text] = "提案 #{target_proposal.title} に投票しますか？"
-        confirmation[:template][:actions][0][:data] = "id=#{params['id'].to_s}&action=support&flug=#{params["process_slug"]}&confirmed=true"
+        confirmation[:template][:actions][0][:data] = "id=#{params['id'].to_s}&action=support&flug=#{params["flug"]}&confirmed=true"
         confirmation[:template][:actions][1][:data] = "quit=true"
 
         result = client.reply_message(event['replyToken'], confirmation)
@@ -38,7 +38,7 @@ class SupportProposalService
         proposals.each { |prop| proposal_ids.push(prop.id) }
         support_of_target_proposal = supports_of_current_user.select { |support| proposal_ids.include?(support.decidim_proposal_id) }
 
-        reached_limit = support_of_target_proposal.length >= proposal_component.settings.vote_limit
+        reached_limit = support_of_target_proposal.length >= proposal_component.settings.vote_limit && proposal_component.settings.vote_limit != 0
 
         return [false, reached_limit]
 
@@ -68,7 +68,7 @@ class SupportProposalService
             return
         end
 
-        # ここからエンドース作業
+        # ここから投票作業
         new_endorsement = Decidim::Proposals::ProposalVote.create!(
             decidim_proposal_id: proposal_id.to_s, decidim_author_id: decidim_uid
         )

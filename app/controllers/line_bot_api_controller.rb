@@ -70,6 +70,8 @@ class LineBotApiController < ApplicationController
         support_proposal_service.support_proposal(client, event, query_params)
       elsif query_params["action"] == "support"
         support_proposal_service.confirm_support(client, event, query_params)
+      elsif query_params["quit"] == "true"
+        error_message(client, event, 'ご利用ありがとうございました．')
       else
         error_message(client, event, '下のメニューを開いて閲覧したいコンテンツを選択してください．')
       end
@@ -77,7 +79,12 @@ class LineBotApiController < ApplicationController
     end
 
   def error_message(client, event, error_message)
-
+    message = {
+            "type": "text",
+            "label": error_message,
+            "text": error_message
+        }
+        result = client.reply_message(event['replyToken'], message)
   end
   private
   

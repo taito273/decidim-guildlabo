@@ -86,7 +86,7 @@ class ButtonConst
       end
 
       def home_uri
-        home_uri = "https://baeece939f51.ngrok.io/"#"https://decidim-line.guild.engineer/"
+        home_uri = "https://decidim-line.guild.engineer/"
         home_uri
       end
 
