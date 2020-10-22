@@ -1,8 +1,2 @@
 <%= render partial: "decidim/shared/tags.html", locals: { resource: model, tags_class_extra: "tags--proposal" } %>
-<%
-@good_comments = Decidim::Comments::Comment.where(alignment: 1, decidim_commentable_type: 'Decidim::Proposals::Proposal', decidim_commentable_id: model.id).length
-@bad_comments = Decidim::Comments::Comment.where(alignment: -1, decidim_commentable_type: 'Decidim::Proposals::Proposal', decidim_commentable_id: model.id).length
-        #@neutral_comments = Decidim::Comments::Comment.where(alignment: 0, decidim_commentable_type: Decidim::Proposals:Proposal, decidim_commentable_id: model.id).length
-%>
-
-<p>賛成 <%= @good_comments %> 反対 <%= @bad_comments %></p>
+<p>賛成 <%= comments.count{|comment| comment.alignment == 1} %> 反対 <%= comments.count{|comment| comment.alignment == -1} %></p>
