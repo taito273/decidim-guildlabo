@@ -16,16 +16,36 @@ class SupportProposalService
 
     end
 
-    def check_if_supported(decidim_uid, proposal_id)
-        #ans はそのユーザーが提案にエンドースしなければ nil になる
-        ans = Decidim::Proposals::ProposalVote.find_by(decidim_author_id: decidim_uid, decidim_proposal_id: proposal_id)
+    def validate_support(decidim_uid, proposal)
+        #そのユーザーの該当提案コンポーネントに対する投票
+        supports_of_current_user = Decidim::Proposals::ProposalVote.where(decidim_author_id: decidim_uid)
 
-        if ans
-            return true
-        else
-            return false
+
+        supports_of_current_user.each do |support| 
+            if support.decidim_proposal_id.to_i == proposal.id
+                #　既に投票していればここで終わり
+                return [true, nil]
+            end
         end
+
+
+        # 該当提案コンポーネントに含まれる提案一覧
+        proposals = Decidim::Proposals::Proposal.where(decidim_component_id: proposal.decidim_component_id.to_i)
+        proposal_component = Decidim::Component.find(proposal.decidim_component_id.to_i)
+
+        # 該当コンポーネントに含まれる提案のIDから，ユーザーの投票の中でも関連する投票だけ抜き出す
+        proposal_ids = []
+        proposals.each { |prop| proposal_ids.push(prop.id) }
+        support_of_target_proposal = supports_of_current_user.select { |support| proposal_ids.include?(support.decidim_proposal_id) }
+
+        reached_limit = support_of_target_proposal.length >= proposal_component.settings.vote_limit
+
+        return [false, reached_limit]
+
+
+
     end
+
 
     def support_proposal(client, event, params)
 
@@ -36,10 +56,15 @@ class SupportProposalService
         proposal_id = params["id"].to_i
         proposal = Decidim::Proposals::Proposal.find(proposal_id)
 
-        already_endorsed = check_if_supported(decidim_uid, proposal_id)
+        already_supported, support_reached_limit = validate_support(decidim_uid, proposal)
 
-        if already_endorsed
+        if already_supported
             result = error_message(client, event, "提案 #{proposal.title} には既に投票しています．")
+            return
+        end
+
+        if support_reached_limit
+            result = error_message(client, event, "投票数が上限に達しています．")
             return
         end
 
