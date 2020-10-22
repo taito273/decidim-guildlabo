@@ -1,8 +1,6 @@
 class LineBotApiController < ApplicationController
     require 'line/bot'
-    require './lib/line/show_processes'
-    require './lib/line/show_proposals'
-    require './lib/line/decidim_user_verification'
+    require 'uri'
 
     skip_before_action :verify_authenticity_token
   
@@ -18,14 +16,20 @@ class LineBotApiController < ApplicationController
         when Line::Bot::Event::Message
           case event.type
           when Line::Bot::Event::MessageType::Text
-            line_bot_handler(event)
+            line_bot_text_handler(event)
           end
+
+        when Line::Bot::Event::Postback
+          line_bot_postback_handler(event)
+        
         end
       end
+
+
       head :ok
     end
 
-    def line_bot_handler(event)
+    def line_bot_text_handler(event)
       # テキストの種類が
       # 1. プロセス一覧
       # 2. 提案一覧
@@ -38,23 +42,42 @@ class LineBotApiController < ApplicationController
       # の8種類
       #p event.message['text']
 
-      if false#decidim_user_verification(client, event)#ユーザーがDecidimにLINEを登録していない場合
+      if line_user_verification_service.decidim_user_verification(client, event)#ユーザーがDecidimにLINEを登録していない場合
         return
       end
 
-      if event.message['text'] == 'プロセス一覧' || event.message['text'] == '提案一覧'
-        show_processes(client, event)
+      if event.message['text'] == 'プロセス一覧'
+        show_process_service.show_processes(client, event)
+      elsif event.message['text'] == '提案一覧'
+        show_process_service.show_processes(client, event, true)
       elsif event.message['text'].slice(-6, 6) == ' の提案一覧'
         # メッセージは，[id] [process_name] の提案一覧　として来る
-        show_all_proposals(client, event)
+        show_proposal_service.show_all_proposals(client, event)
       end
+    end
 
 
+    def line_bot_postback_handler(event)
+      query_array = URI::decode_www_form(event["postback"]["data"])
+      query_params = Hash[query_array]
 
 
+      if query_params["action"] == "endorse" && query_params["confirmed"] == 'true'
+        endorse_proposal_service.endorse_proposal(client, event, query_params)
+      elsif query_params["action"] == "endorse"
+        endorse_proposal_service.confirm_endorsement(client, event, query_params)
+      elsif query_params["action"] == "support" && query_params["confirmed"] == 'true'
+        support_proposal_service.support_proposal(client, event, query_params)
+      elsif query_params["action"] == "support"
+        support_proposal_service.confirm_support(client, event, query_params)
+      else
+        error_message(client, event, '下のメニューを開いて閲覧したいコンテンツを選択してください．')
+      end
+      
     end
 
   def error_message(client, event, error_message)
+
   end
   private
   
@@ -66,5 +89,24 @@ class LineBotApiController < ApplicationController
       }
     end
 
+    def show_proposal_service
+      @show_proposal_service = ShowProposalsService.new
+    end
+
+    def show_process_service
+      @show_process_service = ShowProcessesService.new
+    end
+
+    def endorse_proposal_service
+      @endorse_proposal_service = EndorseProposalService.new
+    end
+
+    def support_proposal_service
+      @support_proposal_service = SupportProposalService.new
+    end
+
+    def line_user_verification_service
+      @line_user_verification_service = LineUserVerificationService.new
+    end
 
 end
