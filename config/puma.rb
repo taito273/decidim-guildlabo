@@ -41,4 +41,3 @@ if rails_env
     daemonize true
     bind "unix:///var/run/puma/my_app_2.sock"
 end
-
