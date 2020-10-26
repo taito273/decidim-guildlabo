@@ -34,19 +34,10 @@ module Decidim
 
       def comments
         comments = Decidim::Comments::Comment.where(decidim_commentable_id: model.id, decidim_commentable_type: 'Decidim::Proposals::Proposal')
-        good_s = 0
-        bad_s = 0
-        neutral_s = 0
+        good_s = comments.where(alignment: 1).length
+        bad_s = comments.where(alignment: -1).length
+        neutral_s = comments.where(alignment: 0).length
 
-        comments.each do |comment|
-          if comment.alignment == 1
-            good_s += 1
-          elsif comment.alignment == -1
-            bad_s += 1
-          else
-            neutral_s += 1
-          end
-        end
         {good_s: good_s, bad_s: bad_s, neutral_s: neutral_s}
       end
       
