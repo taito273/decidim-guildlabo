@@ -40,3 +40,6 @@ en:
           count:
             one: 'supporters'
             other: ' supporters'
+        endorsements_count: 'endorsements'
+        comments_count: 'comments'
+        
