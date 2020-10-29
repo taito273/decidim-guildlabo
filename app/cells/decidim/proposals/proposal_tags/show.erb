@@ -25,7 +25,7 @@
     <% end %>
 
     <li>
-     <p>賛成 <%= comments.count{|comment| comment.alignment == 1} %> 反対 <%= comments.count{|comment| comment.alignment == -1} %></p>
+     <p><%= icon('thumb-up') %> <%= comments[:good_s] %> 　 <%= icon('thumb-down') %><%= comments[:bad_s] %></p>
     </li>
 
   </ul>

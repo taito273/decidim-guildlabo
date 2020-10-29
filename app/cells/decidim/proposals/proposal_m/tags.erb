@@ -1,5 +1,5 @@
 <%= render partial: "decidim/shared/tags.html", locals: { resource: model, tags_class_extra: "tags--proposal" } %>
 
-<p>賛成 <%= comments[:good_s] %> 反対 <%= comments[:bad_s] %></p>
+<p><%= icon('thumb-up') %> <%= comments[:good_s] %>　<%= icon('thumb-down') %> <%= comments[:bad_s] %></p>
 
 
