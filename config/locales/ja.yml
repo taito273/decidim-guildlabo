@@ -6050,6 +6050,10 @@ ja:
           withdraw_proposal: 提案の取り下げ
         tags:
           changed_from: (管理者によって <u>%{previous_name}</u> から変更されました)
+        
+        endorsements_count: '件のいいね'
+        comments_count: '件のコメント'
+
         vote_button:
           already_voted: 支持中
           already_voted_hover: 支持を取り下げる
@@ -6058,6 +6062,9 @@ ja:
           vote: 支持する
           votes_blocked: 支持は無効です
         votes_count:
+          count_list:
+            one: ' 人が支持しています。'
+            other: ' 人が支持しています。'
           count:
             one: ' 支持者'
             other: ' 支持者'
