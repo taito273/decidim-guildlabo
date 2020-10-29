@@ -1,5 +1,9 @@
 <figure>
   <ul class="tags tags--proposal tags--list">
+    <li>
+     <p><%= icon('thumb-up') %> <%= comments[:good_s] %> 　 <%= icon('thumb-down') %><%= comments[:bad_s] %></p>
+    </li>
+
     <% if category.present? %>
       <li>
         <%= link_to translated_attribute(category.name), resource_locator(model).index(filter: { category_id: [category.id.to_s] }) %>
@@ -24,9 +28,7 @@
       </li>
     <% end %>
 
-    <li>
-     <p><%= icon('thumb-up') %> <%= comments[:good_s] %> 　 <%= icon('thumb-down') %><%= comments[:bad_s] %></p>
-    </li>
+    
 
   </ul>
 </figure>
